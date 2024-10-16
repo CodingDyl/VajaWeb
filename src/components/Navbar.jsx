@@ -44,7 +44,7 @@ export function Navbar() {
       </Container>
 
       {opened && (
-        <div className="md:hidden absolute top-5 md:top-20 left-0 right-0 bg-accent p-4">
+        <div className="md:hidden absolute top-20 left-0 right-0 bg-accent p-4">
           {navItems.map((item) => (
             <Link
               key={item.to}

@@ -33,7 +33,7 @@ export function Hero() {
             src={sauna_hero}
             alt="Sauna interior"
             fill
-            className="object-cover rounded-l-[80px]"
+            className="object-cover rounded-l-[120px] border-4 border-accent"
             sizes="(max-width: 1024px) 100vw, 50vw"
             priority
           />
