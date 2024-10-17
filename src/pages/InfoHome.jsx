@@ -42,7 +42,7 @@ const InfoHome = () => {
           <ImageWithOverlay src={productImage2} alt='Product' title="Our Steam Rooms" direction="left" />
         </div>
         <div className='flex flex-col justify-center space-y-4'>
-          <p className='text-lg md:text-2xl lg:text-3xl mt-4 text-center'><span className='text-secondary'>VAJA</span> offers quality products for every taste and budget.</p>
+          <p className='text-lg md:text-2xl lg:text-3xl mt-4'><span className='text-secondary'>VAJA</span> offers quality products for every taste and budget.</p>
           <p className='text-lg'>South Africa's leading sauna and steam room manufacturers, VAJA was established in 1970 to cater for the domestic market.</p>
           <p className='text-lg'>Fifty-one years later and VAJA products can be found not only in South Africa, but all over the world.</p>
           <p className='text-lg'>Our production line extends from casual saunas, to modern customised sauna and steam rooms with individualised lighting and multiple wood choices to match any design style.</p>

@@ -10,7 +10,7 @@ export default {
         'libre-baskerville': ['Libre Baskerville', 'serif'],
       },
       colors: {
-        primary: '#D7CEBB',
+        primary: '#F5F2ED',
         secondary: '#9A887B',
         'accent': ' #A4B792',
         "black-100": "#100d25",

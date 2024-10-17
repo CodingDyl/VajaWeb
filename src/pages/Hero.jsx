@@ -6,7 +6,7 @@ import { Navbar } from '../components/Navbar'
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center bg-[#F5F2ED] overflow-hidden">
+    <section className="relative min-h-screen flex items-center bg-primary overflow-hidden">
     <Navbar />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center">
         <div className="lg:w-1/2 z-10">

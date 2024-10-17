@@ -6,7 +6,7 @@ const FooterSection = ({ title, items }: { title: string; items: string[] }) => 
     <h3 className="text-lg font-semibold text-secondary mb-4">{title}</h3>
     <ul className="space-y-2">
       {items.map((item, index) => (
-        <li key={index} className="text-sm text-gray-600">{item}</li>
+        <li key={index} className="text-sm text-accent">{item}</li>
       ))}
     </ul>
   </div>
@@ -51,9 +51,9 @@ const Footer = () => {
             items={["sandy@vaja.co.za"]}
           />
         </div>
-        <div className="mt-12 pt-8 border-t border-gray-200">
+        <div className="mt-12 pt-8 border-t border-secondary">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-sm text-gray-600 mb-4 md:mb-0">
+            <p className="text-sm text-accent mb-4 md:mb-0">
               © {new Date().getFullYear()} Vaja. All rights reserved.
             </p>
             <div className="flex space-x-4">
