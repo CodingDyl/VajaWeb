@@ -4,13 +4,9 @@ import { Container, Burger, Image } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { IconMenu2 } from '@tabler/icons-react';
 import { logo } from '../assets';
+import { navItems } from '../constants';
 
-const navItems = [
-  { label: 'Our Products', to: '/products' },
-  { label: 'About Us', to: '/about' },
-  { label: 'Blog', to: '/blog' },
-  { label: 'Contact', to: '/contact' },
-];
+
 
 export function Navbar() {
   const [opened, { toggle }] = useDisclosure(false);

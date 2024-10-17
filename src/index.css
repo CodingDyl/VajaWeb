@@ -13,4 +13,40 @@
 body {
   font-family: 'Libre Baskerville', serif;
   background-color: #D7CEBB;
+  overflow-x: hidden;
+}
+
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.logo-scroll-container {
+  overflow: hidden;
+  padding: 20px 0;
+  white-space: nowrap;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-scroll {
+  display: inline-block;
+  animation: scroll 30s linear infinite;
+}
+
+.logo-item {
+  display: inline-block;
+  margin: 0 20px;
+}
+
+/* Pause animation on hover */
+.logo-scroll-container:hover .logo-scroll {
+  animation-play-state: paused;
 }
