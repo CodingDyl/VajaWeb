@@ -21,6 +21,13 @@ import idc from './customers/idc.png'
 import wildCoast from './customers/wildCoast.png'
 import virgin from './customers/virgin.png'
 import maldives from './customers/Maldives.png'
+import aromaImage from './aroma.webp'
+
+// Sauna Wood's
+import clearPine from './sauna/clearPine.webp'
+import western from './sauna/western.webp'
+import thermo from './sauna/thermo.webp'
+import obeche from './sauna/obeche.webp'
 
 export {
   sauna_hero,
@@ -45,4 +52,9 @@ export {
   virgin,
   maldives,
   aboutImage,
+  aromaImage,
+  clearPine,
+  western,
+  thermo,
+  obeche,
 }

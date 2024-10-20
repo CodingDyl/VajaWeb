@@ -5,6 +5,7 @@ import AboutSection from './pages/about/AboutSection'
 import Contact from './pages/contact/Contact'
 import Gallery from './pages/gallery/Gallery'
 import Blog from './pages/blog/Blog'
+import Products from './pages/products/Products'
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<HomeLayout />} />
+          <Route path="/products" element={<Products />} />
           <Route path="/about" element={<AboutSection />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/gallery" element={<Gallery />} />

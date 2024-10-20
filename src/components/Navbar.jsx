@@ -17,17 +17,19 @@ export function Navbar() {
   const [navPosition, setNavPosition] = useState('left-0 right-0');
   const [navMargin, setNavMargin] = useState('mt-0');
   const [textColor, setTextColor] = useState('text-secondary');
+  const [justifyContent, setJustifyContent] = useState('md:justify-around');
   const location = useLocation();
 
   const handleScroll = () => {
     if (window.scrollY > 0) {
-      setBgColor('bg-accent border-2 border-secondary/[0.2]');
-      setNavSize('h-16 md:h-20 w-full md:w-[60%] p-2 md:p-4');
-      setNavRadius('md:rounded-2xl');
-      setHideLogo('block md:hidden'); // Show logo on small devices, hide on medium and up
+      setBgColor('bg-accent border-4 border-secondary');
+      setNavSize('h-16 md:h-20 w-full md:w-auto md:px-12');
+      setNavRadius('md:rounded-full');
+      setHideLogo('hidden');
       setNavPosition('md:left-1/2 md:-translate-x-1/2');
       setNavMargin('md:mt-4');
       setTextColor('text-primary hover:text-secondary');
+      setJustifyContent('md:justify-center');
     } else {
       setBgColor('bg-transparent');
       setNavSize('h-20 md:h-24 w-full p-4 md:p-10');
@@ -36,6 +38,7 @@ export function Navbar() {
       setNavPosition('left-0 right-0');
       setNavMargin('mt-0');
       setTextColor('text-secondary');
+      setJustifyContent('md:justify-around');
     }
   };
 
@@ -55,7 +58,7 @@ export function Navbar() {
 
   return (
     <nav className={`fixed top-0 z-50 transition-all duration-300 ${bgColor} ${navSize} ${navRadius} ${navPosition} ${navMargin}`}>
-      <Container className="flex justify-between md:justify-around items-center w-full h-full">
+      <Container className={`flex justify-between ${justifyContent} items-center w-full h-full`}>
         <Link to="/" className={hideLogo}>
           <Image src={logo} alt="VAJA logo" width={100} height={100} className="w-[80px] h-[80px] md:w-[120px] md:h-[120px]" />
         </Link>
