@@ -2,6 +2,7 @@ import sauna_hero from "./sauna_hero.png"
 import logo from "./logo.png"
 import productImage from "./random_sauna.jpg"
 import productImage2 from "./elegant_steam.jpg"
+import aboutImage from "./about-us.webp"
 
 import sun from './customers/Sun-International.webp'
 import sabi from './customers/sabi-sabi_logo.jpg'
@@ -43,4 +44,5 @@ export {
   wildCoast,
   virgin,
   maldives,
+  aboutImage,
 }

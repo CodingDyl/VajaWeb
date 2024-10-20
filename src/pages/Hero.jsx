@@ -4,6 +4,7 @@ import { sauna_hero } from '../assets'
 import { motion } from 'framer-motion'
 import { Navbar } from '../components/Navbar'
 
+
 export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center bg-primary overflow-hidden">
