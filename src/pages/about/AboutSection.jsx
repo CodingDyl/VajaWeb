@@ -41,7 +41,7 @@ const AnimatedButton = () => (
 const About = () => {
   return (
     <>
-    <div className='min-h-screen bg-gray-100'>
+    <div className='min-h-screen bg-primary'>
       <Navbar />
       <div className='container mx-auto px-4 py-32'>
         
