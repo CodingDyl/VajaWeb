@@ -22,12 +22,12 @@ export function Navbar() {
   const handleScroll = () => {
     if (window.scrollY > 0) {
       setBgColor('bg-accent border-2 border-secondary/[0.2]');
-      setNavSize('h-16 md:h-20 w-[90%] md:w-[60%] p-2 md:p-4');
-      setNavRadius('rounded-2xl');
-      setHideLogo('hidden');
-      setNavPosition('left-1/2 -translate-x-1/2');
-      setNavMargin('mt-4');
-      setTextColor('text-primary hover:text-secondary'); // Change text color to primary on scroll
+      setNavSize('h-16 md:h-20 w-full md:w-[60%] p-2 md:p-4');
+      setNavRadius('md:rounded-2xl');
+      setHideLogo('block md:hidden'); // Show logo on small devices, hide on medium and up
+      setNavPosition('md:left-1/2 md:-translate-x-1/2');
+      setNavMargin('md:mt-4');
+      setTextColor('text-primary hover:text-secondary');
     } else {
       setBgColor('bg-transparent');
       setNavSize('h-20 md:h-24 w-full p-4 md:p-10');
@@ -35,7 +35,7 @@ export function Navbar() {
       setHideLogo('block');
       setNavPosition('left-0 right-0');
       setNavMargin('mt-0');
-      setTextColor('text-secondary'); // Reset text color when at the top
+      setTextColor('text-secondary');
     }
   };
 
@@ -57,7 +57,7 @@ export function Navbar() {
     <nav className={`fixed top-0 z-50 transition-all duration-300 ${bgColor} ${navSize} ${navRadius} ${navPosition} ${navMargin}`}>
       <Container className="flex justify-between md:justify-around items-center w-full h-full">
         <Link to="/" className={hideLogo}>
-          <Image src={logo} alt="VAJA logo" width={100} height={100} className="md:w-[120px] md:h-[120px]" />
+          <Image src={logo} alt="VAJA logo" width={100} height={100} className="w-[80px] h-[80px] md:w-[120px] md:h-[120px]" />
         </Link>
 
         <div className="hidden md:flex space-x-4">
@@ -83,7 +83,7 @@ export function Navbar() {
                       <Link
                         key={dropdownItem.to}
                         to={dropdownItem.to}
-                        className={`block px-4 py-2 text-sm ${textColor} hover:text-accent`}
+                        className={`block px-4 py-2 text-sm text-white hover:text-accent`}
                         role="menuitem"
                       >
                         {dropdownItem.label}
