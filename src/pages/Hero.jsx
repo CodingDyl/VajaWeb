@@ -3,6 +3,7 @@ import { Divider, Image } from '@mantine/core'
 import { sauna_hero } from '../assets'
 import { motion } from 'framer-motion'
 import { Navbar } from '../components/Navbar'
+import { Link } from 'react-router-dom'
 
 
 export function Hero() {
@@ -22,9 +23,11 @@ export function Hero() {
             <button className="bg-accent text-white px-6 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-colors">
               Discover Our Sauna
             </button>
+            <Link to="/contact">
             <button className="bg-transparent border-2 border-accent text-accent px-6 py-3 rounded-full font-semibold hover:bg-accent hover:text-white transition-colors">
               Contact Us Now
             </button>
+            </Link>
           </div>
         </div>
       </div>

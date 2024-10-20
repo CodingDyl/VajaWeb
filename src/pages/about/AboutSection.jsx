@@ -6,6 +6,7 @@ import { FaHistory, FaTools, FaGlobeAfrica } from 'react-icons/fa'
 import Footer from '../../components/Footer'
 import { aboutImage } from '../../assets'
 import { Divider } from '@mantine/core'
+import { Link } from 'react-router-dom'
 
 const AboutSection = ({ title, icon, children }) => (
   <div className="mb-12">
@@ -18,6 +19,7 @@ const AboutSection = ({ title, icon, children }) => (
 )
 
 const AnimatedButton = () => (
+  <Link to="/contact">
   <motion.div
     className="flex justify-center mt-12 mb-2"
     initial="hidden"
@@ -33,6 +35,7 @@ const AnimatedButton = () => (
       Contact Us
     </motion.button>
   </motion.div>
+  </Link>
 )
 
 const About = () => {
