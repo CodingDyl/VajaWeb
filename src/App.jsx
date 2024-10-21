@@ -5,6 +5,7 @@ import AboutSection from './pages/about/AboutSection'
 import Contact from './pages/contact/Contact'
 import Gallery from './pages/gallery/Gallery'
 import Blog from './pages/blog/Blog'
+import BlogPage from './components/BlogPage'
 import Products from './pages/products/Products'
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogPage />} />
         </Routes>
       </Router>
     </MantineProvider>
