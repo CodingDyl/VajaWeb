@@ -29,6 +29,16 @@ import western from './sauna/western.webp'
 import thermo from './sauna/thermo.webp'
 import obeche from './sauna/obeche.webp'
 
+// accessories
+import ergo_pine from './accessories/ergo_pine_head.webp'
+import pine_bucket from './accessories/pine_bucket.webp'
+import pine_head from './accessories/pine_head.webp'
+import pine_sandtimer from './accessories/pine_sandtimer.webp'
+import red_cedar_bucket from './accessories/red_cedar_bucket.webp'
+import red_cedar_head from './accessories/red_cedar_head.webp'
+import red_cedar_sandtimer from './accessories/red_cedar_sandtimer.webp'
+import thermometer from './accessories/Thermometer.webp'
+
 export {
   sauna_hero,
   logo,
@@ -57,4 +67,12 @@ export {
   western,
   thermo,
   obeche,
+  ergo_pine,
+  pine_bucket,
+  pine_head,
+  pine_sandtimer,
+  red_cedar_bucket,
+  red_cedar_head,
+  red_cedar_sandtimer,
+  thermometer,
 }

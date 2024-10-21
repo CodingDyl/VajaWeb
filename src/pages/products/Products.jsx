@@ -5,7 +5,7 @@ import { Navbar } from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import { FaLeaf } from 'react-icons/fa';
 import { Divider } from '@mantine/core';
-import { aromaImage } from '../../assets';
+import { aromaImage, pine_sandtimer, red_cedar_sandtimer, thermometer, pine_bucket, pine_head, red_cedar_bucket, red_cedar_head, ergo_pine } from '../../assets';
 import { productCategories, diyKits, aromaConcentrates } from '../../constants';
 
 const ProductCard = ({ product, index }) => (
@@ -36,9 +36,22 @@ const CategorySection = ({ category, index }) => (
     </div>
     <p className="text-gray-600 mb-8">{category.description}</p>
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {category.products.map((product, productIndex) => (
-        <ProductCard key={productIndex} product={product} index={productIndex} />
-      ))}
+      {category.title === "Accessories" ? (
+        <>
+          <ProductCard product={{ name: "Pine Sand Timer", image: pine_sandtimer }} index={0} />
+          <ProductCard product={{ name: "Red Cedar Sand Timer", image: red_cedar_sandtimer }} index={1} />
+          <ProductCard product={{ name: "Thermometer", image: thermometer }} index={2} />
+          <ProductCard product={{ name: "Pine Bucket", image: pine_bucket }} index={3} />
+          <ProductCard product={{ name: "Pine Head Rest", image: pine_head }} index={4} />
+          <ProductCard product={{ name: "Red Cedar Bucket", image: red_cedar_bucket }} index={5} />
+          <ProductCard product={{ name: "Red Cedar Head Rest", image: red_cedar_head }} index={6} />
+          <ProductCard product={{ name: "Ergonomic Pine Accessory", image: ergo_pine }} index={7} />
+        </>
+      ) : (
+        category.products.map((product, productIndex) => (
+          <ProductCard key={productIndex} product={product} index={productIndex} />
+        ))
+      )}
     </div>
   </motion.section>
 );
