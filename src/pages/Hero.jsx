@@ -20,9 +20,11 @@ export function Hero() {
             Find Inner Calm and Rejuvenate Your Mind.
           </h1>
           <div className="space-x-4 space-y-4 md:space-y-0">
+            <Link to="/products">
             <button className="bg-accent text-white px-6 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-colors">
               Discover Our Sauna
             </button>
+            </Link>
             <Link to="/contact">
             <button className="bg-transparent border-2 border-accent text-accent px-6 py-3 rounded-full font-semibold hover:bg-accent hover:text-white transition-colors">
               Contact Us Now
