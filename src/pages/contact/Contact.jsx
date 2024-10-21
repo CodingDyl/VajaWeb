@@ -166,8 +166,8 @@ const Contact = () => {
               <div className="space-y-6">
                 {[
                   { icon: FaEnvelope, text: "info@vaja.com" },
-                  { icon: FaPhone, text: "+27 123 456 7890" },
-                  { icon: FaMapMarkerAlt, text: "123 Sauna Street, Pretoria, South Africa" }
+                  { icon: FaPhone, text: "+27 11 794 2090" },
+                  { icon: FaMapMarkerAlt, text: "58 Zeiss Rd, Roodeport, South Africa" }
                 ].map((item, index) => (
                   <motion.div
                     key={index}
@@ -197,7 +197,7 @@ const Contact = () => {
               <ul className="space-y-2">
                 {[
                   "Monday - Friday: 9:00 AM - 6:00 PM",
-                  "Saturday: 10:00 AM - 4:00 PM",
+                  "Saturday: Closed",
                   "Sunday: Closed"
                 ].map((day, index) => (
                   <motion.li
