@@ -18,27 +18,37 @@ export function Navbar() {
   const [navMargin, setNavMargin] = useState('mt-0');
   const [textColor, setTextColor] = useState('text-secondary');
   const [justifyContent, setJustifyContent] = useState('md:justify-around');
+  const [smallScreenBg, setSmallScreenBg] = useState('bg-transparent');
   const location = useLocation();
 
   const handleScroll = () => {
-    if (window.scrollY > 0) {
-      setBgColor('bg-accent border-4 border-secondary');
-      setNavSize('h-16 md:h-20 w-full md:w-auto md:px-12');
-      setNavRadius('md:rounded-full');
-      setHideLogo('hidden');
-      setNavPosition('md:left-1/2 md:-translate-x-1/2');
-      setNavMargin('md:mt-4');
-      setTextColor('text-primary hover:text-secondary');
-      setJustifyContent('md:justify-center');
+    if (window.innerWidth >= 768) { // Only apply changes for medium screens and larger
+      if (window.scrollY > 0) {
+        setBgColor('bg-accent border-4 border-secondary');
+        setNavSize('h-16 md:h-20 w-full md:w-auto md:px-12');
+        setNavRadius('md:rounded-full');
+        setHideLogo('hidden');
+        setNavPosition('md:left-1/2 md:-translate-x-1/2');
+        setNavMargin('md:mt-4');
+        setTextColor('text-primary hover:text-secondary');
+        setJustifyContent('md:justify-center');
+      } else {
+        setBgColor('bg-transparent');
+        setNavSize('h-20 md:h-24 w-full p-4 md:p-10');
+        setNavRadius('');
+        setHideLogo('block');
+        setNavPosition('left-0 right-0');
+        setNavMargin('mt-0');
+        setTextColor('text-secondary');
+        setJustifyContent('md:justify-around');
+      }
     } else {
-      setBgColor('bg-transparent');
-      setNavSize('h-20 md:h-24 w-full p-4 md:p-10');
-      setNavRadius('');
-      setHideLogo('block');
-      setNavPosition('left-0 right-0');
-      setNavMargin('mt-0');
-      setTextColor('text-secondary');
-      setJustifyContent('md:justify-around');
+      // Glassmorphic effect for small screens
+      if (window.scrollY > 0) {
+        setSmallScreenBg('bg-white/30 backdrop-blur-md');
+      } else {
+        setSmallScreenBg('bg-transparent');
+      }
     }
   };
 
@@ -50,14 +60,36 @@ export function Navbar() {
     window.scrollTo(0, 0);
     handleScroll();
 
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        // Reset to initial state for small screens
+        setBgColor('bg-transparent');
+        setNavSize('h-20 w-full p-4');
+        setNavRadius('');
+        setHideLogo('block');
+        setNavPosition('left-0 right-0');
+        setNavMargin('mt-0');
+        setTextColor('text-secondary');
+        setJustifyContent('justify-between');
+        handleScroll(); // Apply glassmorphic effect if needed
+      } else {
+        handleScroll(); // Re-apply scroll-based styles for larger screens
+        setSmallScreenBg('bg-transparent'); // Reset small screen background
+      }
+    };
+
     window.addEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleResize);
+    handleResize(); // Initial call to set correct styles
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
     };
   }, [location]);
 
   return (
-    <nav className={`fixed top-0 z-50 transition-all duration-300 ${bgColor} ${navSize} ${navRadius} ${navPosition} ${navMargin}`}>
+    <nav className={`fixed top-0 z-50 transition-all duration-300 ${window.innerWidth >= 768 ? bgColor : smallScreenBg} ${navSize} ${navRadius} ${navPosition} ${navMargin}`}>
       <Container className={`flex justify-between ${justifyContent} items-center w-full h-full`}>
         <Link to="/" className={hideLogo}>
           <Image src={logo} alt="VAJA logo" width={100} height={100} className="w-[80px] h-[80px] md:w-[120px] md:h-[120px]" />
