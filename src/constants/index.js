@@ -6,8 +6,28 @@ const navItems = [
     label: 'Our Products',
     to: '/products',
     dropdown: [
-      { label: 'Steam Rooms', to: '/products/steam-rooms' },
-      { label: 'Saunas', to: '/products/saunas' },
+      {
+        heading: 'Our Sauna Collections',
+        items: [
+          { label: 'Sauna 1', to: '/products/sauna1' },
+          { label: 'Sauna 2', to: '/products/sauna2' },
+          { label: 'Sauna 3', to: '/products/sauna3' },
+        ],
+      },
+      {
+        heading: 'Steam Rooms',
+        items: [
+          { label: 'Nordmann AT4D Steam Generator', to: '/products/steam-generator' },
+          { label: 'Nordmann Omega Steam System', to: '/products/steam-system' },
+        ],
+      },
+      {
+        heading: 'Customization',
+        items: [
+          { label: 'Equipment', to: '/products/equipment' },
+          { label: 'Accessories', to: '/products/accessories' },
+        ],
+      },
     ],
   },
   { label: 'About Us', to: '/about' },

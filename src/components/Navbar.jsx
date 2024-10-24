@@ -5,6 +5,7 @@ import { useDisclosure } from '@mantine/hooks';
 import { IconMenu2, IconX } from '@tabler/icons-react';
 import { logo } from '../assets';
 import { navItems } from '../constants';
+import { Divider } from '@mantine/core';
 
 export function Navbar() {
   const [opened, { toggle }] = useDisclosure(false);
@@ -112,19 +113,25 @@ export function Navbar() {
                 {item.label}
               </Link>
               {item.dropdown && activeDropdown === item.to && (
-                <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-secondary ring-1 ring-black ring-opacity-5">
-                  <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
-                    {item.dropdown.map((dropdownItem) => (
-                      <Link
-                        key={dropdownItem.to}
-                        to={dropdownItem.to}
-                        className={`block px-4 py-2 text-sm text-white hover:text-accent`}
-                        role="menuitem"
-                      >
-                        {dropdownItem.label}
-                      </Link>
-                    ))}
-                  </div>
+                <div className="absolute left-1/2 transform -translate-x-1/2 mt-2 w-[800px] rounded-md shadow-lg bg-secondary ring-1 ring-black ring-opacity-5 flex">
+                  {item.dropdown.map((section, index) => (
+                    <div key={index} className="py-2 px-4 flex flex-row gap-4">
+                      <Container className='flex flex-col'>
+                      <div className="text-md font-bold text-accent mb-5">{section.heading}</div>
+                      {section.items.map((dropdownItem) => (
+                        <Link
+                          key={dropdownItem.to}
+                          to={dropdownItem.to}
+                          className="block py-2 text-sm text-white hover:underline hover:underline-offset-4 hover:decoration-2 hover:decoration-accent"
+                          role="menuitem"
+                        >
+                          {dropdownItem.label}
+                        </Link>
+                      ))}
+                      </Container>
+                      {index < item.dropdown.length - 1 && <Divider orientation="vertical" className="mx-2 bg-accent h-[80%] w-0.5 items-center my-auto"/>}
+                    </div>
+                  ))}
                 </div>
               )}
             </div>
