@@ -93,7 +93,7 @@ export function Navbar() {
     <nav className={`fixed top-0 z-50 transition-all duration-300 ${window.innerWidth >= 768 ? bgColor : smallScreenBg} ${navSize} ${navRadius} ${navPosition} ${navMargin}`}>
       <Container className={`flex justify-between ${justifyContent} items-center w-full h-full`}>
         <Link to="/" className={hideLogo}>
-          <Image src={logo} alt="VAJA logo" width={100} height={100} className="w-[80px] h-[80px] md:w-[120px] md:h-[120px]" />
+          <Image src={logo} alt="VAJA logo" width={100} height={100} className="w-[80px] h-[80px] md:w-[150px] md:h-[150px]" />
         </Link>
 
         <div className="hidden md:flex space-x-4">
@@ -113,21 +113,21 @@ export function Navbar() {
                 {item.label}
               </Link>
               {item.dropdown && activeDropdown === item.to && (
-                <div className="absolute left-1/2 transform -translate-x-1/2 mt-2 w-[800px] rounded-md shadow-lg bg-secondary ring-1 ring-black ring-opacity-5 flex">
+                <div className="absolute left-1/2 transform -translate-x-1/2 mt-2 rounded-md shadow-lg bg-secondary ring-1 ring-black ring-opacity-5 flex">
                   {item.dropdown.map((section, index) => (
-                    <div key={index} className="py-2 px-4 flex flex-row gap-4">
+                    <div key={index} className="py-2 px-4 flex flex-row gap-4 min-w-max">
                       <Container className='flex flex-col'>
-                      <div className="text-md font-bold text-accent mb-5">{section.heading}</div>
-                      {section.items.map((dropdownItem) => (
-                        <Link
-                          key={dropdownItem.to}
-                          to={dropdownItem.to}
-                          className="block py-2 text-sm text-white hover:underline hover:underline-offset-4 hover:decoration-2 hover:decoration-accent"
-                          role="menuitem"
-                        >
-                          {dropdownItem.label}
-                        </Link>
-                      ))}
+                        <div className="text-md font-bold text-accent mb-5">{section.heading}</div>
+                        {section.items.map((dropdownItem) => (
+                          <Link
+                            key={dropdownItem.to}
+                            to={dropdownItem.to}
+                            className="block py-2 text-sm text-white hover:underline hover:underline-offset-4 hover:decoration-2 hover:decoration-accent"
+                            role="menuitem"
+                          >
+                            {dropdownItem.label}
+                          </Link>
+                        ))}
                       </Container>
                       {index < item.dropdown.length - 1 && <Divider orientation="vertical" className="mx-2 bg-accent h-[80%] w-0.5 items-center my-auto"/>}
                     </div>

@@ -7,7 +7,7 @@ const navItems = [
     to: '/products',
     dropdown: [
       {
-        heading: 'Our Sauna Collections',
+        heading: 'Sauna Collections',
         items: [
           { label: 'Sauna 1', to: '/products/sauna1' },
           { label: 'Sauna 2', to: '/products/sauna2' },
@@ -28,6 +28,13 @@ const navItems = [
           { label: 'Accessories', to: '/products/accessories' },
         ],
       },
+      {
+        heading: 'Other',
+        items: [
+          { label: 'DIY Sauna Kits', to: '/products/diy-sauna-kits' },
+          { label: 'Aroma Concentrates', to: '/products/aroma-concentrates' },
+        ],
+      }
     ],
   },
   { label: 'About Us', to: '/about' },
@@ -81,4 +88,17 @@ const aromaConcentrates = [
   'Green Apple', 'Blood Orange', 'Rose'
 ];
 
-export { navItems, productCategories, diyKits, aromaConcentrates };
+const saunaRooms = [
+  {
+    name: 'Sola',
+    description: 'A beautifully compact and streamlined sauna, perfect for small spaces and personal retreats. Available in solo and four-person sizes, the Sola combines sleek, modern design with the warmth and wellness benefits of a traditional sauna experience. Ideal for those who cherish simplicity and style.',
+    image: 'https://images.unsplash.com/photo-1712659606957-b7395ba9ebb2?q=80&w=1771&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  },
+  {
+    name: 'Luma',
+    description: 'Luma enhances your sauna experience with its integrated porch, providing a serene space to cool down or relax between sessions. It’s an ideal choice for those who appreciate the balance of functional design and aesthetic appeal.',
+    image: 'https://images.unsplash.com/photo-1712659604528-b179a3634560?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  },
+];
+
+export { navItems, productCategories, diyKits, aromaConcentrates, saunaRooms };
