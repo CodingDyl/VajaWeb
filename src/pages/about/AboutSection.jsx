@@ -13,7 +13,7 @@ const AboutSection = ({ title, icon, children, index }) => (
     variants={fadeIn('up', 'spring', index * 0.3, 0.75)}
     className="mb-12 transform transition-all duration-300"
   >
-    <h2 className="flex items-center text-2xl font-bold mb-4 text-accent">
+    <h2 className="flex items-center text-2xl font-bold mb-4 text-secondary">
       <span className="bg-accent text-white p-2 rounded-full mr-3">{icon}</span>
       <span>{title}</span>
     </h2>
