@@ -160,7 +160,7 @@ const ProductPage = ({ products }) => {
                   <motion.div
                     key={index}
                     variants={fadeIn('up', 'spring', index * 0.1, 0.75)}
-                    className="space-y-4"
+                    className="space-y-4 p-4 rounded-xl backdrop-blur-md bg-white/10 border border-white/20 shadow-lg hover:bg-white/20 transition-all duration-300"
                   >
                     <div className="aspect-square relative rounded-lg overflow-hidden">
                       <img
@@ -169,7 +169,7 @@ const ProductPage = ({ products }) => {
                         className="w-full h-full object-cover"
                       />
                     </div>
-                    <h3 className="text-lg font-semibold text-center">{material.title}</h3>
+                    <h3 className="text-lg font-semibold text-center text-secondary">{material.title}</h3>
                   </motion.div>
                 ))}
               </motion.div>
@@ -184,9 +184,9 @@ const ProductPage = ({ products }) => {
                   <motion.div
                     key={key}
                     variants={fadeIn('up', 'spring', index * 0.1, 0.75)}
-                    className="text-center p-6 bg-gray-50 rounded-lg"
+                    className="text-center p-6 rounded-xl backdrop-blur-md bg-[rgba(0, 0, 0, 0.6)] border border-white/10 shadow-lg hover:bg-white/10 transition-all duration-300"
                   >
-                    <h3 className="text-lg font-semibold capitalize mb-2">{key}</h3>
+                    <h3 className="text-lg font-semibold capitalize mb-2 text-secondary">{key}</h3>
                     <p className="text-2xl text-accent">{value}</p>
                   </motion.div>
                 ))}
