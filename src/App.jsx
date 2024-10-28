@@ -7,6 +7,8 @@ import Gallery from './pages/gallery/Gallery'
 import Blog from './pages/blog/Blog'
 import BlogPage from './components/BlogPage'
 import Products from './pages/products/Products'
+import ProductPage from './pages/products/sauna\'s/ProductPage'
+import { products } from './data/products'
 
 function App() {
   return (
@@ -20,6 +22,10 @@ function App() {
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPage />} />
+          <Route 
+            path="/products/:productSlug" 
+            element={<ProductPage products={products} />} 
+          />
         </Routes>
       </Router>
     </MantineProvider>

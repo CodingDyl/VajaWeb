@@ -9,9 +9,9 @@ const navItems = [
       {
         heading: 'Sauna Collections',
         items: [
-          { label: 'Sauna 1', to: '/products/sauna1' },
-          { label: 'Sauna 2', to: '/products/sauna2' },
-          { label: 'Sauna 3', to: '/products/sauna3' },
+          { label: 'Sola', to: '/products/sola' },
+          { label: 'Luma', to: '/products/luma' },
+          { label: 'Kora', to: '/products/kora' },
         ],
       },
       {
