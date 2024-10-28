@@ -20,6 +20,7 @@ const SaunaCard = ({ sauna, index }) => (
       </div>
       <div className={`p-16 md:w-1/3 ${index % 2 === 0 ? 'order-2' : 'order-1'} ${index % 2 === 0 ? 'text-left' : 'text-right'}`}>
         <h3 className="text-3xl font-bold text-secondary mb-4">{sauna.name}</h3>
+        <p className='text-accent text-sm mb-4'>sauna | compact</p>
         <p className="text-gray-600">{sauna.description}</p>
       </div>
     </motion.div>

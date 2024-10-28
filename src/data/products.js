@@ -1,4 +1,4 @@
-import { clearPine, western, thermo, obeche } from '../assets';
+import { clearPine, western, thermo, obeche, productImage, productImage2 } from '../assets';
 
 export const products = {
   'sola': {
@@ -7,7 +7,7 @@ export const products = {
     description: 'Experience the pure beauty of Nordic clear pine in this elegant sauna design.',
     productTitle: 'Compact tranquility',
     productDescription: 'The Sola sauna is a compact and elegant sauna that offers a serene and tranquil experience. It is designed to fit seamlessly into any space, making it an ideal choice for those who want a luxurious sauna without the need for a large room.',
-    images: ["https://images.unsplash.com/photo-1712659606957-b7395ba9ebb2?q=80&w=1771&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", clearPine],
+    images: ["https://images.unsplash.com/photo-1712659606957-b7395ba9ebb2?q=80&w=1771&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", productImage, productImage2],
     features: [
       {
         title: 'Easy installation',

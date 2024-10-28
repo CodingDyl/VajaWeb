@@ -3,7 +3,7 @@ import { Button } from '@mantine/core';
 import { motion, useInView } from 'framer-motion';
 import { productImage, productImage2 } from '../assets';
 import { slideIn } from '../utils/motion';
-
+import { Link } from 'react-router-dom';
 const ImageWithOverlay = ({ src, alt, title, direction }) => (
   <motion.div
     variants={slideIn(direction, "tween", 0.2, 1)}
@@ -12,7 +12,7 @@ const ImageWithOverlay = ({ src, alt, title, direction }) => (
     <img src={src} alt={alt} width={750} height={750} className='rounded-lg w-full h-auto' />
     <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100">
       <h2 className="text-secondary text-2xl font-bold mb-4">{title}</h2>
-      <Button variant="filled" className='bg-accent text-white px-4 py-2 rounded-md'>Learn More</Button>
+      <Link to="/products"><Button variant="filled" className='bg-accent text-white px-4 py-2 rounded-md'>Learn More</Button></Link>
     </div>
   </motion.div>
 );

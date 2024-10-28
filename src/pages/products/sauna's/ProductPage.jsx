@@ -184,7 +184,7 @@ const ProductPage = ({ products }) => {
                   <motion.div
                     key={key}
                     variants={fadeIn('up', 'spring', index * 0.1, 0.75)}
-                    className="text-center p-6 rounded-xl backdrop-blur-md bg-[rgba(0, 0, 0, 0.6)] border border-white/10 shadow-lg hover:bg-white/10 transition-all duration-300"
+                    className="text-center p-6 rounded-xl backdrop-blur-md bg-white/5 border border-white/10 shadow-lg hover:bg-white/10 transition-all duration-300"
                   >
                     <h3 className="text-lg font-semibold capitalize mb-2 text-secondary">{key}</h3>
                     <p className="text-2xl text-accent">{value}</p>
