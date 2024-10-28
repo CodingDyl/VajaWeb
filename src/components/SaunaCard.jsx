@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { fadeIn, slideIn } from '../utils/motion';
+import { Link } from 'react-router-dom';
 
 const SaunaCard = ({ sauna, index }) => (
     <motion.div
@@ -14,7 +15,7 @@ const SaunaCard = ({ sauna, index }) => (
           variants={slideIn(index % 2 === 0 ? 'left' : 'right', 'spring', index * 0.2, 0.75)}
         />
         <div className="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-60 transition-all duration-300 flex items-center justify-center opacity-0 hover:opacity-100">
-          <button className="bg-accent text-white px-4 py-2 rounded-md">See More</button>
+          <Link to={`/products/${sauna.slug}`}><button className="bg-accent text-white px-4 py-2 rounded-md">See More</button></Link>
         </div>
       </div>
       <div className={`p-16 md:w-1/3 ${index % 2 === 0 ? 'order-2' : 'order-1'} ${index % 2 === 0 ? 'text-left' : 'text-right'}`}>
