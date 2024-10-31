@@ -32,7 +32,7 @@ const navItems = [
         heading: 'Other',
         items: [
           { label: 'DIY Sauna Kits', to: '/products/diy-sauna-kits' },
-          { label: 'Aroma Concentrates', to: '/products/aroma-concentrates' },
+          { label: 'Aroma Concentrates', to: '/products/auroma-concentrates' },
         ],
       }
     ],

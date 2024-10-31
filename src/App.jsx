@@ -8,7 +8,12 @@ import Blog from './pages/blog/Blog'
 import BlogPage from './components/BlogPage'
 import Products from './pages/products/Products'
 import ProductPage from './pages/products/sauna\'s/ProductPage'
+import AuromaConcentrates from './pages/products/other/AuromaConcentrates'
+import DIYSauna from './pages/products/other/DIYSauna'
+import Accessories from './pages/products/customization/Accessories'
 import { products } from './data/products'
+
+import '@mantine/carousel/styles.css';
 
 function App() {
   return (
@@ -26,6 +31,9 @@ function App() {
             path="/products/:productSlug" 
             element={<ProductPage products={products} />} 
           />
+          <Route path="/products/auroma-concentrates" element={<AuromaConcentrates />} />
+          <Route path="/products/diy-sauna-kits" element={<DIYSauna />} />
+          <Route path="/products/accessories" element={<Accessories />} />
         </Routes>
       </Router>
     </MantineProvider>

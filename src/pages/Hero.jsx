@@ -22,7 +22,7 @@ export function Hero() {
           <div className="space-x-4 space-y-4 md:space-y-0">
             <Link to="/products">
             <button className="bg-accent text-white px-6 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-colors">
-              Discover Our Sauna
+              Discover Our Sauna's
             </button>
             </Link>
             <Link to="/contact">
