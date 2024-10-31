@@ -11,6 +11,7 @@ import ProductPage from './pages/products/sauna\'s/ProductPage'
 import AuromaConcentrates from './pages/products/other/AuromaConcentrates'
 import DIYSauna from './pages/products/other/DIYSauna'
 import Accessories from './pages/products/customization/Accessories'
+import Equipment from './pages/products/customization/Equipment'
 import { products } from './data/products'
 
 import '@mantine/carousel/styles.css';
@@ -34,6 +35,7 @@ function App() {
           <Route path="/products/auroma-concentrates" element={<AuromaConcentrates />} />
           <Route path="/products/diy-sauna-kits" element={<DIYSauna />} />
           <Route path="/products/accessories" element={<Accessories />} />
+          <Route path="/products/equipment" element={<Equipment />} />
         </Routes>
       </Router>
     </MantineProvider>

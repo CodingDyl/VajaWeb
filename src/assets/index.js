@@ -39,6 +39,16 @@ import red_cedar_head from './accessories/red_cedar_head.webp'
 import red_cedar_sandtimer from './accessories/red_cedar_sandtimer.webp'
 import thermometer from './accessories/Thermometer.webp'
 
+//equipment
+import cilindro from './equipment/Harvia_Cilindro.webp'
+import globe from './equipment/Harvia_Globe.webp'
+import m3 from './equipment/Harvia_M3.webp'
+import modulo from './equipment/Harvia_Modulo.webp'
+import harvia from './equipment/Harvia.webp'
+import harviae from './equipment/HarviaE.webp'
+import modulo_m from './equipment/HarviaModulo_M.webp'
+import virta from './equipment/HarviaVirta.webp'
+
 export {
   sauna_hero,
   logo,
@@ -75,4 +85,12 @@ export {
   red_cedar_head,
   red_cedar_sandtimer,
   thermometer,
+  cilindro,
+  globe,
+  m3,
+  modulo,
+  harvia,
+  harviae,
+  modulo_m,
+  virta,
 }
