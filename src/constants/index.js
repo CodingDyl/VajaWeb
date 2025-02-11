@@ -9,9 +9,10 @@ const navItems = [
       {
         heading: 'Sauna Collections',
         items: [
-          { label: 'Sola', to: '/products/sola' },
-          { label: 'Luma', to: '/products/luma' },
-          { label: 'Kora', to: '/products/kora' },
+          { label: 'Aurora', to: '/products/aurora' },
+          { label: 'Elysium', to: '/products/elysium' },
+          { label: 'Celeste', to: '/products/celeste' },
+          { label: 'Opal', to: '/products/opal' },
         ],
       },
       {
@@ -28,13 +29,13 @@ const navItems = [
           { label: 'Accessories', to: '/products/accessories' },
         ],
       },
-      {
-        heading: 'Other',
-        items: [
-          { label: 'DIY Sauna Kits', to: '/products/diy-sauna-kits' },
-          { label: 'Aroma Concentrates', to: '/products/auroma-concentrates' },
-        ],
-      }
+      // {
+      //   heading: 'Other',
+      //   items: [
+      //     { label: 'DIY Sauna Kits', to: '/products/diy-sauna-kits' },
+      //     { label: 'Aroma Concentrates', to: '/products/auroma-concentrates' },
+      //   ],
+      // }
     ],
   },
   { label: 'About Us', to: '/about' },
@@ -90,17 +91,29 @@ const aromaConcentrates = [
 
 const saunaRooms = [
   {
-    name: 'Sola',
-    slug: 'sola',
-    description: 'A beautifully compact and streamlined sauna, perfect for small spaces and personal retreats. Available in solo and four-person sizes, the Sola combines sleek, modern design with the warmth and wellness benefits of a traditional sauna experience. Ideal for those who cherish simplicity and style.',
+    name: 'Aurora',
+    slug: 'aurora',
+    description: 'Inspired by the breathtaking Northern Lights, this name evokes serenity, warmth, and natural beauty. Perfect for a sleek, modern sauna that offers a tranquil escape.',
     image: 'https://images.unsplash.com/photo-1712659606957-b7395ba9ebb2?q=80&w=1771&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
   },
   {
-    name: 'Luma',
-    slug: 'luma',
-    description: 'Luma enhances your sauna experience with its integrated porch, providing a serene space to cool down or relax between sessions. It’s an ideal choice for those who appreciate the balance of functional design and aesthetic appeal.',
+    name: 'Elysium',
+    slug: 'elysium',
+    description: 'Named after the mythical paradise, this name represents ultimate relaxation and luxury. Ideal for a high-end, spa-like sauna experience.',
     image: 'https://images.unsplash.com/photo-1712659604528-b179a3634560?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
   },
+  {
+    name: 'Celeste',
+    slug: 'celeste',
+    description: 'Meaning “heavenly” in Latin, this name conveys a sense of elegance and sophistication. Perfect for a minimalist, contemporary sauna with a refined aesthetic.',
+    image: 'https://images.unsplash.com/photo-1712659604528-b179a3634560?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  },
+  {
+    name: 'Opal',
+    slug: 'opal',
+    description: 'Inspired by the rare and precious gemstone, this name signifies luxury, uniqueness, and radiance. A great fit for a bespoke sauna design with intricate details.',
+    image: 'https://images.unsplash.com/photo-1712659604528-b179a3634560?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  }
 ];
 
 export { navItems, productCategories, diyKits, aromaConcentrates, saunaRooms };
