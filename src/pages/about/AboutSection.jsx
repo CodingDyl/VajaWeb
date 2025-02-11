@@ -7,6 +7,7 @@ import Footer from '../../components/Footer'
 import { aboutImage } from '../../assets'
 import { Divider } from '@mantine/core'
 import { Link } from 'react-router-dom'
+import { IconCheck } from '@tabler/icons-react'
 
 const AboutSection = ({ title, icon, children, index }) => (
   <motion.div
@@ -59,6 +60,13 @@ const About = () => {
           About VAJA
         </motion.h1>
 
+        <motion.h4 
+          variants={fadeIn('down', 'spring', 0.2, 0.75)}
+          className="text-2xl font-bold text-accent mb-12 text-center"
+        >
+          Crafting Luxury Wellness Experiences Since 1970
+        </motion.h4>
+
         <motion.div
           variants={fadeIn('up', 'spring', 0.3, 0.75)}
           className="grid md:grid-cols-2 gap-8 mb-12 items-center text-left"
@@ -66,15 +74,9 @@ const About = () => {
           <div>
             <motion.p
               variants={fadeIn('up', 'spring', 0.4, 0.75)}
-              className="text-lg text-secondary mb-4"
+              className="text-lg text-secondary mb-4 leading-10"
             >
-              Welcome to VAJA, South Africa's premier destination for quality saunas and steam rooms. Since our founding in 1970, we have dedicated ourselves to providing an unparalleled selection of sauna and steam solutions to fit every taste and budget.
-            </motion.p>
-            <motion.p
-              variants={fadeIn('up', 'spring', 0.5, 0.75)}
-              className="text-lg text-secondary"
-            >
-              With over half a century of expertise, VAJA has become synonymous with excellence in the design, manufacture, and supply of luxury sauna and steam products both in South Africa and across the globe.
+              Welcome to VAJA, South Africa's premier provider of luxury saunas and steam rooms. For over half a century, we've been at the forefront of sauna innovation, delivering custom-crafted wellness solutions that blend elegance, functionality, and superior craftsmanship. From home spa retreats to world-class wellness centres, our expertise extends across South Africa and beyond.
             </motion.p>
           </div>
           <motion.div
@@ -89,24 +91,30 @@ const About = () => {
           </motion.div>
         </motion.div>
 
-        <AboutSection title="Our Journey" icon={<FaHistory />} index={0}>
+        <AboutSection title="A Legacy of Excellence" icon={<FaHistory />} index={0}>
           <p>
-            Founded with the vision to cater to the domestic market's need for high-quality saunas, VAJA has evolved significantly over the past 51 years. Our journey began with a simple yet passionate commitment to excellence, which remains at the heart of everything we do. Today, our products grace homes and commercial spaces worldwide, showcasing our commitment to quality, innovation, and design.
+          What began in 1970 as a vision to provide high-quality saunas for the domestic market has evolved into a globally recognized brand. With an unwavering commitment to innovation and design, VAJA's bespoke sauna and steam solutions now enhance luxury homes, resorts, and commercial spaces worldwide.
           </p>
         </AboutSection>
 
-        <AboutSection title="Service & Maintenance" icon={<FaTools />} index={1}>
+        <AboutSection title="Unmatched Service & Maintenance" icon={<FaTools />} index={1}>
           <p>
-            At VAJA, we understand the importance of reliable service and maintenance. Our commitment to our clients extends beyond the sale, with efficient and prompt service solutions to ensure your sauna or steam unit remains in optimal condition. We maintain an extensive inventory of spare parts in-house to minimise downtime, ensuring a quick turnaround for all service needs.
+          We believe that luxury extends beyond design—it's about longevity and reliability. Our dedicated service teams ensure your sauna or steam unit remains in peak condition with:
+          <ul className='my-5'>
+            <li><div className='flex items-center gap-2'><IconCheck /> Fast, efficient maintenance</div></li> 
+            <li><div className='flex items-center gap-2'><IconCheck /> In-house spare parts for quick repairs</div></li> 
+            <li><div className='flex items-center gap-2'><IconCheck /> Mobile service teams ready to assist</div></li>
+          </ul>
+          Whether you need routine check-ups or urgent repairs, VAJA guarantees a seamless, stress-free experience.
           </p>
           <p className="mt-4">
             Our mobile service and maintenance teams are always prepared to assist with a smile, embodying our dedication to customer satisfaction and support. Whether you're seeking routine maintenance or require urgent repairs, VAJA is here to ensure your experience is seamless and satisfying.
           </p>
         </AboutSection>
 
-        <AboutSection title="Global Reach, Local Touch" icon={<FaGlobeAfrica />} index={2}>
+        <AboutSection title="Global Reach, Local Expertise" icon={<FaGlobeAfrica />} index={2}>
           <p>
-            While VAJA has grown to have a global presence, our roots remain firmly planted in South Africa. We take pride in our heritage and the trust our clients place in us, from local households to international venues. Our global reach allows us to bring the best of the world to your doorstep, while our local touch ensures personalised service and attention to detail.
+          While our reputation spans the globe, our South African roots keep us grounded. We take pride in delivering world-class sauna technology with a personalized touch, ensuring every client receives the highest level of care and attention to detail.
           </p>
         </AboutSection>
 
@@ -120,9 +128,9 @@ const About = () => {
           variants={fadeIn('up', 'spring', 0.7, 0.75)}
           className="text-center mt-12"
         >
-          <h2 className="text-3xl font-bold text-accent mb-4">Join Our Legacy</h2>
+          <h2 className="text-3xl font-bold text-accent mb-4">Join the VAJA Experience</h2>
           <p className="text-lg text-secondary">
-            Choosing VAJA means more than just purchasing a sauna or steam room; it's an investment in quality, luxury, and a lifestyle supported by unparalleled service. We invite you to explore our range and join the thousands of satisfied clients who have made VAJA a part of their wellness journey.
+          Choosing VAJA is more than just buying a sauna—it's an investment in luxury, wellness, and exceptional service. Explore our range and join the thousands who trust VAJA to bring relaxation and rejuvenation into their lives.
           </p>
         </motion.div>
 
