@@ -31,9 +31,7 @@ const InfoHome = () => {
       <div className='grid grid-cols-1 md:grid-cols-2 gap-10'>
         <div className='flex flex-col justify-center'>
           <h1 className='text-4xl md:text-5xl lg:text-6xl font-bold'>Our Products</h1>
-          <p className='text-lg md:text-xl lg:text-2xl mt-4'>
-            We offer a wide range of products to meet your needs.
-          </p>
+          <p className='text-lg mt-5'><strong>Transform your space into a luxury wellness retreat – explore VAJA’s expertly crafted saunas today.</strong></p>
         </div>
         <div className='flex justify-center items-center'>
           <ImageWithOverlay src={productImage} alt='Product' title="Our Saunas" direction="right" />
@@ -42,11 +40,10 @@ const InfoHome = () => {
           <ImageWithOverlay src={productImage2} alt='Product' title="Our Steam Rooms" direction="left" />
         </div>
         <div className='flex flex-col justify-center space-y-4'>
-          <p className='text-lg md:text-2xl lg:text-3xl mt-4'><span className='text-secondary'>VAJA</span> offers quality products for every taste and budget.</p>
-          <p className='text-lg'>South Africa's leading sauna and steam room manufacturers, VAJA was established in 1970 to cater for the domestic market.</p>
-          <p className='text-lg'>Fifty-one years later and VAJA products can be found not only in South Africa, but all over the world.</p>
-          <p className='text-lg'>Our production line extends from casual saunas, to modern customised sauna and steam rooms with individualised lighting and multiple wood choices to match any design style.</p>
-          <p className='text-lg'>We supply quality NORDMANN Steam Generators and Harvia Sauna Heaters.</p>
+          <p className='text-lg md:text-2xl lg:text-3xl mt-4'><span className='text-secondary'>Luxury Saunas & Steam Rooms</span> Crafted for the Ultimate Wellness Experience.</p>
+          <p className='text-lg'>As South Africa’s leading sauna and steam room manufacturer, VAJA has been designing and delivering premium, luxury saunas since 1970. Originally catering to the domestic market, our craftsmanship now extends nation wide, bringing spa-quality relaxation to homes, gyms, and wellness centres across the globe.</p>
+          <p className='text-lg'>From classic home saunas to custom-built saunas tailored to your exact specifications, VAJA combines superior craftsmanship with high-end materials, customizable lighting, and a choice of premium wood finishes to match any interior aesthetic.</p>
+          <p className='text-lg'>We proudly supply NORDMANN Steam Generators and Harvia Sauna Heaters, ensuring unmatched quality, efficiency, and durability.</p>
         </div>
       </div>
     </motion.div>

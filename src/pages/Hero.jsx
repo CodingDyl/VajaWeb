@@ -12,12 +12,12 @@ export function Hero() {
     <Navbar />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center">
         <div className="lg:w-1/2 z-10">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-secondary mb-2">
-            Escape the Stress
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-secondary mb-2">
+            Luxury Saunas & Steam Rooms
           </h1>
           <Divider className='w-1/2 bg-accent h-2 my-8' />
-          <h1 className="text-4xl md:text-5xl lg:text-6xl text-secondary mb-6">
-            Find Inner Calm and Rejuvenate Your Mind.
+          <h1 className="text-2xl md:text-3xl lg:text-4xl text-secondary mb-6">
+            Crafted for the Ultimate Wellness Experience
           </h1>
           <div className="space-x-4 space-y-4 md:space-y-0">
             <Link to="/products">
