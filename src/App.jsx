@@ -13,7 +13,7 @@ import DIYSauna from './pages/products/other/DIYSauna'
 import Accessories from './pages/products/customization/Accessories'
 import Equipment from './pages/products/customization/Equipment'
 import { products } from './data/products'
-
+import SteamRooms from './pages/products/SteamRooms'
 import '@mantine/carousel/styles.css';
 
 function App() {
@@ -36,6 +36,8 @@ function App() {
           <Route path="/products/diy-sauna-kits" element={<DIYSauna />} />
           <Route path="/products/accessories" element={<Accessories />} />
           <Route path="/products/equipment" element={<Equipment />} />
+
+          <Route path="/steam-rooms" element={<SteamRooms />} />
         </Routes>
       </Router>
     </MantineProvider>

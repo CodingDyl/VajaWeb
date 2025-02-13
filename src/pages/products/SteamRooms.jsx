@@ -4,12 +4,10 @@ import { fadeIn, staggerContainer, slideIn } from '../../utils/motion';
 import { Navbar } from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import { Divider } from '@mantine/core';
-import { saunaRooms } from '../../constants';
-import SaunaCard from '../../components/SaunaCard';
 import { Link } from 'react-router-dom';
 import { IconCheck } from '@tabler/icons-react';
 
-const Products = () => {
+const SteamRooms = () => {
   return (
     <div className="min-h-screen bg-primary">
       <Navbar />
@@ -28,13 +26,13 @@ const Products = () => {
         >
           <Link 
             to="/products"
-            className="text-xl font-semibold text-accent border-b-2 border-accent px-4 py-2 transition-all hover:scale-105"
+            className="text-xl font-semibold text-secondary hover:text-accent transition-all px-4 py-2 hover:scale-105"
           >
             Saunas
           </Link>
           <Link 
             to="/steam-rooms"
-            className="text-xl font-semibold text-secondary hover:text-accent transition-all px-4 py-2 hover:scale-105"
+            className="text-xl font-semibold text-accent border-b-2 border-accent px-4 py-2 transition-all hover:scale-105"
           >
             Steam Rooms
           </Link>
@@ -46,10 +44,10 @@ const Products = () => {
           className="max-w-4xl mx-auto text-center space-y-8 mb-16"
         >
           <h1 className="text-4xl md:text-5xl font-bold text-accent">
-            Experience Luxury & Wellness with VAJA Saunas
+            Premium Steam Solutions by VAJA
           </h1>
           <p className="text-secondary text-lg">
-            At VAJA, we design and manufacture premium saunas that bring the essence of relaxation and wellness into your home or business. Crafted with exceptional materials and cutting-edge technology, our saunas offer an elegant, rejuvenating escape tailored to your lifestyle.
+            At VAJA, we supply high-quality steam generators that bring the luxury of steam therapy to homes, spas, and commercial wellness spaces. As the exclusive supplier of Nordmann Steam Generators, we provide cutting-edge, efficient, and durable steam solutions trusted by industry professionals worldwide.
           </p>
         </motion.div>
 
@@ -59,10 +57,10 @@ const Products = () => {
           className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 max-w-3xl mx-auto mb-16"
         >
           <h2 className="text-2xl font-semibold text-accent mb-4 text-center">
-            The VAJA Sauna Collection: Crafted for Comfort & Style
+            Why Choose VAJA's Steam Generators?
           </h2>
           <p className="text-secondary text-center">
-            Our luxury saunas combine time-honored traditions with modern innovation, delivering an immersive wellness experience. From traditional Finnish saunas to custom-designed contemporary spaces, each VAJA sauna is built to enhance both aesthetic appeal and therapeutic benefits.
+            Our steam solutions combine innovative technology with reliable performance, delivering an unmatched wellness experience. Each VAJA steam system is designed for optimal efficiency, easy maintenance, and long-lasting operation.
           </p>
         </motion.div>
 
@@ -71,19 +69,19 @@ const Products = () => {
           variants={fadeIn('up', 'spring', 0.5, 0.75)}
           className="grid md:grid-cols-2 gap-8 mb-16"
         >
-          {/* Premium Craftsmanship Card */}
+          {/* Features Card */}
           <motion.div
             variants={slideIn('left', 'tween', 0.2, 1)}
             className="bg-secondary/5 backdrop-blur-sm rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300"
           >
-            <h3 className="text-2xl font-semibold text-accent mb-6">Premium Craftsmanship</h3>
+            <h3 className="text-2xl font-semibold text-accent mb-6">Key Features</h3>
             <ul className="space-y-4">
               {[
-                "Thermo Pine – Durable and dimensionally stable",
-                "Pine – Classic and versatile",
-                "Obeche – Smooth and lightweight",
-                "Western Red Cedar – Naturally aromatic",
-                "Lunawood – Thermally modified"
+                "Imported Nordmann Technology",
+                "Powerful & Efficient Operation",
+                "Easy Integration",
+                "Low Maintenance Requirements",
+                "High Performance Output"
               ].map((item, index) => (
                 <motion.li
                   key={index}
@@ -97,18 +95,19 @@ const Products = () => {
             </ul>
           </motion.div>
 
-          {/* Health Benefits Card */}
+          {/* Benefits Card */}
           <motion.div
             variants={slideIn('right', 'tween', 0.2, 1)}
             className="bg-secondary/5 backdrop-blur-sm rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300"
           >
-            <h3 className="text-2xl font-semibold text-accent mb-6">Health & Wellness Benefits</h3>
+            <h3 className="text-2xl font-semibold text-accent mb-6">Health Benefits</h3>
             <ul className="space-y-4">
               {[
-                "Detoxify the body through deep sweating",
-                "Improve circulation and promote heart health",
-                "Relieve stress & muscle tension",
-                "Enhance sleep quality"
+                "Detoxifies the body",
+                "Hydrates & rejuvenates skin",
+                "Relieves muscle tension & stress",
+                "Supports respiratory health",
+                "Improves circulation"
               ].map((item, index) => (
                 <motion.li
                   key={index}
@@ -123,33 +122,23 @@ const Products = () => {
           </motion.div>
         </motion.div>
 
-        {/* Product Cards */}
-        <motion.div 
-          variants={staggerContainer()}
-          className="space-y-16"
-        >
-          {saunaRooms.map((sauna, index) => (
-            <SaunaCard key={index} sauna={sauna} index={index} />
-          ))}
-        </motion.div>
-
         <Divider className="my-16 bg-accent/20 w-1/2 mx-auto h-0.5" />
 
-        {/* Custom Quote Section */}
+        {/* Contact Section */}
         <motion.div
           variants={fadeIn('up', 'spring', 0.6, 0.75)}
           className="text-center mb-16 bg-white/5 backdrop-blur-sm rounded-2xl p-8 max-w-2xl mx-auto"
         >
-          <h3 className="text-2xl font-semibold text-accent mb-4">Need a custom solution?</h3>
+          <h3 className="text-2xl font-semibold text-accent mb-4">Ready to Transform Your Space?</h3>
           <p className="text-secondary mb-8">
-            We offer custom-sized sauna kits tailored to your specific requirements. Contact our experienced design team to create your dream sauna.
+            As South Africa's leading supplier of steam generators, VAJA ensures unmatched quality and service for your steam room installation.
           </p>
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="bg-accent text-white px-8 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-all duration-300 shadow-lg"
           >
-            Get a Custom Quote
+            Contact Us Today
           </motion.button>
         </motion.div>
       </motion.section>
@@ -158,4 +147,4 @@ const Products = () => {
   );
 };
 
-export default Products;
+export default SteamRooms; 
