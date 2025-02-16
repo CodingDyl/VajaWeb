@@ -22,23 +22,26 @@ import CategoryGallery from './pages/gallery/category/[slug]'
 import { ReferralForm } from './components/ReferralForm'
 
 function App() {
-  const [showReferralModal, setShowReferralModal] = useState(false)
+  // const [showReferralModal, setShowReferralModal] = useState(false)
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      const hasVisited = Cookies.get('has_visited')
-      if (!hasVisited) {
-        setShowReferralModal(true)
-      }
-    }, 100)
+  // useEffect(() => {
+  //   // Check cookie immediately without setTimeout
+  //   const hasVisited = Cookies.get('has_visited')
+    
+  //   // Only show modal if user hasn't visited and after a longer delay
+  //   if (!hasVisited) {
+  //     const timer = setTimeout(() => {
+  //       setShowReferralModal(true)
+  //     }, 2000) // Increased to 2 seconds to let the page load first
+      
+  //     return () => clearTimeout(timer)
+  //   }
+  // }, [])
 
-    return () => clearTimeout(timer)
-  }, [])
-
-  const handleModalClose = () => {
-    setShowReferralModal(false)
-    Cookies.set('has_visited', 'true', { expires: 30 })
-  }
+  // const handleModalClose = () => {
+  //   setShowReferralModal(false)
+  //   Cookies.set('has_visited', 'true', { expires: 30 })
+  // }
 
   return (
     <MantineProvider>
@@ -64,7 +67,7 @@ function App() {
           <Route path="/steam-rooms" element={<SteamRooms />} />
         </Routes>
 
-        <Modal
+        {/* <Modal
           opened={showReferralModal}
           onClose={handleModalClose}
           size="md"
@@ -77,7 +80,7 @@ function App() {
             </h2>
             <ReferralForm onSubmit={handleModalClose} />
           </div>
-        </Modal>
+        </Modal> */}
       </Router>
     </MantineProvider>
   )
