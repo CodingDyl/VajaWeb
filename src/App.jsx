@@ -15,6 +15,7 @@ import Equipment from './pages/products/customization/Equipment'
 import { products } from './data/products'
 import SteamRooms from './pages/products/SteamRooms'
 import '@mantine/carousel/styles.css';
+import CategoryGallery from './pages/gallery/category/[slug]'
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
             path="/products/:productSlug" 
             element={<ProductPage products={products} />} 
           />
+          <Route path="/gallery/category/:slug" element={<CategoryGallery />} />
           <Route path="/products/auroma-concentrates" element={<AuromaConcentrates />} />
           <Route path="/products/diy-sauna-kits" element={<DIYSauna />} />
           <Route path="/products/accessories" element={<Accessories />} />

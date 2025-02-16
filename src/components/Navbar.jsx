@@ -21,6 +21,7 @@ export function Navbar() {
   const [justifyContent, setJustifyContent] = useState('md:justify-around');
   const [smallScreenBg, setSmallScreenBg] = useState('bg-transparent');
   const location = useLocation();
+  const [hoverTimeout, setHoverTimeout] = useState(null);
 
   const handleScroll = () => {
     if (window.innerWidth >= 768) { // Only apply changes for medium screens and larger
@@ -51,6 +52,18 @@ export function Navbar() {
         setSmallScreenBg('bg-transparent');
       }
     }
+  };
+
+  const handleMouseEnter = (itemTo) => {
+    clearTimeout(hoverTimeout);
+    setActiveDropdown(itemTo);
+  };
+
+  const handleMouseLeave = () => {
+    const timeout = setTimeout(() => {
+      setActiveDropdown(null);
+    }, 300); // 300ms delay before closing
+    setHoverTimeout(timeout);
   };
 
   useEffect(() => {
@@ -86,8 +99,9 @@ export function Navbar() {
     return () => {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', handleResize);
+      clearTimeout(hoverTimeout);
     };
-  }, [location]);
+  }, [location, hoverTimeout]);
 
   return (
     <nav className={`fixed top-0 z-50 transition-all duration-300 ${window.innerWidth >= 768 ? bgColor : smallScreenBg} ${navSize} ${navRadius} ${navPosition} ${navMargin}`}>
@@ -100,9 +114,9 @@ export function Navbar() {
           {navItems.map((item) => (
             <div
               key={item.to}
-              className="relative"
-              onMouseEnter={() => setActiveDropdown(item.to)}
-              onMouseLeave={() => setActiveDropdown(null)}
+              className="relative group"
+              onMouseEnter={() => handleMouseEnter(item.to)}
+              onMouseLeave={handleMouseLeave}
             >
               <Link
                 to={item.to}
@@ -113,25 +127,38 @@ export function Navbar() {
                 {item.label}
               </Link>
               {item.dropdown && activeDropdown === item.to && (
-                <div className="absolute left-1/2 transform -translate-x-1/2 mt-2 rounded-md shadow-lg bg-secondary ring-1 ring-black ring-opacity-5 flex">
-                  {item.dropdown.map((section, index) => (
-                    <div key={index} className="py-2 px-4 flex flex-row gap-4 min-w-max">
-                      <Container className='flex flex-col'>
-                        <div className="text-md font-bold text-accent mb-5">{section.heading}</div>
-                        {section.items.map((dropdownItem) => (
-                          <Link
-                            key={dropdownItem.to}
-                            to={dropdownItem.to}
-                            className="block py-2 text-sm text-white hover:underline hover:underline-offset-4 hover:decoration-2 hover:decoration-accent"
-                            role="menuitem"
-                          >
-                            {dropdownItem.label}
-                          </Link>
-                        ))}
-                      </Container>
-                      {index < item.dropdown.length - 1 && <Divider orientation="vertical" className="mx-2 bg-accent h-[80%] w-0.5 items-center my-auto"/>}
-                    </div>
-                  ))}
+                <div 
+                  className="absolute left-1/2 transform -translate-x-1/2 mt-2 rounded-md shadow-lg bg-secondary ring-1 ring-black ring-opacity-5 overflow-y-auto lg:overflow-visible max-w-[90vw] max-h-[80vh]"
+                  onMouseEnter={() => handleMouseEnter(item.to)}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  <div className="flex flex-col lg:flex-row lg:items-stretch">
+                    {item.dropdown.map((section, index) => (
+                      <div key={index} className="relative p-4 min-w-[200px]">
+                        <div className="text-md font-bold text-accent mb-3">{section.heading}</div>
+                        <div className="flex flex-col gap-2">
+                          {section.items.map((dropdownItem) => (
+                            <Link
+                              key={dropdownItem.to}
+                              to={dropdownItem.to}
+                              className="text-sm text-white hover:underline hover:underline-offset-4 hover:decoration-2 hover:decoration-accent whitespace-nowrap"
+                              role="menuitem"
+                            >
+                              {dropdownItem.label}
+                            </Link>
+                          ))}
+                        </div>
+                        {index < item.dropdown.length - 1 && (
+                          <div className="lg:absolute lg:right-0 lg:top-4 lg:bottom-4 lg:h-[calc(100%-2rem)]">
+                            <Divider 
+                              orientation={window.innerWidth >= 1024 ? "vertical" : "horizontal"} 
+                              className="my-4 lg:my-0 lg:h-full bg-accent w-full lg:w-0.5"
+                            />
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
                 </div>
               )}
             </div>
