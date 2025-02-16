@@ -1,5 +1,8 @@
+import { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { MantineProvider } from '@mantine/core'
+import { Modal } from '@mantine/core'
+import Cookies from 'js-cookie'
 import HomeLayout from './layout/HomeLayout'
 import AboutSection from './pages/about/AboutSection'
 import Contact from './pages/contact/Contact'
@@ -16,8 +19,27 @@ import { products } from './data/products'
 import SteamRooms from './pages/products/SteamRooms'
 import '@mantine/carousel/styles.css';
 import CategoryGallery from './pages/gallery/category/[slug]'
+import { ReferralForm } from './components/ReferralForm'
 
 function App() {
+  const [showReferralModal, setShowReferralModal] = useState(false)
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const hasVisited = Cookies.get('has_visited')
+      if (!hasVisited) {
+        setShowReferralModal(true)
+      }
+    }, 100)
+
+    return () => clearTimeout(timer)
+  }, [])
+
+  const handleModalClose = () => {
+    setShowReferralModal(false)
+    Cookies.set('has_visited', 'true', { expires: 30 })
+  }
+
   return (
     <MantineProvider>
       <Router>
@@ -41,6 +63,21 @@ function App() {
 
           <Route path="/steam-rooms" element={<SteamRooms />} />
         </Routes>
+
+        <Modal
+          opened={showReferralModal}
+          onClose={handleModalClose}
+          size="md"
+          centered
+          withCloseButton
+        >
+          <div className="p-4">
+            <h2 className="text-4xl font-bold text-accent text-center mb-6">
+              We'd Love to Know
+            </h2>
+            <ReferralForm onSubmit={handleModalClose} />
+          </div>
+        </Modal>
       </Router>
     </MantineProvider>
   )
