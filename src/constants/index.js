@@ -1,5 +1,5 @@
 import { FaFire, FaShower, FaTree } from 'react-icons/fa';
-import { clearPine, western, thermo, obeche } from '../assets';
+import { clearPine, western, thermo, obeche, aurora_1, elysium_1, celeste_1, opal_1 } from '../assets';
 
 const navItems = [
   {
@@ -94,25 +94,25 @@ const saunaRooms = [
     name: 'Aurora',
     slug: 'aurora',
     description: 'Inspired by the breathtaking Northern Lights, this name evokes serenity, warmth, and natural beauty. Perfect for a sleek, modern sauna that offers a tranquil escape.',
-    image: 'https://images.unsplash.com/photo-1712659606957-b7395ba9ebb2?q=80&w=1771&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    image: aurora_1,
   },
   {
     name: 'Elysium',
     slug: 'elysium',
     description: 'Named after the mythical paradise, this name represents ultimate relaxation and luxury. Ideal for a high-end, spa-like sauna experience.',
-    image: 'https://images.unsplash.com/photo-1712659604528-b179a3634560?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    image: elysium_1,
   },
   {
     name: 'Celeste',
     slug: 'celeste',
     description: 'Meaning “heavenly” in Latin, this name conveys a sense of elegance and sophistication. Perfect for a minimalist, contemporary sauna with a refined aesthetic.',
-    image: 'https://images.unsplash.com/photo-1712659604528-b179a3634560?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    image: celeste_1,
   },
   {
     name: 'Opal',
     slug: 'opal',
     description: 'Inspired by the rare and precious gemstone, this name signifies luxury, uniqueness, and radiance. A great fit for a bespoke sauna design with intricate details.',
-    image: 'https://images.unsplash.com/photo-1712659604528-b179a3634560?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    image: opal_1,
   }
 ];
 

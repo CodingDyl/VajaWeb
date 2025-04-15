@@ -1,4 +1,4 @@
-import { clearPine, western, thermo, obeche, productImage, productImage2 } from '../assets';
+import { clearPine, western, thermo, obeche, productImage, productImage2, aurora_1, aurora_2, elysium_1, elysium_2, celeste_1, celeste_2, opal_1, opal_2 } from '../assets';
 
 export const products = {
   'aurora': {
@@ -7,7 +7,8 @@ export const products = {
     description: 'Inspired by the breathtaking Northern Lights, this name evokes serenity, warmth, and natural beauty. Perfect for a sleek, modern sauna that offers a tranquil escape.',
     productTitle: 'Compact tranquility',
     // productDescription: 'The Sola sauna is a compact and elegant sauna that offers a serene and tranquil experience. It is designed to fit seamlessly into any space, making it an ideal choice for those who want a luxurious sauna without the need for a large room.',
-    images: ["https://images.unsplash.com/photo-1712659606957-b7395ba9ebb2?q=80&w=1771&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", productImage, productImage2],
+    images: [aurora_1, aurora_2],
+    embed: 'https://kuula.co/share/hJQD2?logo=-1&info=0&fs=1&vr=1&initload=0&thumbs=1&margin=30',
     features: [
       {
         title: 'Easy installation',
@@ -49,7 +50,7 @@ export const products = {
         depth: '1400mm',
         height: '2100mm'
     },
-    gallery: ["https://images.unsplash.com/photo-1717356495389-6ab1e5ff9d84?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", "https://images.unsplash.com/photo-1713270176394-3f9f91f43905?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"]
+    gallery: [aurora_1, aurora_2]
   },
   'elysium': {
     name: 'Elysium',
@@ -57,7 +58,8 @@ export const products = {
     description: 'Named after the mythical paradise, this name represents ultimate relaxation and luxury. Ideal for a high-end, spa-like sauna experience.',
     productTitle: 'Elegant relaxation',
     // productDescription: 'The Elysium sauna is a high-end, spa-like sauna that offers a luxurious and serene experience. It is designed to provide a comfortable and relaxing atmosphere, perfect for those who want to escape the stresses of everyday life.',
-    images: ["https://images.unsplash.com/photo-1717356495389-6ab1e5ff9d84?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", productImage, productImage2],
+    images: [elysium_1, elysium_2],
+    embed: "https://kuula.co/share/hJQTz?logo=-1&info=0&fs=1&vr=1&initload=0&thumbs=1&margin=30",
     features: [
       {
         title: 'Easy installation',
@@ -82,7 +84,7 @@ export const products = {
         depth: '1400mm',
         height: '2100mm'
     },
-    gallery: ["https://images.unsplash.com/photo-1717356495389-6ab1e5ff9d84?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", "https://images.unsplash.com/photo-1713270176394-3f9f91f43905?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"]
+    gallery: [elysium_1, elysium_2]
   },
   'celeste': {
     name: 'Celeste',
@@ -90,7 +92,8 @@ export const products = {
     description: 'Meaning “heavenly” in Latin, this name conveys a sense of elegance and sophistication. Perfect for a minimalist, contemporary sauna with a refined aesthetic.',
     productTitle: 'Heavenly elegance',
     // productDescription: 'The Celeste sauna is a minimalist, contemporary sauna with a refined aesthetic. It is designed to provide a comfortable and relaxing atmosphere, perfect for those who want to escape the stresses of everyday life.',
-    images: ["https://images.unsplash.com/photo-1717356495389-6ab1e5ff9d84?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", productImage, productImage2],
+    images: [celeste_1, celeste_2],
+    embed: 'https://kuula.co/share/hJQdC?logo=-1&info=0&fs=1&vr=1&initload=0&thumbs=1&margin=30',
     features: [
       {
         title: 'Easy installation',
@@ -122,7 +125,7 @@ export const products = {
         depth: '1400mm',
         height: '2100mm'
     },
-    gallery: ["https://images.unsplash.com/photo-1717356495389-6ab1e5ff9d84?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", "https://images.unsplash.com/photo-1713270176394-3f9f91f43905?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"]
+    gallery: [celeste_1, celeste_2]
   }, 
   'opal': {
     name: 'Opal',
@@ -130,7 +133,8 @@ export const products = {
     description: 'Inspired by the rare and precious gemstone, this name signifies luxury, uniqueness, and radiance. A great fit for a bespoke sauna design with intricate details.',
     productTitle: 'Luxury and radiance',
     // productDescription: 'The Opal sauna is a luxurious and unique sauna that offers a radiant and radiant atmosphere, perfect for those who want to escape the stresses of everyday life.',
-    images: ["https://images.unsplash.com/photo-1717356495389-6ab1e5ff9d84?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", productImage, productImage2],
+    images: [opal_1, opal_2],
+    embed: "https://kuula.co/share/hJQn2?logo=-1&info=0&fs=1&vr=1&initload=0&thumbs=1&margin=30",
     features: [
       {
         title: 'Easy installation',
@@ -155,6 +159,6 @@ export const products = {
         depth: '1400mm',
         height: '2100mm'
     },
-    gallery: ["https://images.unsplash.com/photo-1717356495389-6ab1e5ff9d84?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", "https://images.unsplash.com/photo-1713270176394-3f9f91f43905?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"]
+    gallery: [opal_1, opal_2]
   }
 };

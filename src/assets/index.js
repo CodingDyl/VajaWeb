@@ -23,6 +23,23 @@ import virgin from './customers/virgin-clear.png'
 import maldives from './customers/Maldives.png'
 import aromaImage from './aroma.webp'
 
+//Sauna's (products)
+import aurora_1 from './product_image_sauna/aurora/aurora_1.jpg'
+import aurora_2 from './product_image_sauna/aurora/aurora_2.jpg'
+
+import celeste_1 from './product_image_sauna/celeste/celeste_1.jpg'
+import celeste_2 from './product_image_sauna/celeste/celeste_2.jpg'
+
+import elysium_1 from './product_image_sauna/elysium/elysium_1.jpg'
+import elysium_2 from './product_image_sauna/elysium/elysium_2.jpg'
+
+import opal_1 from './product_image_sauna/opal/opal_1.jpg'
+import opal_2 from './product_image_sauna/opal/opal_2.jpg'
+
+
+
+
+
 // Sauna Wood's
 import clearPine from './sauna/clearPine.webp'
 import western from './sauna/western.webp'
@@ -93,4 +110,12 @@ export {
   harviae,
   modulo_m,
   virta,
+  aurora_1,
+  aurora_2,
+  celeste_1,
+  celeste_2,
+  elysium_1,
+  elysium_2,
+  opal_1,
+  opal_2,
 }

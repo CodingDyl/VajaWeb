@@ -5,6 +5,7 @@ import { Navbar } from '../../../components/Navbar';
 import Footer from '../../../components/Footer';
 import { Divider, Tabs } from '@mantine/core';
 import { useParams, Navigate, Link } from 'react-router-dom';
+import { ThreeDViewer } from '../../../components/3DViewer';
 
 const ProductPage = ({ products }) => {
   const { productSlug } = useParams();
@@ -83,9 +84,27 @@ const ProductPage = ({ products }) => {
         </div>
       </motion.section>
 
+      {/* 3D Viewer Section */}
+      {product?.embed && (
+        <motion.section
+          variants={fadeIn('up', 'spring', 0.4, 0.75)}
+          initial="hidden"
+          whileInView="show"
+          className="container mx-auto px-4 py-16"
+        >
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-secondary mb-8 text-center">Explore in 3D</h2>
+            <ThreeDViewer 
+              embedUrl={product.embed} 
+              title={product.name}
+            />
+          </div>
+        </motion.section>
+      )}
+
       {/* Details Tabs Section */}
       <motion.section 
-        variants={fadeIn('up', 'spring', 0.4, 0.75)}
+        variants={fadeIn('up', 'spring', 0.5, 0.75)}
         initial="hidden"
         whileInView="show"
         className="container mx-auto px-4 py-16"
