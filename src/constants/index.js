@@ -1,5 +1,5 @@
 import { FaFire, FaShower, FaTree } from 'react-icons/fa';
-import { clearPine, western, thermo, obeche, aurora_1, elysium_1, celeste_1, opal_1 } from '../assets';
+import { clearPine, western, thermo, obeche, aurora_1, elysium_1, loyly_1, kaelis_1 } from '../assets';
 
 const navItems = [
   {
@@ -103,16 +103,16 @@ const saunaRooms = [
     image: elysium_1,
   },
   {
-    name: 'Celeste',
-    slug: 'celeste',
+    name: 'Loyly',
+    slug: 'loyly',
     description: 'Meaning “heavenly” in Latin, this name conveys a sense of elegance and sophistication. Perfect for a minimalist, contemporary sauna with a refined aesthetic.',
-    image: celeste_1,
+    image: loyly_1,
   },
   {
-    name: 'Opal',
-    slug: 'opal',
+    name: 'Kaelis',
+    slug: 'kaelis',
     description: 'Inspired by the rare and precious gemstone, this name signifies luxury, uniqueness, and radiance. A great fit for a bespoke sauna design with intricate details.',
-    image: opal_1,
+    image: kaelis_1,
   }
 ];
 

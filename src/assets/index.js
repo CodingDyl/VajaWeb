@@ -27,14 +27,14 @@ import aromaImage from './aroma.webp'
 import aurora_1 from './product_image_sauna/aurora/aurora_1.jpg'
 import aurora_2 from './product_image_sauna/aurora/aurora_2.jpg'
 
-import celeste_1 from './product_image_sauna/celeste/celeste_1.jpg'
-import celeste_2 from './product_image_sauna/celeste/celeste_2.jpg'
+import loyly_1 from './product_image_sauna/loyly/loyly_1.jpg'
+import loyly_2 from './product_image_sauna/loyly/loyly_2.jpg'
 
 import elysium_1 from './product_image_sauna/elysium/elysium_1.jpg'
 import elysium_2 from './product_image_sauna/elysium/elysium_2.jpg'
 
-import opal_1 from './product_image_sauna/opal/opal_1.jpg'
-import opal_2 from './product_image_sauna/opal/opal_2.jpg'
+import kaelis_1 from './product_image_sauna/kaelis/kaelis_1.jpg'
+import kaelis_2 from './product_image_sauna/kaelis/kaelis_2.jpg'
 
 
 
@@ -112,10 +112,10 @@ export {
   virta,
   aurora_1,
   aurora_2,
-  celeste_1,
-  celeste_2,
   elysium_1,
   elysium_2,
-  opal_1,
-  opal_2,
+  kaelis_1,
+  kaelis_2,
+  loyly_1,
+  loyly_2,
 }
