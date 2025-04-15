@@ -183,17 +183,19 @@ export function Navbar() {
       </Container>
 
       {opened && (
-        <div className="md:hidden absolute top-20 left-0 right-0 bg-accent p-4">
-          {navItems.map((item) => (
-            <Link
-              key={item.to}
-              to={item.to}
-              className={`block ${textColor} hover:text-secondary transition-colors duration-200 font-libre-baskerville py-2`}
-              onClick={toggle}
-            >
-              {item.label}
-            </Link>
-          ))}
+        <div className="md:hidden absolute top-20 left-0 right-0 bg-accent p-4 w-full">
+          <div className="flex flex-col space-y-4">
+            {navItems.map((item) => (
+              <Link
+                key={item.to}
+                to={item.to}
+                className={`block ${textColor} hover:text-secondary transition-colors duration-200 font-libre-baskerville py-2`}
+                onClick={toggle}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
         </div>
       )}
     </nav>

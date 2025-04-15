@@ -6,6 +6,7 @@ import Footer from '../../../components/Footer';
 import { Divider, Tabs } from '@mantine/core';
 import { useParams, Navigate, Link } from 'react-router-dom';
 import { ThreeDViewer } from '../../../components/3DViewer';
+import { IconCheckbox, IconRuler, IconPhoto, IconTools } from '@tabler/icons-react';
 
 const ProductPage = ({ products }) => {
   const { productSlug } = useParams();
@@ -115,14 +116,19 @@ const ProductPage = ({ products }) => {
           className="bg-white rounded-xl p-8 shadow-xl"
         >
           <Tabs.List className="flex gap-8 justify-center items-center border-b border-secondary/20 pb-4 mb-8">
-            {['features', 'materials', 'dimensions', 'gallery'].map((tab) => (
+            {[
+              { id: 'features', label: 'Features', icon: IconCheckbox },
+              { id: 'materials', label: 'Materials', icon: IconTools },
+              { id: 'dimensions', label: 'Dimensions', icon: IconRuler },
+              { id: 'gallery', label: 'Gallery', icon: IconPhoto }
+            ].map((tab) => (
               <motion.div
-                key={tab}
+                key={tab.id}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 <Tabs.Tab
-                  value={tab}
+                  value={tab.id}
                   className={`
                     relative text-lg capitalize transition-all duration-300
                     text-secondary/70 hover:text-accent
@@ -135,7 +141,10 @@ const ProductPage = ({ products }) => {
                     [&[data-active]]:after:scale-x-100
                   `}
                 >
-                  {tab}
+                  <div className="flex items-center gap-2">
+                    <tab.icon className="w-5 h-5 md:hidden" />
+                    <span className="hidden md:inline">{tab.label}</span>
+                  </div>
                 </Tabs.Tab>
               </motion.div>
             ))}

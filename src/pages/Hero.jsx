@@ -19,16 +19,16 @@ export function Hero() {
           <h1 className="text-2xl md:text-3xl lg:text-4xl text-secondary mb-6">
             Crafted for the Ultimate Wellness Experience
           </h1>
-          <div className="space-x-4 space-y-4 md:space-y-0">
+          <div className="flex flex-col md:flex-row gap-4">
             <Link to="/products">
-            <button className="bg-accent text-white px-6 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-colors">
-              Discover Our Sauna's
-            </button>
+              <button className="w-full md:w-auto bg-accent text-white px-6 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-colors">
+                Discover Our Sauna's
+              </button>
             </Link>
             <Link to="/contact">
-            <button className="bg-transparent border-2 border-accent text-accent px-6 py-3 rounded-full font-semibold hover:bg-accent hover:text-white transition-colors">
-              Contact Us Now
-            </button>
+              <button className="w-full md:w-auto bg-transparent border-2 border-accent text-accent px-6 py-3 rounded-full font-semibold hover:bg-accent hover:text-white transition-colors">
+                Contact Us Now
+              </button>
             </Link>
           </div>
         </div>
