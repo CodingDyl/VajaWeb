@@ -36,7 +36,7 @@ export function Navbar() {
         setJustifyContent('md:justify-center');
       } else {
         setBgColor('bg-transparent');
-        setNavSize('h-20 md:h-24 w-full p-4 md:p-10');
+        setNavSize('h-20 md:h-24 w-full p-4 md:p-2');
         setNavRadius('');
         setHideLogo('block');
         setNavPosition('left-0 right-0');
@@ -105,9 +105,9 @@ export function Navbar() {
 
   return (
     <nav className={`fixed top-0 z-50 transition-all duration-300 ${window.innerWidth >= 768 ? bgColor : smallScreenBg} ${navSize} ${navRadius} ${navPosition} ${navMargin}`}>
-      <Container className={`flex justify-between ${justifyContent} items-center w-full h-full`}>
-        <Link to="/" className={hideLogo}>
-          <Image src={logo} alt="VAJA logo" width={100} height={100} className="w-[80px] h-[80px] md:w-[150px] md:h-[150px]" />
+      <Container className={`flex ${justifyContent} items-center w-full h-full`}>
+        <Link to="/" className={`${hideLogo} ml-4 md:ml-8`}>
+          <Image src={logo} alt="VAJA logo" width={100} height={100} className="w-[100px] h-[100px] md:w-[200px] md:h-[200px]" />
         </Link>
 
         <div className="hidden md:flex space-x-4">
