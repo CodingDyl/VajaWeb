@@ -1,0 +1,115 @@
+import { productIcons } from './productIcons';
+
+export interface ProductFeature {
+  title: string;
+  description: string;
+  icon: keyof typeof productIcons;
+}
+
+export interface ProductInfo {
+  description: string;
+  features: ProductFeature[];
+}
+
+export const productInfo: Record<string, ProductInfo> = {
+  Kaelis: {
+    description: "A refined balance of warmth and modern design, Kaelis features a striking exterior of thermo pine tongue-and-groove, paired with a clean, minimalist triple pine interior. The seating is crafted from premium obeche wood, chosen for its smooth, splinter-free finish and cool touch — ideal for elevated comfort and everyday rituals.",
+    features: [
+      { 
+        title: 'Premium Materials', 
+        description: 'Exterior crafted from thermo pine tongue-and-groove with a clean, minimalist triple pine interior',
+        icon: 'wood'
+      },
+      { 
+        title: 'Comfortable Seating', 
+        description: 'Premium obeche wood seating with smooth, splinter-free finish for elevated comfort',
+        icon: 'armchair'
+      },
+      { 
+        title: 'Modern Design', 
+        description: 'Striking exterior design that balances warmth with contemporary aesthetics',
+        icon: 'palette'
+      },
+      { 
+        title: 'Everyday Luxury', 
+        description: 'Perfectly designed for daily use with premium materials and thoughtful details',
+        icon: 'sparkles'
+      }
+    ]
+  },
+  Aurora: {
+    description: "A bold fusion of nature and modernism, Aurora is defined by its striking black glass façade, seamlessly blending into its surroundings while standing out in style. The interior features warm pine sauna board walls, soft obeche benches, and an ambient LED strip backrest for a calming glow. The rear exterior is finished in triple-shadow Lunawood, bringing earthy contrast to its contemporary form.",
+    features: [
+      { 
+        title: 'Striking Facade', 
+        description: 'Black glass exterior that seamlessly blends with surroundings while making a bold statement',
+        icon: 'buildingStore'
+      },
+      { 
+        title: 'Premium Interior', 
+        description: 'Warm pine sauna board walls with soft obeche benches for ultimate comfort',
+        icon: 'home'
+      },
+      { 
+        title: 'Ambient Lighting', 
+        description: 'LED strip backrest providing a calming glow for the perfect sauna experience',
+        icon: 'sun'
+      },
+      { 
+        title: 'Natural Contrast', 
+        description: 'Triple-shadow Lunawood rear exterior creating an earthy contrast to the modern design',
+        icon: 'trees'
+      }
+    ]
+  },
+  Loyly: {
+    description: "Rooted in raw beauty, Löyly channels rustic charm with its rough black-stained pine exterior. Inside, you'll find black T&G pine walls and benches, creating a bold, immersive space anchored by a wood-burning heater. A large feature window invites the outdoors in—blending fire, wood, and nature in perfect harmony.",
+    features: [
+      { 
+        title: 'Rustic Charm', 
+        description: 'Rough black-stained pine exterior with black T&G pine walls and benches',
+        icon: 'mountain'
+      },
+      { 
+        title: 'Traditional Heating', 
+        description: 'Wood-burning heater for an authentic sauna experience',
+        icon: 'flame'
+      },
+      { 
+        title: 'Natural Connection', 
+        description: 'Large feature window connecting the interior with the outdoors',
+        icon: 'window'
+      },
+      { 
+        title: 'Bold Design', 
+        description: 'Immersive space that blends fire, wood, and nature in perfect harmony',
+        icon: 'leaf'
+      }
+    ]
+  },
+  Elysium: {
+    description: "A sanctuary in every sense—Elysium is our signature sauna + shower combo. Clad in black wide-plank rough pine, it opens to a serene interior of full Obeche T&G walls, matching benches, and a soft LED strip that adds a modern glow. The adjacent shower zone is lined with Accoya timber, blending seamlessly into the warm, light-toned interior for a luxurious, cohesive finish.",
+    features: [
+      { 
+        title: 'Luxury Combo', 
+        description: 'Signature sauna + shower combination for the ultimate wellness experience',
+        icon: 'bath'
+      },
+      { 
+        title: 'Premium Materials', 
+        description: 'Black wide-plank rough pine exterior with full Obeche T&G walls and matching benches',
+        icon: 'tools'
+      },
+      { 
+        title: 'Modern Lighting', 
+        description: 'Soft LED strip adding a modern glow to the interior',
+        icon: 'lamp'
+      },
+      { 
+        title: 'Luxurious Finish', 
+        description: 'Accoya timber shower zone seamlessly blending with the warm, light-toned interior',
+        icon: 'building'
+      }
+    ]
+  }
+}; 

@@ -6,7 +6,9 @@ import Footer from '../../../components/Footer';
 import { Divider, Tabs } from '@mantine/core';
 import { useParams, Navigate, Link } from 'react-router-dom';
 import { ThreeDViewer } from '../../../components/3DViewer';
-import { IconCheckbox, IconRuler, IconPhoto, IconTools } from '@tabler/icons-react';
+import { IconCheckbox, IconRuler, IconPhoto, IconTools, IconInfoCircle } from '@tabler/icons-react';
+import { productInfo } from '../../../constants/productInfo';
+import { productIcons } from '../../../constants/productIcons';
 
 const ProductPage = ({ products }) => {
   const { productSlug } = useParams();
@@ -120,7 +122,8 @@ const ProductPage = ({ products }) => {
               { id: 'features', label: 'Features', icon: IconCheckbox },
               { id: 'materials', label: 'Materials', icon: IconTools },
               { id: 'dimensions', label: 'Dimensions', icon: IconRuler },
-              { id: 'gallery', label: 'Gallery', icon: IconPhoto }
+              { id: 'gallery', label: 'Gallery', icon: IconPhoto },
+              { id: 'info', label: 'Product Info', icon: IconInfoCircle }
             ].map((tab) => (
               <motion.div
                 key={tab.id}
@@ -161,21 +164,24 @@ const ProductPage = ({ products }) => {
                 variants={fadeIn('up', 'spring', 0.2, 0.75)}
                 className="grid grid-cols-1 md:grid-cols-2 gap-8"
               >
-                {product?.features.map((feature, index) => (
-                  <motion.div
-                    key={index}
-                    variants={fadeIn('up', 'spring', index * 0.1, 0.75)}
-                    className="flex items-start space-x-4"
-                  >
-                    <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center text-2xl">
-                      {feature.icon}
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-semibold text-secondary">{feature.title}</h3>
-                      <p className="text-gray-600">{feature.description}</p>
-                    </div>
-                  </motion.div>
-                ))}
+                {productInfo[product?.name]?.features.map((feature, index) => {
+                  const Icon = productIcons[feature.icon];
+                  return (
+                    <motion.div
+                      key={index}
+                      variants={fadeIn('up', 'spring', index * 0.1, 0.75)}
+                      className="flex items-start space-x-4"
+                    >
+                      <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center text-2xl">
+                        <Icon className="w-6 h-6" />
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-semibold text-secondary">{feature.title}</h3>
+                        <p className="text-gray-600">{feature.description}</p>
+                      </div>
+                    </motion.div>
+                  );
+                })}
               </motion.div>
             </Tabs.Panel>
 
@@ -239,6 +245,36 @@ const ProductPage = ({ products }) => {
                     />
                   </motion.div>
                 ))}
+              </motion.div>
+            </Tabs.Panel>
+
+            <Tabs.Panel value="info" pt="xl">
+              <motion.div 
+                variants={fadeIn('up', 'spring', 0.2, 0.75)}
+                className="space-y-8"
+              >
+                <div className="prose prose-lg max-w-none">
+                  <h3 className="text-2xl font-bold text-secondary mb-4">Product Description</h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    {productInfo[product?.name]?.description}
+                  </p>
+                </div>
+
+                <div className="mt-8">
+                  <h3 className="text-2xl font-bold text-secondary mb-4">Dimensions</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    {Object.entries(product?.dimensions || {}).map(([key, value], index) => (
+                      <motion.div
+                        key={key}
+                        variants={fadeIn('up', 'spring', index * 0.1, 0.75)}
+                        className="text-center p-6 rounded-xl backdrop-blur-md bg-white/5 border border-white/10 shadow-lg hover:bg-white/10 transition-all duration-300"
+                      >
+                        <h3 className="text-lg font-semibold capitalize mb-2 text-secondary">{key}</h3>
+                        <p className="text-2xl text-accent">{value}</p>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
               </motion.div>
             </Tabs.Panel>
           </motion.div>
