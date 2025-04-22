@@ -11,8 +11,8 @@ const navItems = [
         items: [
           { label: 'Aurora', to: '/products/aurora' },
           { label: 'Elysium', to: '/products/elysium' },
-          { label: 'Celeste', to: '/products/celeste' },
-          { label: 'Opal', to: '/products/opal' },
+          { label: 'Loyly', to: '/products/loyly' },
+          { label: 'Kaelis', to: '/products/kaelis' },
         ],
       },
       {
@@ -29,13 +29,6 @@ const navItems = [
           { label: 'Accessories', to: '/products/accessories' },
         ],
       },
-      // {
-      //   heading: 'Other',
-      //   items: [
-      //     { label: 'DIY Sauna Kits', to: '/products/diy-sauna-kits' },
-      //     { label: 'Aroma Concentrates', to: '/products/auroma-concentrates' },
-      //   ],
-      // }
     ],
   },
   { label: 'About Us', to: '/about' },
