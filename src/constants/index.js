@@ -1,5 +1,5 @@
-import { FaFire, FaShower, FaTree } from 'react-icons/fa';
-import { clearPine, western, thermo, obeche, aurora_1, elysium_1, loyly_1, kaelis_1 } from '../assets';
+import { FaFire, FaShower, FaTree, FaSnowflake } from 'react-icons/fa';
+import { clearPine, western, thermo, obeche, aurora_1, elysium_1, loyly_1, kaelis_1, ice_bath_1, ice_bath_2 } from '../assets';
 
 const navItems = [
   {
@@ -18,8 +18,13 @@ const navItems = [
       {
         heading: 'Steam Rooms',
         items: [
-          { label: 'Nordmann AT4D Steam Generator', to: '/products/steam-generator' },
-          { label: 'Nordmann Omega Steam System', to: '/products/steam-system' },
+          { label: 'Nordmann', to: '/steam-rooms' },
+        ],
+      },
+      {
+        heading: 'Ice Baths',
+        items: [
+          { label: 'Premium Ice Bath', to: '/products/ice-bath/premium-ice-bath' },
         ],
       },
       {
@@ -56,6 +61,14 @@ const productCategories = [
     products: [
       { name: 'Nordmann AT4D Steam Generator', image: 'https://plus.unsplash.com/premium_photo-1683141182191-6c3dc91f9536?q=80&w=1770&auto=format&fit=crop' },
       { name: 'Nordmann Omega Steam System', image: 'https://images.unsplash.com/photo-1583417319070-4a69db38a482?q=80&w=1770&auto=format&fit=crop' },
+    ]
+  },
+  {
+    title: 'Ice Baths',
+    icon: FaSnowflake,
+    description: 'Experience the benefits of cold therapy with our premium ice baths, designed for optimal recovery and performance.',
+    products: [
+      { name: 'Premium Ice Bath', image: ice_bath_2 },
     ]
   },
   {
@@ -98,7 +111,7 @@ const saunaRooms = [
   {
     name: 'Loyly',
     slug: 'loyly',
-    description: 'Meaning “heavenly” in Latin, this name conveys a sense of elegance and sophistication. Perfect for a minimalist, contemporary sauna with a refined aesthetic.',
+    description: 'Meaning "heavenly" in Latin, this name conveys a sense of elegance and sophistication. Perfect for a minimalist, contemporary sauna with a refined aesthetic.',
     image: loyly_1,
   },
   {
@@ -109,4 +122,97 @@ const saunaRooms = [
   }
 ];
 
-export { navItems, productCategories, diyKits, aromaConcentrates, saunaRooms };
+const iceBaths = [
+  {
+    name: 'Premium Ice Bath',
+    slug: 'premium-ice-bath',
+    description: 'Experience the ultimate in cold therapy with our Premium Ice Bath. Designed for optimal recovery and performance, this state-of-the-art ice bath combines advanced technology with elegant design.',
+    productTitle: 'Professional Cold Therapy Solution',
+    images: [ice_bath_2, ice_bath_1],
+    features: [
+      {
+        title: 'Temperature Control',
+        description: 'Maintains water temperature from 16°C to 0.5°C for optimal cold therapy',
+        icon: '🌡️'
+      },
+      {
+        title: 'Sanitation System',
+        description: 'Advanced ozone sanitation and filtration system for clean, safe water',
+        icon: '🧼'
+      },
+      {
+        title: 'Automated Ice Creation',
+        description: 'Built-in system for automated ice creation and temperature maintenance',
+        icon: '❄️'
+      },
+      {
+        title: 'Easy Setup',
+        description: 'Simple plug & plunge operation with minimal setup required',
+        icon: '🔌'
+      },
+      {
+        title: 'Ambient Lighting',
+        description: 'Integrated underwater lighting for a premium experience',
+        icon: '💡'
+      },
+      {
+        title: 'Versatile Installation',
+        description: 'Suitable for both indoor and outdoor use under cover',
+        icon: '🏠'
+      },
+      {
+        title: 'Warranty',
+        description: 'Comprehensive 1.5 years warranty for peace of mind',
+        icon: '📜'
+      }
+    ],
+    technical: {
+      frame: 'L 2320mm x W 815mm x H 700mm',
+      tub: 'L 1450mm x W 600mm x H 575mm',
+      material: 'Stainless steel',
+      voltage: '220V – 240V',
+      socket: '16-amp 3 pin plug',
+      power: '1000 Watts',
+      current: '3.5 amps',
+      noise: 'dB50'
+    },
+    maintenance: [
+      {
+        title: 'Getting Started',
+        description: 'Watch Video here',
+        icon: '▶️'
+      },
+      {
+        title: 'Maintenance Guide',
+        description: 'Watch Video here',
+        icon: '📹'
+      },
+      {
+        title: 'Monthly Maintenance',
+        description: 'Empty and refill with water / rinse filter cartridge',
+        icon: '📅'
+      },
+      {
+        title: 'Quarterly Maintenance',
+        description: 'Change the filter cartridge',
+        icon: '🔄'
+      }
+    ],
+    considerations: [
+      {
+        title: 'Access',
+        description: 'When planning the placement of your ice bath, be sure to account for its width and length to avoid any obstacles, such as narrow doorways, sharp corners, or steep staircases. If you\'re unsure about access, we recommend sending us a video showing the path from curb side to the intended placement area. This allows us to assist with any concerns.'
+      },
+      {
+        title: 'Electrical Connection',
+        description: 'Plug the ice bath directly into a dedicated 220V outlet. For outdoor setups, ensure a weather-proof power source is installed near the tub location. Avoid using extension cords. Position the electrical connection at a safe distance from the bath to prevent any water from reaching the outlet.'
+      },
+      {
+        title: 'Airflow',
+        description: 'Ensure the air vents on your ice bath have adequate airflow. Leave at least 5 cm of space between the unit and any walls. Avoid placing the bath directly against a wall, as restricted airflow can affect performance.'
+      }
+    ]
+  }
+];
+
+export { navItems, productCategories, diyKits, aromaConcentrates, saunaRooms, iceBaths };

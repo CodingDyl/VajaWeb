@@ -66,6 +66,10 @@ import harviae from './equipment/HarviaE.webp'
 import modulo_m from './equipment/HarviaModulo_M.webp'
 import virta from './equipment/HarviaVirta.webp'
 
+//ice baths
+import ice_bath_1 from './ice_bath/ice_bath_1.jpg'
+import ice_bath_2 from './ice_bath/ice_bath_2.jpg'
+
 export {
   sauna_hero,
   logo,
@@ -118,4 +122,6 @@ export {
   kaelis_2,
   loyly_1,
   loyly_2,
+  ice_bath_1,
+  ice_bath_2,
 }

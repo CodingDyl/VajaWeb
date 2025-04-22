@@ -165,9 +165,9 @@ const Contact = () => {
               <h2 className="text-2xl font-bold mb-6">Contact Information</h2>
               <div className="space-y-6">
                 {[
-                  { icon: FaEnvelope, text: "info@vaja.com" },
+                  { icon: FaEnvelope, text: "sandy@vaja.co.za" },
                   { icon: FaPhone, text: "+27 11 794 2090" },
-                  { icon: FaMapMarkerAlt, text: "58 Zeiss Rd, Roodeport, South Africa" }
+                  { icon: FaMapMarkerAlt, text: "53 Zeiss Rd, Roodeport, South Africa" }
                 ].map((item, index) => (
                   <motion.div
                     key={index}

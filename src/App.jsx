@@ -20,6 +20,7 @@ import SteamRooms from './pages/products/SteamRooms'
 import '@mantine/carousel/styles.css';
 import CategoryGallery from './pages/gallery/category/[slug]'
 import { ReferralForm } from './components/ReferralForm'
+import IceProductPage from './pages/products/iceBath/IceProductPage'
 
 function App() {
   // const [showReferralModal, setShowReferralModal] = useState(false)
@@ -58,6 +59,7 @@ function App() {
             path="/products/:productSlug" 
             element={<ProductPage products={products} />} 
           />
+          <Route path="/products/ice-bath/:productSlug" element={<IceProductPage />} />
           <Route path="/gallery/category/:slug" element={<CategoryGallery />} />
           <Route path="/products/auroma-concentrates" element={<AuromaConcentrates />} />
           <Route path="/products/diy-sauna-kits" element={<DIYSauna />} />
