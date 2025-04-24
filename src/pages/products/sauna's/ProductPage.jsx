@@ -1,14 +1,15 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { fadeIn, staggerContainer } from '../../../utils/motion';
 import { Navbar } from '../../../components/Navbar';
 import Footer from '../../../components/Footer';
-import { Divider, Tabs } from '@mantine/core';
+import {  Tabs } from '@mantine/core';
 import { useParams, Navigate, Link } from 'react-router-dom';
 import { ThreeDViewer } from '../../../components/3DViewer';
-import { IconCheckbox, IconRuler, IconPhoto, IconTools, IconInfoCircle } from '@tabler/icons-react';
+import { IconCheckbox, IconRuler, IconPhoto, IconTools, IconInfoCircle, IconDownload } from '@tabler/icons-react';
 import { productInfo } from '../../../constants/productInfo';
 import { productIcons } from '../../../constants/productIcons';
+import { aurora_plan, elysium_plan } from '../../../../public';
 
 const ProductPage = ({ products }) => {
   const { productSlug } = useParams();
@@ -123,7 +124,8 @@ const ProductPage = ({ products }) => {
               { id: 'materials', label: 'Materials', icon: IconTools },
               { id: 'dimensions', label: 'Dimensions', icon: IconRuler },
               { id: 'gallery', label: 'Gallery', icon: IconPhoto },
-              { id: 'info', label: 'Product Info', icon: IconInfoCircle }
+              { id: 'info', label: 'Product Info', icon: IconInfoCircle },
+              { id: 'plans', label: 'Plans', icon: IconDownload }
             ].map((tab) => (
               <motion.div
                 key={tab.id}
@@ -274,6 +276,58 @@ const ProductPage = ({ products }) => {
                       </motion.div>
                     ))}
                   </div>
+                </div>
+              </motion.div>
+            </Tabs.Panel>
+
+            <Tabs.Panel value="plans" pt="xl">
+              <motion.div 
+                variants={fadeIn('up', 'spring', 0.2, 0.75)}
+                className="flex flex-col items-center justify-center min-h-[400px]"
+              >
+                <div className="max-w-2xl w-full">
+                  {product?.name === 'Aurora' && (
+                    <motion.div
+                      variants={fadeIn('up', 'spring', 0.1, 0.75)}
+                      className="p-8 rounded-xl backdrop-blur-md bg-white/5 border border-white/10 shadow-lg hover:bg-white/10 transition-all duration-300 text-center"
+                    >
+                      <h3 className="text-2xl font-semibold text-secondary mb-6">Aurora Plans</h3>
+                      <a
+                        href={aurora_plan}
+                        download="aurora_plan.pdf"
+                        className="inline-flex items-center gap-2 bg-accent hover:bg-accent/90 text-white px-8 py-4 rounded-full font-semibold transition-colors"
+                      >
+                        <IconDownload className="w-5 h-5" />
+                        Download Plans
+                      </a>
+                    </motion.div>
+                  )}
+                  {product?.name === 'Elysium' && (
+                    <motion.div
+                      variants={fadeIn('up', 'spring', 0.1, 0.75)}
+                      className="p-8 rounded-xl backdrop-blur-md bg-white/5 border border-white/10 shadow-lg hover:bg-white/10 transition-all duration-300 text-center"
+                    >
+                      <h3 className="text-2xl font-semibold text-secondary mb-6">Elysium Plans</h3>
+                      <a
+                        href={elysium_plan}
+                        download="elysium_plan.pdf"
+                        className="inline-flex items-center gap-2 bg-accent hover:bg-accent/90 text-white px-8 py-4 rounded-full font-semibold transition-colors"
+                      >
+                        <IconDownload className="w-5 h-5" />
+                        Download Plans
+                      </a>
+                    </motion.div>
+                  )}
+                  {product?.name !== 'Aurora' && product?.name !== 'Elysium' && (
+                    <motion.div
+                      variants={fadeIn('up', 'spring', 0.1, 0.75)}
+                      className="p-8 rounded-xl backdrop-blur-md bg-white/5 border border-white/10 shadow-lg hover:bg-white/10 transition-all duration-300 text-center"
+                    >
+                      <h3 className="text-2xl font-semibold text-secondary mb-6">Plans</h3>
+                      <p className="text-gray-600 mb-6">Currently, there are no plans available for download for this product.</p>
+                      <p className="text-gray-500 text-sm">Please check back later or contact us for more information.</p>
+                    </motion.div>
+                  )}
                 </div>
               </motion.div>
             </Tabs.Panel>

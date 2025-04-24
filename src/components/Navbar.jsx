@@ -20,7 +20,7 @@ export function Navbar() {
     if (window.innerWidth >= 768) {
       setIsScrolled(window.scrollY > 0);
     } else {
-      setSmallScreenBg(window.scrollY > 0 ? 'bg-white/30 backdrop-blur-md' : 'bg-transparent');
+      setSmallScreenBg(window.scrollY > 0 ? 'bg-white/30 backdrop-blur-md w-full flex justify-between pr-10' : 'bg-transparent w-full flex justify-between pr-10');
     }
   };
 
@@ -80,7 +80,7 @@ export function Navbar() {
           : smallScreenBg
       }`}
     >
-      <Container className={`flex ${isScrolled ? 'md:justify-center' : 'md:justify-around'} items-center w-full h-full`}>
+      <Container className={`flex ${isScrolled ? 'md:justify-center' : 'md:justify-around'} justify-between items-center w-full h-full`}>
         <Link to="/" className={`${isScrolled ? 'hidden' : 'block'} ml-4 md:ml-8`}>
           <Image src={logo} alt="VAJA logo" width={100} height={100} className="w-[100px] h-[100px] md:w-[200px] md:h-[200px]" />
         </Link>
