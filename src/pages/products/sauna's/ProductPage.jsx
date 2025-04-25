@@ -6,10 +6,11 @@ import Footer from '../../../components/Footer';
 import {  Tabs } from '@mantine/core';
 import { useParams, Navigate, Link } from 'react-router-dom';
 import { ThreeDViewer } from '../../../components/3DViewer';
-import { IconCheckbox, IconRuler, IconPhoto, IconTools, IconInfoCircle, IconDownload } from '@tabler/icons-react';
+import { IconCheckbox, IconPhoto, IconTools, IconInfoCircle, IconDownload } from '@tabler/icons-react';
 import { productInfo } from '../../../constants/productInfo';
 import { productIcons } from '../../../constants/productIcons';
-import { aurora_plan, elysium_plan } from '../../../../public';
+import { aurora_plan, elysium_plan} from '../../../../public';
+import { aurora_plan_img, elysium_plan_img } from '../../../assets';
 
 const ProductPage = ({ products }) => {
   const { productSlug } = useParams();
@@ -122,7 +123,6 @@ const ProductPage = ({ products }) => {
             {[
               { id: 'features', label: 'Features', icon: IconCheckbox },
               { id: 'materials', label: 'Materials', icon: IconTools },
-              { id: 'dimensions', label: 'Dimensions', icon: IconRuler },
               { id: 'gallery', label: 'Gallery', icon: IconPhoto },
               { id: 'info', label: 'Product Info', icon: IconInfoCircle },
               { id: 'plans', label: 'Plans', icon: IconDownload }
@@ -211,24 +211,6 @@ const ProductPage = ({ products }) => {
               </motion.div>
             </Tabs.Panel>
 
-            <Tabs.Panel value="dimensions" pt="xl">
-              <motion.div 
-                variants={fadeIn('up', 'spring', 0.2, 0.75)}
-                className="grid grid-cols-1 md:grid-cols-3 gap-8"
-              >
-                {Object.entries(product?.dimensions || {}).map(([key, value], index) => (
-                  <motion.div
-                    key={key}
-                    variants={fadeIn('up', 'spring', index * 0.1, 0.75)}
-                    className="text-center p-6 rounded-xl backdrop-blur-md bg-white/5 border border-white/10 shadow-lg hover:bg-white/10 transition-all duration-300"
-                  >
-                    <h3 className="text-lg font-semibold capitalize mb-2 text-secondary">{key}</h3>
-                    <p className="text-2xl text-accent">{value}</p>
-                  </motion.div>
-                ))}
-              </motion.div>
-            </Tabs.Panel>
-
             <Tabs.Panel value="gallery" pt="xl">
               <motion.div 
                 variants={fadeIn('up', 'spring', 0.2, 0.75)}
@@ -292,6 +274,13 @@ const ProductPage = ({ products }) => {
                       className="p-8 rounded-xl backdrop-blur-md bg-white/5 border border-white/10 shadow-lg hover:bg-white/10 transition-all duration-300 text-center"
                     >
                       <h3 className="text-2xl font-semibold text-secondary mb-6">Aurora Plans</h3>
+                      <div className="mb-6">
+                        <img 
+                          src={aurora_plan_img} 
+                          alt="Aurora Plan Preview" 
+                          className="w-full h-auto rounded-lg shadow-lg"
+                        />
+                      </div>
                       <a
                         href={aurora_plan}
                         download="aurora_plan.pdf"
@@ -308,6 +297,13 @@ const ProductPage = ({ products }) => {
                       className="p-8 rounded-xl backdrop-blur-md bg-white/5 border border-white/10 shadow-lg hover:bg-white/10 transition-all duration-300 text-center"
                     >
                       <h3 className="text-2xl font-semibold text-secondary mb-6">Elysium Plans</h3>
+                      <div className="mb-6">
+                        <img 
+                          src={elysium_plan_img} 
+                          alt="Elysium Plan Preview" 
+                          className="w-full h-auto rounded-lg shadow-lg"
+                        />
+                      </div>
                       <a
                         href={elysium_plan}
                         download="elysium_plan.pdf"

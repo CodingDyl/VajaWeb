@@ -70,6 +70,10 @@ import virta from './equipment/HarviaVirta.webp'
 import ice_bath_1 from './ice_bath/ice_bath_1.jpg'
 import ice_bath_2 from './ice_bath/ice_bath_2.jpg'
 
+//sauna plans
+import aurora_plan_img from './sauna/aurora_plan_img.png'
+import elysium_plan_img from './sauna/elysium_plan_img.png'
+
 export {
   sauna_hero,
   logo,
@@ -124,4 +128,6 @@ export {
   loyly_2,
   ice_bath_1,
   ice_bath_2,
+  aurora_plan_img,
+  elysium_plan_img,
 }
