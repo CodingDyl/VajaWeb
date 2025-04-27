@@ -167,7 +167,7 @@ const Contact = () => {
                 {[
                   { icon: FaEnvelope, text: "sandy@vaja.co.za" },
                   { icon: FaPhone, text: "+27 11 794 2090" },
-                  { icon: FaMapMarkerAlt, text: "53 Zeiss Rd, Roodeport, South Africa" }
+                  { icon: FaMapMarkerAlt, text: "53 Zeiss Rd, Laser Park, Johannesburg, South Africa" }
                 ].map((item, index) => (
                   <motion.div
                     key={index}
@@ -196,8 +196,8 @@ const Contact = () => {
               <h3 className="text-xl font-semibold mb-4">Our Hours</h3>
               <ul className="space-y-2">
                 {[
-                  "Monday - Friday: 9:00 AM - 6:00 PM",
-                  "Saturday: Closed",
+                  "Monday - Friday: 7:30 AM - 5:00 PM",
+                  "Saturday: Appointment Only",
                   "Sunday: Closed"
                 ].map((day, index) => (
                   <motion.li

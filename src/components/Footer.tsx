@@ -12,8 +12,8 @@ const FooterSection = ({ title, items }: { title: string; items: string[] }) => 
   </div>
 )
 
-const SocialIcon = ({ Icon }: { Icon: React.ElementType }) => (
-  <a href="#" className="text-accent hover:text-white transition-colors">
+const SocialIcon = ({ Icon, href }: { Icon: React.ElementType; href: string }) => (
+  <a href={href} className="text-accent hover:text-white transition-colors">
     <Icon size={24} />
   </a>
 )
@@ -39,16 +39,17 @@ const Footer = () => {
               "26 Paarden Eiland Road",
               "Cape Town",
               "Western Cape",
+              "South Africa, 7945",
               "Tel: +27 82 900 1676"
             ]}
           />
           <FooterSection
             title="Services"
-            items={["Steam Rooms", "Saunas"]}
+            items={["Steam Rooms", "Saunas", "Ice Baths"]}
           />
           <FooterSection
             title="Contact Us"
-            items={["sandy@vaja.co.za"]}
+            items={["sandy@vaja.co.za", "+27 11 794 2090"]}
           />
         </div>
         <div className="mt-12 pt-8 border-t border-secondary">
@@ -58,13 +59,13 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
                 <div className="bg-secondary rounded-full p-2">
-                    <SocialIcon Icon={FaFacebookF} />
+                    <SocialIcon href="https://www.facebook.com/vajaproducts" Icon={FaFacebookF} />
                 </div>
                 <div className="bg-secondary rounded-full p-2">
-                    <SocialIcon Icon={FaInstagram} />
+                    <SocialIcon href="https://www.instagram.com/vajaproducts" Icon={FaInstagram} />
                 </div>
                 <div className="bg-secondary rounded-full p-2">
-                    <SocialIcon Icon={FaLinkedinIn} />
+                    <SocialIcon href="https://www.linkedin.com/company/vaja-sauna-steam/" Icon={FaLinkedinIn} />
                 </div>
             </div>
           </div>

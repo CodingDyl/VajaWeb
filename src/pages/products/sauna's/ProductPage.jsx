@@ -259,6 +259,16 @@ const ProductPage = ({ products }) => {
                     ))}
                   </div>
                 </div>
+
+                <motion.div
+                  variants={fadeIn('up', 'spring', 0.3, 0.75)}
+                  className="mt-8 p-6 rounded-xl backdrop-blur-md bg-white/5 border border-white/10 shadow-lg"
+                >
+                  <h3 className="text-lg font-semibold text-secondary mb-3">Material Disclaimer</h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    We reserve the right to make material changes if the prices or availability of raw materials significantly change during the validity period. We strive to maintain material quality at least at the original level, regardless of any material substitutions.
+                  </p>
+                </motion.div>
               </motion.div>
             </Tabs.Panel>
 
