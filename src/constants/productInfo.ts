@@ -9,6 +9,11 @@ export interface ProductFeature {
 export interface ProductInfo {
   description: string;
   features: ProductFeature[];
+  dimensions: {
+    width: number;
+    depth: number;
+    height: number;
+  };
 }
 
 export const productInfo: Record<string, ProductInfo> = {
@@ -35,7 +40,12 @@ export const productInfo: Record<string, ProductInfo> = {
         description: 'Perfectly designed for daily use with premium materials and thoughtful details',
         icon: 'sparkles'
       }
-    ]
+    ],
+    dimensions: {
+      width: 1400,
+      depth: 1400,
+      height: 2400
+    }
   },
   Aurora: {
     description: "A bold fusion of nature and modernism, Aurora is defined by its striking black glass façade, seamlessly blending into its surroundings while standing out in style. The interior features warm pine sauna board walls, soft obeche benches, and an ambient LED strip backrest for a calming glow. The rear exterior is finished in triple-shadow Lunawood, bringing earthy contrast to its contemporary form.",
@@ -60,7 +70,12 @@ export const productInfo: Record<string, ProductInfo> = {
         description: 'Triple-shadow Lunawood rear exterior creating an earthy contrast to the modern design',
         icon: 'trees'
       }
-    ]
+    ],
+    dimensions: {
+      width: 2060,
+      depth: 2000,
+      height: 2400
+    }
   },
   Loyly: {
     description: "Rooted in raw beauty, Löyly channels rustic charm with its rough black-stained pine exterior. Inside, you'll find black T&G pine walls and benches, creating a bold, immersive space anchored by a wood-burning heater. A large feature window invites the outdoors in—blending fire, wood, and nature in perfect harmony.",
@@ -85,7 +100,12 @@ export const productInfo: Record<string, ProductInfo> = {
         description: 'Immersive space that blends fire, wood, and nature in perfect harmony',
         icon: 'leaf'
       }
-    ]
+    ],
+    dimensions: {
+      width: 1400,
+      depth: 1400,
+      height: 2400
+    }
   },
   Elysium: {
     description: "A sanctuary in every sense—Elysium is our signature sauna + shower combo. Clad in black wide-plank rough pine, it opens to a serene interior of full Obeche T&G walls, matching benches, and a soft LED strip that adds a modern glow. The adjacent shower zone is lined with Accoya timber, blending seamlessly into the warm, light-toned interior for a luxurious, cohesive finish.",
@@ -110,6 +130,11 @@ export const productInfo: Record<string, ProductInfo> = {
         description: 'Accoya timber shower zone seamlessly blending with the warm, light-toned interior',
         icon: 'building'
       }
-    ]
+    ],
+    dimensions: {
+      width: 2960,
+      depth: 1900,
+      height: 2400
+    }
   }
 }; 
