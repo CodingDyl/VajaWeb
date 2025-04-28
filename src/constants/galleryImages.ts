@@ -1,3 +1,5 @@
+import { kaelis_1, aurora_1, loyly_1, elysium_1, ice_bath_1, steam_product_1, kaelis_2, aurora_2, loyly_2, elysium_2, ice_bath_2, steam_product_2, custom_2, custom_1, custom_3 } from "../assets";
+
 interface GalleryImage {
   id: number;
   src: string;
@@ -14,155 +16,150 @@ interface GalleryCategory {
 
 export const galleryCategories: GalleryCategory[] = [
   {
-    route: 'category/classic-wooden-sauna',
-    title: 'Classic Wooden Sauna',
-    description: 'Experience the traditional warmth and comfort of our handcrafted wooden saunas.',
+    route: 'category/kaelis',
+    title: 'Kaelis',
+    description: 'A refined balance of warmth and modern design, featuring thermo pine tongue-and-groove exterior and premium obeche wood seating.',
     images: [
       {
         id: 1,
-        src: 'https://images.unsplash.com/photo-1717356495389-6ab1e5ff9d84?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        alt: 'Luxurious wooden sauna',
-        title: 'Main Classic Sauna'
+        src: kaelis_1,
+        alt: 'Kaelis sauna exterior',
+        title: 'Kaelis Exterior'
       },
       {
         id: 11,
-        src: 'https://images.unsplash.com/photo-1712659604528-b179a3634560?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        alt: 'Interior of wooden sauna',
-        title: 'Interior View'
-      },
-      {
-        id: 12,
-        src: 'https://images.unsplash.com/photo-1713270176394-3f9f91f43905?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        alt: 'Sauna accessories',
-        title: 'Sauna Essentials'
+        src: kaelis_2,
+        alt: 'Kaelis interior with obeche wood seating',
+        title: 'Premium Interior'
       }
-    ]
+    ],
   },
   {
-    route: 'category/contemporary-steam-room',
-    title: 'Contemporary Steam Room',
-    description: 'Discover our modern steam rooms featuring cutting-edge technology and elegant design.',
+    route: 'category/aurora',
+    title: 'Aurora',
+    description: 'A bold fusion of nature and modernism, featuring a striking black glass façade and warm pine sauna board walls with ambient LED lighting.',
     images: [
       {
         id: 2,
-        src: 'https://plus.unsplash.com/premium_photo-1683141182191-6c3dc91f9536?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        alt: 'Modern steam room',
-        title: 'Main Steam Room'
+        src: aurora_1,
+        alt: 'Aurora black glass facade',
+        title: 'Modern Facade'
       },
       {
         id: 21,
-        src: 'https://images.unsplash.com/photo-1583417267826-aebc4d1542e1?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        alt: 'Steam room seating',
-        title: 'Relaxation Area'
-      },
-      {
-        id: 22,
-        src: 'https://images.unsplash.com/photo-1712659606957-b7395ba9ebb2?q=80&w=1771&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        alt: 'Steam room features',
-        title: 'Modern Features'
+        src: aurora_2,
+        alt: 'Aurora interior with LED lighting',
+        title: 'Ambient Interior'
       }
     ]
   },
   {
-    route: 'category/scenic-outdoor-sauna',
-    title: 'Scenic Outdoor Sauna',
-    description: 'Enjoy the perfect blend of nature and relaxation in our outdoor sauna facilities.',
+    route: 'category/loyly',
+    title: 'Loyly',
+    description: 'A celebration of authentic sauna tradition with rugged black-stained rough pine exterior and immersive black pine interior, featuring a wood-burning heater.',
     images: [
       {
         id: 3,
-        src: 'https://images.unsplash.com/photo-1712659604528-b179a3634560?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        alt: 'Outdoor sauna with view',
-        title: 'Main Outdoor Sauna'
+        src: loyly_1,
+        alt: 'Loyly black-stained pine exterior',
+        title: 'Traditional Exterior'
       },
       {
         id: 31,
-        src: 'https://images.unsplash.com/photo-1712659604528-b179a3634560?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        alt: 'Scenic view from sauna',
-        title: 'Panoramic Views'
+        src: loyly_2,
+        alt: 'Loyly wood-burning heater',
+        title: 'Authentic Heating'
       },
-      {
-        id: 32,
-        src: 'https://images.unsplash.com/photo-1712659604528-b179a3634560?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        alt: 'Outdoor sauna exterior',
-        title: 'Exterior Design'
-      }
     ]
   },
   {
-    route: 'category/mosaic-wellness-oasis',
-    title: 'Mosaic Wellness Oasis',
-    description: 'Immerse yourself in the artistic beauty of our mosaic-tiled wellness spaces.',
+    route: 'category/elysium',
+    title: 'Elysium',
+    description: 'A luxurious sauna and shower combination, featuring black wide-plank rough pine exterior and full Obeche T&G walls with modern LED lighting.',
     images: [
       {
         id: 4,
-        src: 'https://images.unsplash.com/photo-1583417267826-aebc4d1542e1?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        alt: 'Mosaic-tiled steam room',
-        title: 'Main Mosaic Room'
+        src: elysium_1,
+        alt: 'Elysium sauna and shower combo',
+        title: 'Luxury Combo'
       },
       {
         id: 41,
-        src: 'https://images.unsplash.com/photo-1583417267826-aebc4d1542e1?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        alt: 'Mosaic detail work',
-        title: 'Artistic Details'
-      },
-      {
-        id: 42,
-        src: 'https://images.unsplash.com/photo-1583417267826-aebc4d1542e1?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        alt: 'Wellness area overview',
-        title: 'Full Oasis View'
+        src: elysium_2,
+        alt: 'Elysium shower zone',
+        title: 'Premium Shower'
       }
-    ]
+    ],
   },
   {
-    route: 'category/high-tech-infrared-sauna',
-    title: 'High-Tech Infrared Sauna',
-    description: 'Experience the future of wellness with our state-of-the-art infrared sauna technology.',
+    route: 'category/custom-saunas',
+    title: 'Custom Sauna Solutions',
+    description: 'Explore our bespoke sauna designs tailored to your unique space and preferences, from compact urban retreats to expansive wellness sanctuaries.',
     images: [
       {
         id: 5,
-        src: 'https://images.unsplash.com/photo-1712659606957-b7395ba9ebb2?q=80&w=1771&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        alt: 'Infrared sauna cabin',
-        title: 'Main Infrared Cabin'
+        src: custom_1,
+        alt: 'Custom sauna design',
+        title: 'Bespoke Design'
       },
       {
         id: 51,
-        src: 'https://images.unsplash.com/photo-1712659606957-b7395ba9ebb2?q=80&w=1771&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        alt: 'Control panel',
-        title: 'Smart Controls'
+        src: custom_2,
+        alt: 'Custom sauna interior',
+        title: 'Personalized Interior'
       },
       {
         id: 52,
-        src: 'https://images.unsplash.com/photo-1712659606957-b7395ba9ebb2?q=80&w=1771&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        alt: 'Infrared technology display',
-        title: 'Technology Features'
+        src: custom_3,
+        alt: 'Custom sauna features',
+        title: 'Unique Features'
       }
     ]
   },
   {
-    route: 'category/aromatherapy-haven',
-    title: 'Aromatherapy Haven',
-    description: 'Enhance your wellness journey with our therapeutic aromatherapy steam experiences.',
+    route: 'category/premium-ice-baths',
+    title: 'Premium Ice Baths',
+    description: 'Experience the ultimate cold therapy with our premium ice bath solutions, designed for optimal recovery and wellness benefits.',
     images: [
       {
         id: 6,
-        src: 'https://images.unsplash.com/photo-1713270176394-3f9f91f43905?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        alt: 'Aromatherapy steam room',
-        title: 'Main Aromatherapy Room'
+        src: ice_bath_1,
+        alt: 'Premium ice bath installation',
+        title: 'Luxury Ice Bath'
       },
       {
         id: 61,
-        src: 'https://images.unsplash.com/photo-1713270176394-3f9f91f43905?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        alt: 'Essential oils display',
-        title: 'Aromatherapy Selection'
-      },
-      {
-        id: 62,
-        src: 'https://images.unsplash.com/photo-1713270176394-3f9f91f43905?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        alt: 'Steam room interior',
-        title: 'Therapeutic Environment'
+        src: ice_bath_2,
+        alt: 'Ice bath features and controls',
+        title: 'Advanced Features'
       }
     ]
-  }
+  },
+  // {
+  //   route: 'category/premium-steam-rooms',
+  //   title: 'Premium Steam Rooms',
+  //   description: 'Transform your space with our high-quality steam generators and custom-designed steam rooms, featuring Nordmann technology for the ultimate wellness experience.',
+  //   images: [
+  //     {
+  //       id: 7,
+  //       src: steam_product_1,
+  //       alt: 'Nordmann Steam Generator',
+  //       title: 'Professional Steam Generator'
+  //     },
+  //     {
+  //       id: 71,
+  //       src: steam_product_2,
+  //       alt: 'Steam room installation',
+  //       title: 'Custom Installation'
+  //     },
+  //     {
+  //       id: 72,
+  //       src: 'https://images.unsplash.com/photo-1712659606957-b7395ba9ebb2?q=80&w=1771&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  //       alt: 'Luxury steam experience',
+  //       title: 'Luxury Experience'
+  //     }
+  //   ]
+  // }
 ];
 
 // Update the gallery items export to maintain consistent routing
@@ -171,5 +168,5 @@ export const galleryItems = galleryCategories.map(category => ({
   src: category.images[0].src,
   alt: category.images[0].alt,
   title: category.title,
-  route: category.route // This now includes the 'category/' prefix
+  route: category.route
 })); 

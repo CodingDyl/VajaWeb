@@ -41,6 +41,7 @@ import kaelis_2 from './product_image_sauna/kaelis/kaelis_2.jpg'
 import steam_product_1 from './steam/AT4D.webp'
 import steam_product_2 from './steam/nordTouchScreen.webp'
 import steam_product_3 from './steam/Omega.webp'
+import main_steam from './steam/main_steam.png'
 
 
 // Sauna Wood's
@@ -48,6 +49,7 @@ import clearPine from './sauna/clearPine.webp'
 import western from './sauna/western.webp'
 import thermo from './sauna/thermo.webp'
 import obeche from './sauna/obeche.webp'
+import clad_black_pine from './sauna/wood/clad_black_pine.png'
 
 // accessories
 import ergo_pine from './accessories/ergo_pine_head.webp'
@@ -76,6 +78,70 @@ import ice_bath_2 from './ice_bath/ice_bath_2.jpg'
 //sauna plans
 import aurora_plan_img from './sauna/aurora_plan_img.png'
 import elysium_plan_img from './sauna/elysium_plan_img.png'
+
+import custom_1 from './sauna/custom/custom_1.jpg'
+import custom_2 from './sauna/custom/custom_2.jpg'
+import custom_3 from './sauna/custom/custom_3.jpg'
+
+
+//gallery images
+import gal_1 from './galleryImages/gal_1.jpg'
+import gal_2 from './galleryImages/gal_2.jpg'
+import gal_3 from './galleryImages/gal_3.jpg'
+import gal_4 from './galleryImages/gal_4.jpg'
+import gal_5 from './galleryImages/gal_5.jpg'
+import gal_6 from './galleryImages/gal_6.jpg'
+import gal_7 from './galleryImages/gal_7.jpg'
+import gal_8 from './galleryImages/gal_8.jpg'
+import gal_9 from './galleryImages/gal_9.jpg'
+import gal_10 from './galleryImages/gal_10.jpg'
+import gal_11 from './galleryImages/gal_11.jpg'
+import gal_12 from './galleryImages/gal_12.jpg'
+import gal_13 from './galleryImages/gal_13.jpg'
+import gal_14 from './galleryImages/gal_14.jpg'
+import gal_15 from './galleryImages/gal_15.jpg'
+import gal_16 from './galleryImages/gal_16.jpg'
+import gal_17 from './galleryImages/gal_17.jpg'
+import gal_18 from './galleryImages/gal_18.jpg'
+import gal_19 from './galleryImages/gal_19.jpg'
+import gal_20 from './galleryImages/gal_20.jpg'
+import gal_21 from './galleryImages/gal_21.jpg'
+import gal_22 from './galleryImages/gal_22.jpg'
+import gal_23 from './galleryImages/gal_23.jpg'
+import gal_24 from './galleryImages/gal_24.jpg'
+import gal_25 from './galleryImages/gal_25.jpg'
+import gal_26 from './galleryImages/gal_26.jpg'
+import gal_27 from './galleryImages/gal_27.jpg'
+import gal_28 from './galleryImages/gal_28.jpg'
+import gal_29 from './galleryImages/gal_29.jpg'
+import gal_30 from './galleryImages/gal_30.jpg'
+import gal_31 from './galleryImages/gal_31.jpg'
+import gal_32 from './galleryImages/gal_32.jpg'
+import gal_33 from './galleryImages/gal_33.jpg'
+import gal_34 from './galleryImages/gal_34.jpg'
+import gal_35 from './galleryImages/gal_35.jpg'
+import gal_36 from './galleryImages/gal_36.jpg'
+import gal_37 from './galleryImages/gal_37.jpg'
+import gal_38 from './galleryImages/gal_38.jpg'
+import gal_39 from './galleryImages/gal_39.jpg'
+import gal_40 from './galleryImages/gal_40.jpg'
+import gal_41 from './galleryImages/gal_41.jpg'
+import gal_42 from './galleryImages/gal_42.jpg'
+import gal_43 from './galleryImages/gal_43.jpg'
+import gal_44 from './galleryImages/gal_44.jpg'
+import gal_45 from './galleryImages/gal_45.jpg'
+import gal_46 from './galleryImages/gal_46.jpg'
+import gal_47 from './galleryImages/gal_47.jpg'
+import gal_48 from './galleryImages/gal_48.jpg'
+
+
+
+
+
+
+
+
+
 
 export {
   sauna_hero,
@@ -136,4 +202,57 @@ export {
   steam_product_1,
   steam_product_2,
   steam_product_3,
+  main_steam,
+  clad_black_pine,
+  gal_1,
+  gal_2,
+  gal_3,
+  gal_4,
+  gal_5,
+  gal_6, 
+  gal_7,
+  gal_8,
+  gal_9,
+  gal_10,
+  gal_11,
+  gal_12, 
+  gal_13,
+  gal_14,
+  gal_15,
+  gal_16,
+  gal_17,
+  gal_18,
+  gal_19,
+  gal_20,
+  gal_21,
+  gal_22,
+  gal_23,
+  gal_24,
+  gal_25,
+  gal_26,
+  gal_27,
+  gal_28,
+  gal_29,
+  gal_30,
+  gal_31,
+  gal_32,
+  gal_33,
+  gal_34,
+  gal_35,
+  gal_36,
+  gal_37,
+  gal_38,
+  gal_39,
+  gal_40,
+  gal_41,
+  gal_42,
+  gal_43,
+  gal_44,
+  gal_45,
+  gal_46,
+  gal_47,
+  gal_48,
+  custom_1,
+  custom_2,
+  custom_3,
 }

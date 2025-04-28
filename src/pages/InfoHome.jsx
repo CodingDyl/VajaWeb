@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import { Button } from '@mantine/core';
 import { motion, useInView } from 'framer-motion';
-import { productImage, productImage2 } from '../assets';
+import { main_steam, productImage } from '../assets';
 import { slideIn } from '../utils/motion';
 import { Link } from 'react-router-dom';
 const ImageWithOverlay = ({ src, alt, title, direction }) => (
@@ -37,7 +37,7 @@ const InfoHome = () => {
           <ImageWithOverlay src={productImage} alt='Product' title="Our Saunas" direction="right" />
         </div>
         <div className='flex justify-center items-center'>
-          <ImageWithOverlay src={productImage2} alt='Product' title="Our Steam Rooms" direction="left" />
+          <ImageWithOverlay src={main_steam} alt='Product' title="Our Steam Rooms" direction="left" />
         </div>
         <div className='flex flex-col justify-center space-y-4'>
           <p className='text-lg md:text-2xl lg:text-3xl mt-4'><span className='text-secondary'>Luxury Saunas & Steam Rooms</span> Crafted for the Ultimate Wellness Experience.</p>

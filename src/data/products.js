@@ -1,4 +1,4 @@
-import { clearPine, western, thermo, obeche, productImage, productImage2, aurora_1, aurora_2, elysium_1, elysium_2, kaelis_1, kaelis_2, loyly_1, loyly_2 } from '../assets';
+import { clearPine, thermo, obeche, clad_black_pine, aurora_1, aurora_2, elysium_1, elysium_2, kaelis_1, kaelis_2, loyly_1, loyly_2 } from '../assets';
 
 export const products = {
   'aurora': {
@@ -74,8 +74,8 @@ export const products = {
     ],
     materials: [
         {
-            title: 'Premium Pine Wood',
-            image: clearPine
+            title: 'Clad Black Pine',
+            image: clad_black_pine
         },
         
     ],
