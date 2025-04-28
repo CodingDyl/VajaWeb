@@ -83,7 +83,8 @@ const Products = () => {
                 "Pine – Classic and versatile",
                 "Obeche – Smooth and lightweight",
                 "Western Red Cedar – Naturally aromatic",
-                "Lunawood – Thermally modified"
+                "Lunawood – Thermally modified",
+                "Oak Sauna Board – Natural and durable"
               ].map((item, index) => (
                 <motion.li
                   key={index}

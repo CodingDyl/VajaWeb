@@ -37,7 +37,10 @@ import kaelis_1 from './product_image_sauna/kaelis/kaelis_1.jpg'
 import kaelis_2 from './product_image_sauna/kaelis/kaelis_2.jpg'
 
 
-
+//steam rooms
+import steam_product_1 from './steam/AT4D.webp'
+import steam_product_2 from './steam/nordTouchScreen.webp'
+import steam_product_3 from './steam/Omega.webp'
 
 
 // Sauna Wood's
@@ -130,4 +133,7 @@ export {
   ice_bath_2,
   aurora_plan_img,
   elysium_plan_img,
+  steam_product_1,
+  steam_product_2,
+  steam_product_3,
 }

@@ -109,7 +109,7 @@ const saunaRooms = [
     image: elysium_1,
   },
   {
-    name: 'Loyly',
+    name: 'Löyly',
     slug: 'loyly',
     description: 'Meaning "heavenly" in Latin, this name conveys a sense of elegance and sophistication. Perfect for a minimalist, contemporary sauna with a refined aesthetic.',
     image: loyly_1,

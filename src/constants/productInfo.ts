@@ -78,7 +78,7 @@ export const productInfo: Record<string, ProductInfo> = {
     }
   },
   Loyly: {
-    description: "Rooted in raw beauty, Löyly channels rustic charm with its rough black-stained pine exterior. Inside, you'll find black T&G pine walls and benches, creating a bold, immersive space anchored by a wood-burning heater. A large feature window invites the outdoors in—blending fire, wood, and nature in perfect harmony.",
+    description: "Named after the Finnish word for the soothing steam that rises from sauna stones, Löyly captures the essence of authentic sauna tradition. Built with a rugged black-stained rough pine exterior and an immersive black pine interior, it offers a deeply grounding atmosphere. Inside, black pine benches and a wood-burning heater create a raw, elemental experience, while a large feature window invites nature to complete the ritual. Löyly is a celebration of fire, wood, and timeless Nordic serenity.",
     features: [
       { 
         title: 'Rustic Charm', 

@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { fadeIn, staggerContainer, slideIn } from '../../utils/motion';
 import { Navbar } from '../../components/Navbar';
@@ -6,6 +5,7 @@ import Footer from '../../components/Footer';
 import { Divider } from '@mantine/core';
 import { Link } from 'react-router-dom';
 import { IconCheck } from '@tabler/icons-react';
+import { steam_product_1, steam_product_2, steam_product_3 } from '../../assets';
 
 const SteamRooms = () => {
   return (
@@ -120,6 +120,48 @@ const SteamRooms = () => {
               ))}
             </ul>
           </motion.div>
+        </motion.div>
+
+        {/* Product Showcase */}
+        <motion.div
+          variants={fadeIn('up', 'spring', 0.6, 0.75)}
+          className="grid md:grid-cols-3 gap-8 mb-16"
+        >
+          {[
+            {
+              image: steam_product_1,
+              title: "Nordmann Steam Generator",
+              description: "Professional-grade steam generator for commercial and residential applications"
+            },
+            {
+              image: steam_product_2,
+              title: "Steam Room Installation",
+              description: "Custom-designed steam rooms with premium finishes and materials"
+            },
+            {
+              image: steam_product_3,
+              title: "Luxury Steam Experience",
+              description: "Complete steam room solutions for the ultimate wellness experience"
+            }
+          ].map((product, index) => (
+            <motion.div
+              key={index}
+              variants={slideIn('up', 'tween', 0.2 + index * 0.1, 1)}
+              className="group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 aspect-[4/3]"
+            >
+              <img
+                src={product.image}
+                alt={product.title}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                <div className="text-white">
+                  <h3 className="text-xl font-semibold mb-2">{product.title}</h3>
+                  <p className="text-white/80">{product.description}</p>
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </motion.div>
 
         <Divider className="my-16 bg-accent/20 w-1/2 mx-auto h-0.5" />
