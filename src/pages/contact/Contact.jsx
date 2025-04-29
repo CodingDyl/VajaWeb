@@ -51,10 +51,15 @@ const Contact = () => {
     setFormData(prevState => ({ ...prevState, [name]: value }));
   };
 
+  const resetForm = () => {
+    setFormData({ name: '', email: '', message: '' });
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
     setError('');
+    resetForm();
 
     try {
       await emailjs.send(
@@ -66,8 +71,6 @@ const Contact = () => {
           message: formData.message,
         }
       );
-
-      setFormData({ name: '', email: '', message: '' });
       setIsSubmitted(true);
       setTimeout(() => setIsSubmitted(false), 3000);
     } catch (error) {
