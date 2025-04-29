@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { fadeIn, slideIn, zoomIn } from '../../utils/motion';
 import { Navbar } from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaSteam } from 'react-icons/fa';
+import emailjs from '@emailjs/browser';
 
 const InputField = ({ label, type, name, value, onChange, placeholder }) => (
   <motion.div
@@ -38,18 +39,43 @@ const Contact = () => {
     message: '',
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
+
+  useEffect(() => {
+    emailjs.init("X2fstaygJ1stzvuEF");
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prevState => ({ ...prevState, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log(formData);
-    setIsSubmitted(true);
-    setTimeout(() => setIsSubmitted(false), 3000);
+    setIsLoading(true);
+    setError('');
+
+    try {
+      await emailjs.send(
+        "service_da22vjp",
+        "template_nxq94qv",
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+        }
+      );
+
+      setFormData({ name: '', email: '', message: '' });
+      setIsSubmitted(true);
+      setTimeout(() => setIsSubmitted(false), 3000);
+    } catch (error) {
+      console.error('Email send failed:', error);
+      setError('Failed to send message. Please try again later.');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -121,12 +147,22 @@ const Contact = () => {
               </motion.div>
               <motion.button
                 type="submit"
-                className="w-full bg-accent text-white px-6 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-colors duration-300"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                disabled={isLoading}
+                className="w-full bg-accent text-white px-6 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                whileHover={{ scale: isLoading ? 1 : 1.05 }}
+                whileTap={{ scale: isLoading ? 1 : 0.95 }}
               >
-                Send Message
+                {isLoading ? 'Sending...' : 'Send Message'}
               </motion.button>
+              {error && (
+                <motion.p
+                  className="mt-4 text-red-500 text-center"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                >
+                  {error}
+                </motion.p>
+              )}
             </form>
             <AnimatePresence>
               {isSubmitted && (
