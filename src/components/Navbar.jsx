@@ -10,6 +10,7 @@ import { Divider } from '@mantine/core';
 export function Navbar() {
   const [opened, { toggle }] = useDisclosure(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const [mobileActiveDropdown, setMobileActiveDropdown] = useState(null);
   const [active, setActive] = useState("");
   const [isScrolled, setIsScrolled] = useState(false);
   const [smallScreenBg, setSmallScreenBg] = useState('bg-transparent');
@@ -158,17 +159,66 @@ export function Navbar() {
       </Container>
 
       {opened && (
-        <div className="md:hidden absolute top-20 left-0 right-0 bg-accent p-4 w-full">
+        <div className="md:hidden absolute top-20 left-0 right-0 bg-accent p-4 w-full max-h-[80vh] overflow-y-auto">
           <div className="flex flex-col space-y-4">
             {navItems.map((item) => (
-              <Link
-                key={item.to}
-                to={item.to}
-                className={`block ${isScrolled ? 'text-primary hover:text-secondary' : 'text-secondary'} transition-colors duration-200 font-libre-baskerville py-2`}
-                onClick={toggle}
-              >
-                {item.label}
-              </Link>
+              <div key={item.to} className="flex flex-col">
+                <div 
+                  className="flex items-center justify-between cursor-pointer"
+                  onClick={() => {
+                    if (item.dropdown) {
+                      setMobileActiveDropdown(mobileActiveDropdown === item.to ? null : item.to);
+                    } else {
+                      toggle();
+                    }
+                  }}
+                >
+                  <Link
+                    to={item.dropdown ? "#" : item.to}
+                    onClick={(e) => {
+                      if (item.dropdown) {
+                        e.preventDefault();
+                      } else {
+                        toggle();
+                      }
+                    }}
+                    className={`block ${isScrolled ? 'text-primary hover:text-secondary' : 'text-secondary'} transition-colors duration-200 font-libre-baskerville py-2`}
+                  >
+                    {item.label}
+                  </Link>
+                  {item.dropdown && (
+                    <svg
+                      className={`w-4 h-4 text-secondary transition-transform duration-200 ${
+                        mobileActiveDropdown === item.to ? 'rotate-180' : ''
+                      }`}
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  )}
+                </div>
+                {item.dropdown && mobileActiveDropdown === item.to && (
+                  <div className="ml-4 mt-2 space-y-4">
+                    {item.dropdown.map((section, index) => (
+                      <div key={index} className="flex flex-col space-y-2">
+                        <div className="text-sm font-bold text-accent">{section.heading}</div>
+                        {section.items.map((dropdownItem) => (
+                          <Link
+                            key={dropdownItem.to}
+                            to={dropdownItem.to}
+                            className="text-sm text-white hover:text-secondary transition-colors duration-200 pl-2"
+                            onClick={toggle}
+                          >
+                            {dropdownItem.label}
+                          </Link>
+                        ))}
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
             ))}
           </div>
         </div>

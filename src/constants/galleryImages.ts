@@ -92,8 +92,8 @@ export const galleryCategories: GalleryCategory[] = [
     ],
   },
   {
-    route: 'category/custom-saunas',
-    title: 'Custom Sauna Solutions',
+    route: 'category/client-3d-renderings',
+    title: 'Client 3D Renderings',
     description: 'Explore our bespoke sauna designs tailored to your unique space and preferences, from compact urban retreats to expansive wellness sanctuaries.',
     images: [
       {
