@@ -21,6 +21,7 @@ import '@mantine/carousel/styles.css';
 import CategoryGallery from './pages/gallery/category/[slug]'
 import { ReferralForm } from './components/ReferralForm'
 import IceProductPage from './pages/products/iceBath/IceProductPage'
+import { ThreeDGallery } from './pages/gallery/ThreeDGallery'
 
 function App() {
   // const [showReferralModal, setShowReferralModal] = useState(false)
@@ -67,6 +68,7 @@ function App() {
           <Route path="/products/equipment" element={<Equipment />} />
 
           <Route path="/steam-rooms" element={<SteamRooms />} />
+          <Route path="/gallery/category/client-3d-renderings" element={<ThreeDGallery />} />
         </Routes>
 
         {/* <Modal
