@@ -1,4 +1,4 @@
-import { clearPine, thermo, obeche, clad_black_pine, aurora_1, aurora_2, elysium_1, elysium_2, kaelis_1, kaelis_2, loyly_1, loyly_2 } from '../assets';
+import { obeche, clad_black_pine, aurora_1, aurora_2, elysium_1, elysium_2, kaelis_1, kaelis_2, loyly_1, loyly_2, thermo_pine_tongue_groove, imersive_black_pine, rugged_black_stained_rough_pine, warm_pine_sauna_board } from '../assets';
 
 export const products = {
   'aurora': {
@@ -33,12 +33,8 @@ export const products = {
     ],
     materials: [
         {
-            title: 'Premium Pine Wood',
-            image: clearPine
-        },
-        {
-            title: 'Thermo Treated Poplar',
-            image: thermo
+            title: 'Warm Pine Sauna Board',
+            image: warm_pine_sauna_board
         },
         {
             title: 'Obeché Slats',
@@ -108,16 +104,12 @@ export const products = {
     ],
     materials: [
         {
-            title: 'Premium Pine Wood',
-            image: clearPine
+            title: 'Rugged Black Stained Rough Pine',
+            image: rugged_black_stained_rough_pine
         },
         {
-            title: 'Thermo Treated Poplar',
-            image: thermo
-        },
-        {
-            title: 'Obeché Slats',
-            image: obeche
+            title: 'Black Pine Interior',
+            image: imersive_black_pine
         }
     ],
     dimensions: {
@@ -149,10 +141,13 @@ export const products = {
     ],
     materials: [
         {
-            title: 'Premium Pine Wood',
-            image: clearPine
+            title: 'Thermo Pine Tongue & Groove',
+            image: thermo_pine_tongue_groove
         },
-        
+        {
+          title: 'Obeché Slats',
+          image: obeche
+        }
     ],
     dimensions: {
         width: '1400mm',

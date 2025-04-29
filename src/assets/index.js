@@ -50,6 +50,10 @@ import western from './sauna/western.webp'
 import thermo from './sauna/thermo.webp'
 import obeche from './sauna/obeche.webp'
 import clad_black_pine from './sauna/wood/clad_black_pine.png'
+import imersive_black_pine from './sauna/wood/imersive_black_pine.png'
+import rugged_black_stained_rough_pine from './sauna/wood/rugged_black_stained_rough_pine.png'
+import thermo_pine_tongue_groove from './sauna/wood/thermo_pine_tongue_groove.png'
+import warm_pine_sauna_board from './sauna/wood/warm_pine_sauna_board.png'
 
 // accessories
 import ergo_pine from './accessories/ergo_pine_head.webp'
@@ -255,4 +259,8 @@ export {
   custom_1,
   custom_2,
   custom_3,
+  imersive_black_pine,
+  rugged_black_stained_rough_pine,
+  thermo_pine_tongue_groove,
+  warm_pine_sauna_board
 }
