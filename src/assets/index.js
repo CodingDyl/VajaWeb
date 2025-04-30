@@ -64,6 +64,8 @@ import pine_stained_black from './sauna/wood/pine_stained_black.jpeg'
 import triple_shadows_pine from './sauna/wood/triple_shadows_pine.jpeg'
 import triple_shadow_thermo_pine from './sauna/wood/triple_shadow_thermo_pine.jpeg'
 import wrc_main from './sauna/wood/wrc_main.jpeg'
+import oak_sauna_board from './sauna/wood/oak_sauna_board.jpeg'
+import thermo_pine_main from './sauna/wood/thermo_pine_main.jpeg'
 
 // old accessories
 import ergo_pine from './accessories/old/ergo_pine_head.webp'
@@ -108,6 +110,8 @@ import ice_bath_2 from './ice_bath/ice_bath_2.jpg'
 //sauna plans
 import aurora_plan_img from './sauna/aurora_plan_img.png'
 import elysium_plan_img from './sauna/elysium_plan_img.png'
+import loyly_plan_img from './sauna/loyly_plan_img.png'
+import kaelis_plan_img from './sauna/kaelis_plan_img.png'
 
 import custom_1 from './sauna/custom/custom_1.jpg'
 import custom_2 from './sauna/custom/custom_2.jpg'
@@ -311,4 +315,8 @@ export {
   triple_shadows_pine,
   triple_shadow_thermo_pine,
   wrc_main,
+  oak_sauna_board,
+  thermo_pine_main,
+  loyly_plan_img,
+  kaelis_plan_img,
 }

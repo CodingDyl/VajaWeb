@@ -32,8 +32,14 @@ const heaters: HeaterInfo[] = [
   {
     id: 'harvia-heater',
     name: 'Harvia The Wall',
-    image: harvia_the_wall_e,
+    image: harvia_heater,
     description: 'Harvia The Wall Black Steel electric heater for medium-sized sauna rooms combines minimalistic Scandinavian design and user-friendly operation with top quality.',
+  },
+  {
+    id: 'harvia-wall-45e',
+    name: 'Harvia The Wall 45e',
+    image: harvia_the_wall_e,
+    description: 'Harvia The Wall 45e is a modern electric sauna heater that offers a sleek design and a compact size.',
   },
   {
     id: 'harvia-concept',

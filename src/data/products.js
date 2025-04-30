@@ -1,4 +1,4 @@
-import { lunawood, obeche_main, pine_main, triple_shadows_pine, triple_shadow_thermo_pine, obeche, pine_stained_black, aurora_1, aurora_2, elysium_1, elysium_2, kaelis_1, kaelis_2, loyly_1, loyly_2, thermo_pine_tongue_groove, imersive_black_pine, rugged_black_stained_rough_pine } from '../assets';
+import { oak_sauna_board, obeche_main, triple_shadows_pine, thermo_pine_main, triple_shadow_thermo_pine, pine_stained_black, aurora_1, aurora_2, elysium_1, elysium_2, kaelis_1, kaelis_2, loyly_1, loyly_2, thermo_pine_tongue_groove, imersive_black_pine, rugged_black_stained_rough_pine, thermo } from '../assets';
 
 export const products = {
   'aurora': {
@@ -33,16 +33,16 @@ export const products = {
     ],
     materials: [
         {
-            title: 'Warm Pine Sauna Board',
-            image: pine_main
+            title: 'Oak Sauna Board',
+            image: oak_sauna_board
         },
         {
             title: 'Obeché Slats',
             image: obeche_main
         },
         {
-            title: 'Triple Shadow Lunawood',
-            image: lunawood
+            title: 'Triple Shadow Thermo Pine',
+            image: triple_shadow_thermo_pine
         }
     ],
     dimensions: {
@@ -149,7 +149,7 @@ export const products = {
     materials: [
         {
             title: 'Thermo Pine Tongue & Groove',
-            image: thermo_pine_tongue_groove
+            image: thermo_pine_main
         },
         {
             title: 'Triple Shadow Pine',

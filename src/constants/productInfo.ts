@@ -42,13 +42,13 @@ export const productInfo: Record<string, ProductInfo> = {
       }
     ],
     dimensions: {
-      width: 1400,
-      depth: 1400,
+      width: 1800,
+      depth: 2100,
       height: 2400
     }
   },
   Aurora: {
-    description: "A bold fusion of nature and modernism, Aurora is defined by its striking black glass façade, seamlessly blending into its surroundings while standing out in style. The interior features warm pine sauna board walls, soft obeche benches, and an ambient LED strip backrest for a calming glow. The rear exterior is finished in triple-shadow Lunawood, bringing earthy contrast to its contemporary form.",
+    description: "A bold fusion of nature and modernism, Aurora is defined by its striking black glass façade, seamlessly blending into its surroundings while standing out in style. The interior features Oak Sauna Board Walls, soft obeche benches, and an ambient LED strip backrest for a calming glow. The rear exterior is finished in triple-shadow thermo pine, bringing earthy contrast to its contemporary form.",
     features: [
       { 
         title: 'Striking Facade', 
@@ -102,8 +102,8 @@ export const productInfo: Record<string, ProductInfo> = {
       }
     ],
     dimensions: {
-      width: 1400,
-      depth: 1400,
+      width: 2200,
+      depth: 2200,
       height: 2400
     }
   },

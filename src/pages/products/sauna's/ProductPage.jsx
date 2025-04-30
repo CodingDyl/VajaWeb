@@ -9,8 +9,8 @@ import { ThreeDViewer } from '../../../components/3DViewer';
 import { IconCheckbox, IconPhoto, IconTools, IconInfoCircle, IconDownload } from '@tabler/icons-react';
 import { productInfo } from '../../../constants/productInfo';
 import { productIcons } from '../../../constants/productIcons';
-import { aurora_plan, elysium_plan} from '../../../../public';
-import { aurora_plan_img, elysium_plan_img } from '../../../assets';
+import { aurora_plan, elysium_plan, loyly_plan, kaelis_plan } from '../../../../public';
+import { aurora_plan_img, elysium_plan_img, loyly_plan_img, kaelis_plan_img } from '../../../assets';
 
 const ProductPage = ({ products }) => {
   const { productSlug } = useParams();
@@ -324,14 +324,50 @@ const ProductPage = ({ products }) => {
                       </a>
                     </motion.div>
                   )}
-                  {product?.name !== 'Aurora' && product?.name !== 'Elysium' && (
+                  {product?.name === 'Loyly' && (
                     <motion.div
                       variants={fadeIn('up', 'spring', 0.1, 0.75)}
                       className="p-8 rounded-xl backdrop-blur-md bg-white/5 border border-white/10 shadow-lg hover:bg-white/10 transition-all duration-300 text-center"
                     >
-                      <h3 className="text-2xl font-semibold text-secondary mb-6">Plans</h3>
-                      <p className="text-gray-600 mb-6">Currently, there are no plans available for download for this product.</p>
-                      <p className="text-gray-500 text-sm">Please check back later or contact us for more information.</p>
+                      <h3 className="text-2xl font-semibold text-secondary mb-6">Loyly Plans</h3>
+                      <div className="mb-6">
+                        <img 
+                          src={loyly_plan_img} 
+                          alt="Loyly Plan Preview" 
+                          className="w-full h-auto rounded-lg shadow-lg"
+                        />
+                      </div>
+                      <a
+                        href={loyly_plan}
+                        download="loyly_plan.pdf"
+                        className="inline-flex items-center gap-2 bg-accent hover:bg-accent/90 text-white px-8 py-4 rounded-full font-semibold transition-colors"
+                      >
+                        <IconDownload className="w-5 h-5" />
+                        Download Plans
+                      </a>
+                    </motion.div>
+                  )}
+                  {product?.name === 'Kaelis' && (
+                    <motion.div
+                      variants={fadeIn('up', 'spring', 0.1, 0.75)}
+                      className="p-8 rounded-xl backdrop-blur-md bg-white/5 border border-white/10 shadow-lg hover:bg-white/10 transition-all duration-300 text-center"
+                    > 
+                      <h3 className="text-2xl font-semibold text-secondary mb-6">Kaelis Plans</h3>
+                      <div className="mb-6">
+                        <img 
+                          src={kaelis_plan_img} 
+                          alt="Kaelis Plan Preview" 
+                          className="w-full h-auto rounded-lg shadow-lg"
+                        />
+                      </div>
+                      <a
+                        href={kaelis_plan}
+                        download="kaelis_plan.pdf"
+                        className="inline-flex items-center gap-2 bg-accent hover:bg-accent/90 text-white px-8 py-4 rounded-full font-semibold transition-colors"
+                      >
+                        <IconDownload className="w-5 h-5" />
+                        Download Plans
+                      </a>
                     </motion.div>
                   )}
                 </div>
