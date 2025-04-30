@@ -108,7 +108,7 @@ export const productInfo: Record<string, ProductInfo> = {
     }
   },
   Elysium: {
-    description: "A sanctuary in every sense—Elysium is our signature sauna + shower combo. Clad in black wide-plank rough pine, it opens to a serene interior of full Obeche T&G walls, matching benches, and a soft LED strip that adds a modern glow. The adjacent shower zone is lined with Accoya timber, blending seamlessly into the warm, light-toned interior for a luxurious, cohesive finish.",
+    description: "A sanctuary in every sense—Elysium is our signature sauna + shower combo. Clad in black wide-plank rough pine, it opens to a serene interior of full Obeche T&G walls, matching benches, and a soft LED strip that adds a modern glow. The adjacent shower zone is lined with White Washed Garapa Timber, blending seamlessly into the warm, light-toned interior for a luxurious, cohesive finish.",
     features: [
       { 
         title: 'Luxury Combo', 

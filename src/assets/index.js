@@ -55,6 +55,16 @@ import rugged_black_stained_rough_pine from './sauna/wood/rugged_black_stained_r
 import thermo_pine_tongue_groove from './sauna/wood/thermo_pine_tongue_groove.png'
 import warm_pine_sauna_board from './sauna/wood/warm_pine_sauna_board.png'
 
+//new wood
+import japanese_cedar from './sauna/wood/japanese_cedar.jpeg'
+import lunawood from './sauna/wood/lunawood.jpeg'
+import obeche_main from './sauna/wood/obeche_main.jpeg'
+import pine_main from './sauna/wood/pine_main.jpeg'
+import pine_stained_black from './sauna/wood/pine_stained_black.jpeg'
+import triple_shadows_pine from './sauna/wood/triple_shadows_pine.jpeg'
+import triple_shadow_thermo_pine from './sauna/wood/triple_shadow_thermo_pine.jpeg'
+import wrc_main from './sauna/wood/wrc_main.jpeg'
+
 // old accessories
 import ergo_pine from './accessories/old/ergo_pine_head.webp'
 import pine_bucket from './accessories/old/pine_bucket.webp'
@@ -71,6 +81,11 @@ import harvia_sauna_set from './accessories/new/harvia_sauna_set.png'
 import black_sandtimer from './accessories/new/black_sandtimer.png'
 import harvia_cilindro from './accessories/new/harvia_cilindro.png'
 import harvia_concept from './accessories/new/harvia_concept.jpg'
+import harvia_cube from './accessories/new/harvia_cube.png'
+import harvia_ladle from './accessories/new/harvia_ladle.png'
+import harvia_the_wall_e from './accessories/new/harvia_the_wall_e.png'
+import harvia_thermometer from './accessories/new/harvia_thermometer.png'
+import harvia_wave_neckrest from './accessories/new/harvia_wave_neckrest.png'
 import thermometer from './accessories/new/thermometer.png'
 import WRC_sandtimer from './accessories/new/WRC_sandtimer.png'
 import WRC from './accessories/new/WRC.png'
@@ -283,4 +298,17 @@ export {
   WRC_sandtimer,
   WRC,
   WRC2,
+  harvia_cube,
+  harvia_ladle,
+  harvia_the_wall_e,
+  harvia_thermometer,
+  harvia_wave_neckrest,
+  japanese_cedar,
+  lunawood,
+  obeche_main,
+  pine_main,
+  pine_stained_black,
+  triple_shadows_pine,
+  triple_shadow_thermo_pine,
+  wrc_main,
 }

@@ -17,6 +17,8 @@ import {
   harvia_m3,
   harvia_sauna_set,
   harvia_heater,
+  harvia_cube,
+  harvia_the_wall_e,
 } from '../../../assets';
 
 interface HeaterInfo {
@@ -30,20 +32,20 @@ const heaters: HeaterInfo[] = [
   {
     id: 'harvia-heater',
     name: 'Harvia The Wall',
-    image: harvia_heater,
+    image: harvia_the_wall_e,
     description: 'Harvia The Wall Black Steel electric heater for medium-sized sauna rooms combines minimalistic Scandinavian design and user-friendly operation with top quality.',
   },
   {
-    id: 'harvia-wall-e',
-    name: 'Harvia Wall W45E',
+    id: 'harvia-concept',
+    name: 'Harvia Concept',
     image: harvia_concept,
-    description: 'Wall-mounted electric sauna heater with digital controls',
+    description: 'Harvia Concept is a modern electric sauna heater that offers a sleek design and a compact size.',
   },
   {
-    id: 'harvia-sauna-set',
-    name: 'Harvia Sauna Set',
-    image: harvia_sauna_set,
-    description: 'Set of Sauna Accessories',
+    id: 'harvia-cube',
+    name: 'Harvia Cube',
+    image: harvia_cube,
+    description: 'Harvia Cube is a modern electric sauna heater that offers a sleek design and a compact size.',
   },
   {
     id: 'harvia-cilindro',

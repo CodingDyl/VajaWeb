@@ -10,6 +10,10 @@ import {
   WRC_sandtimer,
   WRC,
   WRC2,
+  harvia_sauna_set,
+  harvia_ladle,
+  harvia_wave_neckrest,
+  harvia_thermometer,
 } from '../../../assets';
 
 interface AccessoryItem {
@@ -43,6 +47,26 @@ const accessories: AccessoryItem[] = [
     name: "Western Red Cedar Spoon",
     description: "Western Red Cedar spoon",
     image: WRC2,
+  },
+  {
+    name: "Harvia Sauna Set",
+    description: "Harvia Sauna Set",
+    image: harvia_sauna_set,
+  },
+  {
+    name: "Harvia Ladle",
+    description: "Harvia Ladle",
+    image: harvia_ladle,
+  },
+  {
+    name: "Harvia Wave Neckrest",
+    description: "Harvia Wave Neckrest",
+    image: harvia_wave_neckrest,
+  },
+  {
+    name: "Harvia Thermometer",
+    description: "Harvia Thermometer",
+    image: harvia_thermometer,
   },
 ];
 
