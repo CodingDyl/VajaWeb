@@ -128,7 +128,7 @@ const iceBaths = [
     name: 'Premium Ice Bath',
     slug: 'premium-ice-bath',
     description: 'Experience the ultimate in cold therapy with our Premium Ice Bath. Designed for optimal recovery and performance, this state-of-the-art ice bath combines advanced technology with elegant design.',
-    productTitle: 'Professional Cold Therapy Solution by Renisis',
+    productTitle: 'Professional Cold Therapy Solution by Renesis',
     images: [ice_bath_2, ice_bath_1],
     features: [
       {

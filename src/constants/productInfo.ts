@@ -78,7 +78,7 @@ export const productInfo: Record<string, ProductInfo> = {
     }
   },
   Loyly: {
-    description: "Named after the Finnish word for the soothing steam that rises from sauna stones, Löyly captures the essence of authentic sauna tradition. Built with a Rugged Black-stained Rough Pine exterior and an Immersive Black Pine interior, it offers a deeply grounding atmosphere. Inside, black pine benches and a wood-burning heater create a raw, elemental experience, while a large feature window invites nature to complete the ritual. Löyly is a celebration of fire, wood, and timeless Nordic serenity.",
+    description: "Named after the Finnish word for the soothing steam that rises from sauna stones, Löyly captures the essence of authentic sauna tradition. Built with a Rugged Black-stained Rough Pine exterior and an Immersive Black Pine interior, it offers a deeply grounding atmosphere. Inside, Black Pine Benches and a wood-burning heater create a raw, elemental experience, while a large feature window invites nature to complete the ritual. Löyly is a celebration of fire, wood, and timeless Nordic serenity.",
     features: [
       { 
         title: 'Rustic Charm', 

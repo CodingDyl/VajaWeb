@@ -74,7 +74,7 @@ export const products = {
     ],
     materials: [
         {
-            title: 'Clad Black Pine',
+            title: 'Black Pine Tongue & Groove',
             image: pine_stained_black
         },
         {

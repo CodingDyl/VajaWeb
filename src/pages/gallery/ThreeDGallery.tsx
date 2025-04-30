@@ -29,14 +29,14 @@ const threeDRenderings: ThreeDRender[] = [
     id: 'hPRhY',
     title: 'Private Estate Wellness Center',
     embedUrl: 'https://kuula.co/share/hPRhY?logo=-1&info=0&fs=1&vr=1&initload=0&thumbs=1&margin=30',
-    description: 'A bespoke dual-room sauna complex built for a private estate, combining traditional Finnish and infrared technologies'
+    description: 'A bespoke dual-room sauna complex built for a private estate, combining traditional Finnish technologies'
   },
-  {
-    id: 'hY176',
-    title: 'Urban Apartment Sauna Solution',
-    embedUrl: 'https://kuula.co/share/hY176?logo=-1&info=0&fs=1&vr=1&initload=0&thumbs=1&margin=30',
-    description: 'Compact yet luxurious sauna designed for our client\'s city apartment, maximizing space while delivering premium features'
-  },
+  // {
+  //   id: 'hY176',
+  //   title: 'Urban Apartment Sauna Solution',
+  //   embedUrl: 'https://kuula.co/share/hY176?logo=-1&info=0&fs=1&vr=1&initload=0&thumbs=1&margin=30',
+  //   description: 'Compact yet luxurious sauna designed for our client\'s city apartment, maximizing space while delivering premium features'
+  // },
   {
     id: 'hY1cq',
     title: 'Eco-Resort Wellness Facility',
