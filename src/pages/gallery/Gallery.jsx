@@ -57,7 +57,7 @@ const AnimatedButton = () => (
       viewport={{ once: true, amount: 0.25 }}
     >
       <motion.button
-        className="px-8 py-3 bg-accent text-white rounded-full font-semibold text-lg shadow-lg hover:bg-opacity-90 transition-colors duration-300"
+        className="hidden md:block px-8 py-3 bg-accent text-white rounded-full font-semibold text-lg shadow-lg hover:bg-opacity-90 transition-colors duration-300"
         variants={zoomIn(0.2, 0.5)}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
@@ -73,6 +73,9 @@ const Gallery = () => {
     gal_1, gal_2, gal_3, gal_4, gal_5, gal_6, gal_7, gal_8, gal_9, gal_10,
     gal_11, gal_12, gal_13, gal_14, gal_15, gal_16, gal_17, gal_18, gal_19, gal_20,
   ];
+
+  // Create a mobile-optimized array with fewer images
+  const mobileImages = standaloneImages.slice(0, 8);
 
   return (
     <div className="min-h-screen bg-primary">
@@ -106,15 +109,18 @@ const Gallery = () => {
 
         <motion.h2
           variants={fadeIn('down', 'spring', 0.2, 0.75)}
-          className="text-3xl font-bold text-accent mb-8 text-center"
+          className="hidden md:block text-3xl font-bold text-accent mb-8 text-center"
         >
           More Inspirational Spaces
         </motion.h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {standaloneImages.map((src, index) => (
-            <StandaloneGalleryImage key={index} src={src} index={index} />
-          ))}
+        {/* Desktop view - hidden on mobile */}
+        <div className="hidden md:block">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {standaloneImages.map((src, index) => (
+              <StandaloneGalleryImage key={index} src={src} index={index} />
+            ))}
+          </div>
         </div>
 
         <AnimatedButton />
