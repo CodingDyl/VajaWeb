@@ -55,15 +55,26 @@ import rugged_black_stained_rough_pine from './sauna/wood/rugged_black_stained_r
 import thermo_pine_tongue_groove from './sauna/wood/thermo_pine_tongue_groove.png'
 import warm_pine_sauna_board from './sauna/wood/warm_pine_sauna_board.png'
 
-// accessories
-import ergo_pine from './accessories/ergo_pine_head.webp'
-import pine_bucket from './accessories/pine_bucket.webp'
-import pine_head from './accessories/pine_head.webp'
-import pine_sandtimer from './accessories/pine_sandtimer.webp'
-import red_cedar_bucket from './accessories/red_cedar_bucket.webp'
-import red_cedar_head from './accessories/red_cedar_head.webp'
-import red_cedar_sandtimer from './accessories/red_cedar_sandtimer.webp'
-import thermometer from './accessories/Thermometer.webp'
+// old accessories
+import ergo_pine from './accessories/old/ergo_pine_head.webp'
+import pine_bucket from './accessories/old/pine_bucket.webp'
+import pine_head from './accessories/old/pine_head.webp'
+import pine_sandtimer from './accessories/old/pine_sandtimer.webp'
+import red_cedar_bucket from './accessories/old/red_cedar_bucket.webp'
+import red_cedar_head from './accessories/old/red_cedar_head.webp'
+import red_cedar_sandtimer from './accessories/old/red_cedar_sandtimer.webp'
+
+// new accessories
+import harvia_heater from './accessories/new/harvia_heater.png'
+import harvia_m3 from './accessories/new/harvia_m3.png'
+import harvia_sauna_set from './accessories/new/harvia_sauna_set.png'
+import black_sandtimer from './accessories/new/black_sandtimer.png'
+import harvia_cilindro from './accessories/new/harvia_cilindro.png'
+import harvia_concept from './accessories/new/harvia_concept.jpg'
+import thermometer from './accessories/new/thermometer.png'
+import WRC_sandtimer from './accessories/new/WRC_sandtimer.png'
+import WRC from './accessories/new/WRC.png'
+import WRC2 from './accessories/new/WRC2.png'
 
 //equipment
 import cilindro from './equipment/Harvia_Cilindro.webp'
@@ -262,5 +273,14 @@ export {
   imersive_black_pine,
   rugged_black_stained_rough_pine,
   thermo_pine_tongue_groove,
-  warm_pine_sauna_board
+  warm_pine_sauna_board,
+  harvia_heater,
+  harvia_m3,
+  harvia_sauna_set,
+  black_sandtimer,
+  harvia_cilindro,
+  harvia_concept, 
+  WRC_sandtimer,
+  WRC,
+  WRC2,
 }

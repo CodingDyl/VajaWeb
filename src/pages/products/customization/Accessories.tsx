@@ -5,14 +5,11 @@ import { Navbar } from '../../../components/Navbar';
 import Footer from '../../../components/Footer';
 import { Divider } from '@mantine/core';
 import {
-  ergo_pine,
-  pine_bucket,
-  pine_head,
-  pine_sandtimer,
-  red_cedar_bucket,
-  red_cedar_head,
-  red_cedar_sandtimer,
   thermometer,
+  black_sandtimer,
+  WRC_sandtimer,
+  WRC,
+  WRC2,
 } from '../../../assets';
 
 interface AccessoryItem {
@@ -23,14 +20,14 @@ interface AccessoryItem {
 
 const accessories: AccessoryItem[] = [
   {
-    name: "Western Red Cedar Sand Timer",
-    description: "A stylish 15-minute sand timer crafted from solid Western Red Cedar timber",
-    image: red_cedar_sandtimer,
+    name: "Black Sand Timer",
+    description: "A stylish 15-minute sand timer",
+    image: black_sandtimer,
   },
   {
-    name: "Western Red Cedar Bucket & Ladle",
-    description: "3L Western Red Cedar bucket with plastic insert and matching ladle",
-    image: red_cedar_bucket,
+    name: "Western Red Cedar Sand Timer",
+    description: "A stylish 15-minute sand timer crafted from solid Western Red Cedar timber",
+    image: WRC_sandtimer,
   },
   {
     name: "Thermometer / Hydrometer",
@@ -38,29 +35,14 @@ const accessories: AccessoryItem[] = [
     image: thermometer,
   },
   {
-    name: "Red Cedar Headrest",
-    description: "Ergonomic headrest crafted from premium Western Red Cedar",
-    image: red_cedar_head,
+    name: "Red Cedar Bucket",
+    description: "3L Western Red Cedar bucket with plastic insert and matching ladle",
+    image: WRC,
   },
   {
-    name: "Pine Sand Timer",
-    description: "Elegant 15-minute sand timer made from solid Pine timber",
-    image: pine_sandtimer,
-  },
-  {
-    name: "Pine Bucket & Ladle",
-    description: "3L Pine bucket with plastic insert and matching ladle",
-    image: pine_bucket,
-  },
-  {
-    name: "Ergo Pine Headrest",
-    description: "Ergonomically designed headrest made from quality Pine",
-    image: ergo_pine,
-  },
-  {
-    name: "Pine Headrest",
-    description: "Classic design headrest crafted from Pine wood",
-    image: pine_head,
+    name: "Western Red Cedar Spoon",
+    description: "Western Red Cedar spoon",
+    image: WRC2,
   },
 ];
 
@@ -69,11 +51,11 @@ const AccessoryCard: React.FC<{ item: AccessoryItem; index: number }> = ({ item,
     variants={fadeIn('up', 'spring', index * 0.2, 0.75)}
     className="bg-white rounded-lg shadow-xl overflow-hidden transform transition-all duration-300 hover:shadow-2xl"
   >
-    <div className="h-64 relative overflow-hidden">
+    <div className="aspect-square relative overflow-hidden">
       <img
         src={item.image}
         alt={item.name}
-        className="w-full h-full object-cover transform transition-transform duration-300 hover:scale-105"
+        className="absolute inset-0 w-full h-full object-contain p-4 transform transition-transform duration-300 hover:scale-105"
       />
     </div>
     <div className="p-6">

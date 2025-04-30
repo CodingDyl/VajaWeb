@@ -12,6 +12,11 @@ import {
   harviae,
   modulo_m,
   virta,
+  harvia_cilindro,
+  harvia_concept,
+  harvia_m3,
+  harvia_sauna_set,
+  harvia_heater,
 } from '../../../assets';
 
 interface HeaterInfo {
@@ -23,33 +28,33 @@ interface HeaterInfo {
 
 const heaters: HeaterInfo[] = [
   {
-    id: 'harvia-wall',
-    name: 'Harvia Wall W45',
-    image: harvia,
-    description: 'Wall-mounted electric sauna heater',
+    id: 'harvia-heater',
+    name: 'Harvia The Wall',
+    image: harvia_heater,
+    description: 'Harvia The Wall Black Steel electric heater for medium-sized sauna rooms combines minimalistic Scandinavian design and user-friendly operation with top quality.',
   },
   {
     id: 'harvia-wall-e',
     name: 'Harvia Wall W45E',
-    image: harviae,
+    image: harvia_concept,
     description: 'Wall-mounted electric sauna heater with digital controls',
   },
   {
-    id: 'harvia-glow',
-    name: 'Harvia Glow',
-    image: modulo,
-    description: 'Available in 7kw & 9kw configurations',
+    id: 'harvia-sauna-set',
+    name: 'Harvia Sauna Set',
+    image: harvia_sauna_set,
+    description: 'Set of Sauna Accessories',
   },
   {
-    id: 'harvia-modulo',
-    name: 'Harvia Modulo',
-    image: modulo_m,
-    description: 'High-capacity heater available in 13.5kw & 18kw',
+    id: 'harvia-cilindro',
+    name: 'Harvia Cilindro',
+    image: harvia_cilindro,
+    description: 'The Harvia Cilindro Black Steel pillar heaters are stylish electric heaters ideal for many needs.',
   },
   {
     id: 'harvia-m3',
     name: 'Harvia M3',
-    image: m3,
+    image: harvia_m3,
     description: 'Traditional wood burning sauna heater',
   },
 ];
