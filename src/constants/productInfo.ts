@@ -22,12 +22,12 @@ export const productInfo: Record<string, ProductInfo> = {
     features: [
       { 
         title: 'Premium Materials', 
-        description: 'Exterior crafted from thermo pine tongue-and-groove with a clean, minimalist triple pine interior',
+        description: 'Exterior crafted from Thermo Pine Tongue & Groove with a clean, minimalist Triple Pine Interior',
         icon: 'wood'
       },
       { 
         title: 'Comfortable Seating', 
-        description: 'Premium obeche wood seating with smooth, splinter-free finish for elevated comfort',
+        description: 'Premium Obeche Wood seating with smooth, splinter-free finish for elevated comfort',
         icon: 'armchair'
       },
       { 
@@ -57,7 +57,7 @@ export const productInfo: Record<string, ProductInfo> = {
       },
       { 
         title: 'Premium Interior', 
-        description: 'Warm pine sauna board walls with soft obeche benches for ultimate comfort',
+        description: 'Oak Sauna Board Walls with soft Obeche Benches for ultimate comfort',
         icon: 'home'
       },
       { 
@@ -67,7 +67,7 @@ export const productInfo: Record<string, ProductInfo> = {
       },
       { 
         title: 'Natural Contrast', 
-        description: 'Triple-shadow Lunawood rear exterior creating an earthy contrast to the modern design',
+        description: 'Triple-shadow Thermo Pine rear exterior creating an earthy contrast to the modern design',
         icon: 'trees'
       }
     ],
@@ -127,7 +127,7 @@ export const productInfo: Record<string, ProductInfo> = {
       },
       { 
         title: 'Luxurious Finish', 
-        description: 'Accoya timber shower zone seamlessly blending with the warm, light-toned interior',
+        description: 'White Washed Garapa Timber shower zone seamlessly blending with the warm, light-toned interior',
         icon: 'building'
       }
     ],
