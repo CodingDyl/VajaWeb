@@ -33,7 +33,7 @@ const heaters: HeaterInfo[] = [
     id: 'harvia-heater',
     name: 'Harvia The Wall',
     image: harvia_heater,
-    description: 'Harvia The Wall Black Steel electric heater for medium-sized sauna rooms combines minimalistic Scandinavian design and user-friendly operation with top quality.',
+    description: 'Harvia The Wall Black Steel electric heater for small to medium-sized sauna rooms combines minimalistic Scandinavian design and user-friendly operation with top quality.',
   },
   {
     id: 'harvia-wall-45e',

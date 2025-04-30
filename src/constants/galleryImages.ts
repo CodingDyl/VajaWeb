@@ -1,4 +1,4 @@
-import { kaelis_1, aurora_1, loyly_1, elysium_1, ice_bath_1, steam_product_1, kaelis_2, aurora_2, loyly_2, elysium_2, ice_bath_2, steam_product_2, custom_2, custom_1, custom_3 } from "../assets";
+import { kaelis_1, aurora_1, loyly_1, elysium_1, ice_bath_1, steam_product_1, kaelis_2, aurora_2, loyly_2, elysium_2, ice_bath_2, steam_product_2, custom_2, custom_1, custom_3, sauna_hero } from "../assets";
 
 interface GalleryImage {
   id: number;
@@ -98,7 +98,7 @@ export const galleryCategories: GalleryCategory[] = [
     images: [
       {
         id: 5,
-        src: custom_1,
+        src: sauna_hero,
         alt: 'Custom sauna design',
         title: 'Bespoke Design'
       },

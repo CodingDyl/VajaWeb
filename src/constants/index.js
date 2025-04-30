@@ -128,7 +128,7 @@ const iceBaths = [
     name: 'Premium Ice Bath',
     slug: 'premium-ice-bath',
     description: 'Experience the ultimate in cold therapy with our Premium Ice Bath. Designed for optimal recovery and performance, this state-of-the-art ice bath combines advanced technology with elegant design.',
-    productTitle: 'Professional Cold Therapy Solution',
+    productTitle: 'Professional Cold Therapy Solution by Renisis',
     images: [ice_bath_2, ice_bath_1],
     features: [
       {
@@ -202,11 +202,11 @@ const iceBaths = [
     considerations: [
       {
         title: 'Access',
-        description: 'When planning the placement of your ice bath, be sure to account for its width and length to avoid any obstacles, such as narrow doorways, sharp corners, or steep staircases. If you\'re unsure about access, we recommend sending us a video showing the path from curb side to the intended placement area. This allows us to assist with any concerns.'
+        description: 'When planning the placement of your ice bath, account for its width and length to avoid obstacles like narrow doorways, sharp corners, or steep staircases. If you\'re unsure about access, we recommend sending us a video showing the path from curbside to the intended placement area. This allows us to assist with any concerns.'
       },
       {
         title: 'Electrical Connection',
-        description: 'Plug the ice bath directly into a dedicated 220V outlet. For outdoor setups, ensure a weather-proof power source is installed near the tub location. Avoid using extension cords. Position the electrical connection at a safe distance from the bath to prevent any water from reaching the outlet.'
+        description: 'Plug the ice bath directly into a dedicated 220V outlet. For outdoor setups, ensure a weatherproof power source is installed near the tub location. Avoid using extension cords. Position the electrical connection at a safe distance from the bath to prevent any water from reaching the outlet.'
       },
       {
         title: 'Airflow',

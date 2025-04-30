@@ -18,7 +18,7 @@ export interface ProductInfo {
 
 export const productInfo: Record<string, ProductInfo> = {
   Kaelis: {
-    description: "A refined balance of warmth and modern design, Kaelis features a striking exterior of thermo pine tongue-and-groove, paired with a clean, minimalist triple pine interior. The seating is crafted from premium obeche wood, chosen for its smooth, splinter-free finish and cool touch — ideal for elevated comfort and everyday rituals.",
+    description: "A refined balance of warmth and modern design, Kaelis features a striking exterior of Thermo Pine Tongue & Groove, paired with a clean, minimalist Triple Pine Interior. The seating is crafted from premium Obeche Wood, chosen for its smooth, splinter-free finish and cool touch — ideal for elevated comfort and everyday rituals.",
     features: [
       { 
         title: 'Premium Materials', 
@@ -48,7 +48,7 @@ export const productInfo: Record<string, ProductInfo> = {
     }
   },
   Aurora: {
-    description: "A bold fusion of nature and modernism, Aurora is defined by its striking black glass façade, seamlessly blending into its surroundings while standing out in style. The interior features Oak Sauna Board Walls, soft obeche benches, and an ambient LED strip backrest for a calming glow. The rear exterior is finished in triple-shadow thermo pine, bringing earthy contrast to its contemporary form.",
+    description: "A bold fusion of nature and modernism, Aurora is defined by its striking black glass façade, seamlessly blending into its surroundings while standing out in style. The interior features Oak Sauna Board Walls, soft Obeche Benches, and an ambient LED strip backrest for a calming glow. The rear exterior is finished in Triple-shadow Thermo Pine, bringing earthy contrast to its contemporary form.",
     features: [
       { 
         title: 'Striking Facade', 
@@ -78,7 +78,7 @@ export const productInfo: Record<string, ProductInfo> = {
     }
   },
   Loyly: {
-    description: "Named after the Finnish word for the soothing steam that rises from sauna stones, Löyly captures the essence of authentic sauna tradition. Built with a rugged black-stained rough pine exterior and an immersive black pine interior, it offers a deeply grounding atmosphere. Inside, black pine benches and a wood-burning heater create a raw, elemental experience, while a large feature window invites nature to complete the ritual. Löyly is a celebration of fire, wood, and timeless Nordic serenity.",
+    description: "Named after the Finnish word for the soothing steam that rises from sauna stones, Löyly captures the essence of authentic sauna tradition. Built with a Rugged Black-stained Rough Pine exterior and an Immersive Black Pine interior, it offers a deeply grounding atmosphere. Inside, black pine benches and a wood-burning heater create a raw, elemental experience, while a large feature window invites nature to complete the ritual. Löyly is a celebration of fire, wood, and timeless Nordic serenity.",
     features: [
       { 
         title: 'Rustic Charm', 
@@ -108,7 +108,7 @@ export const productInfo: Record<string, ProductInfo> = {
     }
   },
   Elysium: {
-    description: "A sanctuary in every sense—Elysium is our signature sauna + shower combo. Clad in black wide-plank rough pine, it opens to a serene interior of full Obeche T&G walls, matching benches, and a soft LED strip that adds a modern glow. The adjacent shower zone is lined with White Washed Garapa Timber, blending seamlessly into the warm, light-toned interior for a luxurious, cohesive finish.",
+    description: "A sanctuary in every sense—Elysium is our signature Sauna + Shower Combo. Clad in Black Wide-plank Rough Pine, it opens to a serene interior of full Obeche T&G walls, matching benches, and a soft LED strip that adds a modern glow. The adjacent shower zone is lined with White Washed Garapa Timber, blending seamlessly into the warm, light-toned interior for a luxurious, cohesive finish.",
     features: [
       { 
         title: 'Luxury Combo', 
@@ -117,7 +117,7 @@ export const productInfo: Record<string, ProductInfo> = {
       },
       { 
         title: 'Premium Materials', 
-        description: 'Black wide-plank rough pine exterior with full Obeche T&G walls and matching benches',
+        description: 'Black Wide-plank Rough Pine exterior with full Obeche T&G walls and matching benches',
         icon: 'tools'
       },
       { 
