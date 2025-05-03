@@ -37,6 +37,7 @@ const Contact = () => {
     name: '',
     email: '',
     message: '',
+    mobile: '',
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -52,7 +53,7 @@ const Contact = () => {
   };
 
   const resetForm = () => {
-    setFormData({ name: '', email: '', message: '' });
+    setFormData({ name: '', email: '', message: '', mobile: '' });
   };
 
   const handleSubmit = async (e) => {
@@ -69,6 +70,7 @@ const Contact = () => {
           from_name: formData.name,
           from_email: formData.email,
           message: formData.message,
+          mobile: formData.mobile,
         }
       );
       setIsSubmitted(true);
@@ -124,6 +126,14 @@ const Contact = () => {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="your.email@example.com"
+              />
+              <InputField
+                label="Mobile Number"
+                type="tel"
+                name="mobile"
+                value={formData.mobile}
+                onChange={handleChange}
+                placeholder="+27 12 345 6789"
               />
               <motion.div
                 className="mb-6 relative"
