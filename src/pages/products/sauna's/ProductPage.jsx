@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { fadeIn, staggerContainer } from '../../../utils/motion';
 import { Navbar } from '../../../components/Navbar';
@@ -16,10 +16,40 @@ const ProductPage = ({ products }) => {
   const { productSlug } = useParams();
   const product = products[productSlug];
   const [activeImage, setActiveImage] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
+  const [loadedImages, setLoadedImages] = useState({});
+
+  useEffect(() => {
+    setIsLoading(true);
+    setLoadedImages({});
+    
+    // Preload all product images
+    if (product?.images) {
+      product.images.forEach((img, index) => {
+        const image = new Image();
+        image.src = img;
+        image.onload = () => {
+          setLoadedImages(prev => ({ ...prev, [index]: true }));
+          if (index === 0) setIsLoading(false);
+        };
+      });
+    }
+  }, [productSlug, product?.images]);
 
   if (!product) {
     return <Navigate to="/products" replace />;
   }
+
+  const ImageSkeleton = () => (
+    <div className="animate-pulse">
+      <div className="aspect-square bg-gray-200 rounded-2xl" />
+      <div className="grid grid-cols-4 gap-4 mt-4">
+        {[...Array(4)].map((_, i) => (
+          <div key={i} className="aspect-square bg-gray-200 rounded-lg" />
+        ))}
+      </div>
+    </div>
+  );
 
   return (
     <div className="min-h-screen bg-primary">
@@ -38,30 +68,40 @@ const ProductPage = ({ products }) => {
             variants={fadeIn('right', 'spring', 0.2, 0.75)}
             className="relative"
           >
-            <div className="aspect-square overflow-hidden rounded-2xl">
-              <img 
-                src={product?.images[activeImage]}
-                alt={product?.name}
-                className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-              />
-            </div>
-            <div className="grid grid-cols-4 gap-4 mt-4">
-              {product?.images.map((img, index) => (
-                <div 
-                  key={index}
-                  onClick={() => setActiveImage(index)}
-                  className={`cursor-pointer rounded-lg overflow-hidden border-2 ${
-                    activeImage === index ? 'border-accent' : 'border-transparent'
-                  }`}
-                >
+            {isLoading ? (
+              <ImageSkeleton />
+            ) : (
+              <>
+                <div className="aspect-square overflow-hidden rounded-2xl">
                   <img 
-                    src={img} 
-                    alt={`${product?.name} view ${index + 1}`}
-                    className="w-full h-full object-cover"
+                    src={product?.images[activeImage]}
+                    alt={product?.name}
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                    loading="eager"
+                    decoding="async"
                   />
                 </div>
-              ))}
-            </div>
+                <div className="grid grid-cols-4 gap-4 mt-4">
+                  {product?.images.map((img, index) => (
+                    <div 
+                      key={index}
+                      onClick={() => setActiveImage(index)}
+                      className={`cursor-pointer rounded-lg overflow-hidden border-2 ${
+                        activeImage === index ? 'border-accent' : 'border-transparent'
+                      }`}
+                    >
+                      <img 
+                        src={img} 
+                        alt={`${product?.name} view ${index + 1}`}
+                        className="w-full h-full object-cover"
+                        loading={index === 0 ? "eager" : "lazy"}
+                        decoding="async"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </>
+            )}
           </motion.div>
 
           {/* Product Info */}
