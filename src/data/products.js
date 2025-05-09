@@ -4,7 +4,7 @@ export const products = {
   'aurora': {
     name: 'Aurora',
     slug: 'aurora',
-    description: 'Inspired by the breathtaking Northern Lights, this name evokes serenity, warmth, and natural beauty. Perfect for a sleek, modern sauna that offers a tranquil escape.',
+    description: 'Inspired by the breathtaking Northern Lights, this name evokes serenity, warmth, and natural beauty. Perfect for a sleek, modern sauna that offers a tranquil escape. (Please Note: This sauna is currently only available in Johannesburg)',
     productTitle: 'Compact tranquility',
     // productDescription: 'The Sola sauna is a compact and elegant sauna that offers a serene and tranquil experience. It is designed to fit seamlessly into any space, making it an ideal choice for those who want a luxurious sauna without the need for a large room.',
     images: [aurora_1, aurora_2],
