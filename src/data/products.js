@@ -1,4 +1,4 @@
-import { oak_sauna_board, obeche_main, triple_shadows_pine, thermo_pine_main, triple_shadow_thermo_pine, pine_stained_black, aurora_1, aurora_2, elysium_1, elysium_2, kaelis_1, kaelis_2, loyly_1, loyly_2, thermo_pine_tongue_groove, imersive_black_pine, rugged_black_stained_rough_pine, thermo } from '../assets';
+import { oak_sauna_board, obeche_main, triple_shadows_pine, thermo_pine_main, triple_shadow_thermo_pine, pine_stained_black, aurora_1, aurora_2, elysium_1, elysium_2, kaelis_1, kaelis_2, loyly_1, loyly_2, thermo_pine_tongue_groove, imersive_black_pine, rugged_black_stained_rough_pine, thermo, standard_1, standard_2, pine_main } from '../assets';
 
 export const products = {
   'aurora': {
@@ -92,7 +92,7 @@ export const products = {
   'loyly': {
     name: 'Loyly',
     slug: 'loyly',
-    description: 'Meaning “heavenly” in Latin, this name conveys a sense of elegance and sophistication. Perfect for a minimalist, contemporary sauna with a refined aesthetic.',
+    description: 'Meaning "heavenly" in Latin, this name conveys a sense of elegance and sophistication. Perfect for a minimalist, contemporary sauna with a refined aesthetic.',
     productTitle: 'Heavenly elegance',
     // productDescription: 'The Celeste sauna is a minimalist, contemporary sauna with a refined aesthetic. It is designed to provide a comfortable and relaxing atmosphere, perfect for those who want to escape the stresses of everyday life.',
     images: [loyly_1, loyly_2],
@@ -166,5 +166,90 @@ export const products = {
         height: '2100mm'
     },
     gallery: [kaelis_1, kaelis_2]
+  },
+  'standard': {
+    name: 'Standard',
+    slug: 'standard',
+    description: 'Our Standard Sauna Kit range brings classic wellness into any home or small commercial space. With clean lines, efficient sizing, and premium materials, each unit is pre-designed for quick installation and consistent performance.',
+    productTitle: 'Timeless design. Built for simplicity. Priced for accessibility.',
+    images: [standard_1, standard_2],
+    embed: 'https://kuula.co/share/h1Tqh?logo=-1&info=0&fs=1&vr=1&initload=0&thumbs=1&margin=30',
+    features: [
+      {
+        title: 'Easy installation',
+        description: 'Easy to install: Approximately 4–6 hours with two people.',
+        icon: '🔧'
+      },
+      {
+        title: 'Clean, minimalistic design',
+        description: 'Our Standard Sauna Kit range brings classic wellness into any home or small commercial space. With clean lines, efficient sizing, and premium materials, each unit is pre-designed for quick installation and consistent performance.',
+        icon: '🏠'
+      },
+      {
+        title: 'Precision Craftsmanship',
+        description: 'Each kit is meticulously designed and built to ensure consistent performance and durability.',
+        icon: '🔨'
+      },
+      {
+        title: 'Designed for small spaces',
+        description: 'Our Standard Sauna Kit range is designed for small spaces, making it an ideal choice for those who want a luxurious sauna without the need for a large room.',
+        icon: '🏠'
+      },
+      {
+        title: 'LED lighting provision and ventilation slots',
+        description: 'Our Standard Sauna Kit range includes LED lighting provision and ventilation slots, making it an ideal choice for those who want a luxurious sauna without the need for a large room.',
+        icon: '💡'
+      },
+      {
+        title: 'Fully Upgradeable',
+        description: 'Fully upgradeable with accessories (backrests, lighting kits, glass doors, etc.)',
+        icon: '🔧'
+      }
+    ],
+    materials: [
+      {
+        title: 'Pine Tongue & Groove',
+        image: thermo_pine_tongue_groove
+      },
+      {
+        title: 'Obeché Slats',
+        image: obeche_main
+      }
+    ],
+    kits: [
+      {
+        id: 0,
+        name: 'Kit 0',
+        dimensions: {
+          width: '1400mm',
+          depth: '1400mm'
+        }
+      },
+      {
+        id: 1,
+        name: 'Kit 1',
+        dimensions: {
+          width: '1800mm',
+          depth: '1400mm'
+        }
+      },
+      {
+        id: 2,
+        name: 'Kit 2',
+        dimensions: {
+          width: '2100mm',
+          depth: '1800mm'
+        }
+      },
+      {
+        id: 3,
+        name: 'Kit 3',
+        dimensions: {
+          width: '2600mm',
+          depth: '2100mm'
+        }
+      }
+    ],
+    gallery: [standard_1, standard_2]
   }
 };

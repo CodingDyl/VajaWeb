@@ -7,6 +7,7 @@ export interface ProductFeature {
 }
 
 export interface ProductInfo {
+  name?: string;
   description: string;
   features: ProductFeature[];
   dimensions: {
@@ -135,6 +136,47 @@ export const productInfo: Record<string, ProductInfo> = {
       width: 2960,
       depth: 1900,
       height: 2400
+    }
+  },
+  Standard: {
+    name: 'Standard Sauna Kit Series',
+    description: "“Vakio” (pronounced vah-kee-oh) directly translates to “standard”, “default”, or “baseline” — simple, strong, and minimal. It fits your naming theme beautifully while still feeling authentic and design-conscious",
+    features: [
+      {
+        title: 'Easy installation',
+        description: 'Easy to install: Approximately 4–6 hours with two people.',
+        icon: 'tools'
+      },
+      {
+        title: 'Clean, minimalistic design',
+        description: 'Our Standard Sauna Kit range brings classic wellness into any home or small commercial space. With clean lines, efficient sizing, and premium materials, each unit is pre-designed for quick installation and consistent performance.',
+        icon: 'palette'
+      },
+      {
+        title: 'Precision Craftsmanship',
+        description: 'Each kit is meticulously designed and built to ensure consistent performance and durability.',
+        icon: 'tools'
+      },
+      {
+        title: 'Designed for small spaces',
+        description: 'Our Standard Sauna Kit range is designed for small spaces, making it an ideal choice for those who want a luxurious sauna without the need for a large room.',
+        icon: 'palette'
+      },
+      {
+        title: 'LED lighting provision and ventilation slots',
+        description: 'Our Standard Sauna Kit range includes LED lighting provision and ventilation slots, making it an ideal choice for those who want a luxurious sauna without the need for a large room.',
+        icon: 'lamp'
+      },
+      {
+        title: 'Fully Upgradeable',
+        description: 'Fully upgradeable with accessories (backrests, lighting kits, glass doors, etc.)',
+        icon: 'tools'
+      },
+    ],
+    dimensions: {
+      width: 1400,
+      depth: 1400,
+      height: 2100
     }
   }
 }; 

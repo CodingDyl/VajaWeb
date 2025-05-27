@@ -1,5 +1,5 @@
 import { FaFire, FaShower, FaTree, FaSnowflake } from 'react-icons/fa';
-import { clad_black_pine, clearPine, western, thermo, obeche, aurora_1, elysium_1, loyly_1, kaelis_1, ice_bath_1, ice_bath_2 } from '../assets';
+import { clad_black_pine, clearPine, western, thermo, obeche, aurora_1, elysium_1, loyly_1, kaelis_1, ice_bath_1, ice_bath_2, standard_1 } from '../assets';
 
 const navItems = [
   {
@@ -13,6 +13,7 @@ const navItems = [
           { label: 'Elysium', to: '/products/elysium' },
           { label: 'Loyly', to: '/products/loyly' },
           { label: 'Kaelis', to: '/products/kaelis' },
+          { label: 'Standard', to: '/products/standard' },
         ],
       },
       {
@@ -120,6 +121,12 @@ const saunaRooms = [
     slug: 'kaelis',
     description: 'Inspired by the rare and precious gemstone, this name signifies luxury, uniqueness, and radiance. A great fit for a bespoke sauna design with intricate details.',
     image: kaelis_1,
+  },
+  {
+    name: 'Standard',
+    slug: 'standard',
+    description: 'A compact and affordable option that offers a comfortable and relaxing atmosphere.',
+    image: standard_1,
   }
 ];
 

@@ -36,6 +36,9 @@ import elysium_2 from './product_image_sauna/elysium/elysium_2.jpg'
 import kaelis_1 from './product_image_sauna/kaelis/kaelis_1.jpg'
 import kaelis_2 from './product_image_sauna/kaelis/kaelis_2.jpg'
 
+import standard_1 from './product_image_sauna/standard/standard_1.jpg'
+import standard_2 from './product_image_sauna/standard/standard_2.jpg'
+
 
 //steam rooms
 import steam_product_1 from './steam/AT4D.webp'
@@ -319,4 +322,6 @@ export {
   thermo_pine_main,
   loyly_plan_img,
   kaelis_plan_img,
+  standard_1,
+  standard_2
 }

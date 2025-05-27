@@ -1,4 +1,4 @@
-import { kaelis_1, aurora_1, loyly_1, elysium_1, ice_bath_1, steam_product_1, kaelis_2, aurora_2, loyly_2, elysium_2, ice_bath_2, steam_product_2, custom_2, custom_1, custom_3, sauna_hero } from "../assets";
+import { kaelis_1, aurora_1, loyly_1, elysium_1, ice_bath_1, steam_product_1, kaelis_2, aurora_2, loyly_2, elysium_2, ice_bath_2, steam_product_2, custom_2, custom_1, custom_3, sauna_hero, standard_1, standard_2 } from "../assets";
 
 interface GalleryImage {
   id: number;
@@ -90,6 +90,25 @@ export const galleryCategories: GalleryCategory[] = [
         title: 'Premium Shower'
       }
     ],
+  },
+  {
+    route: 'category/standard',
+    title: 'Standard',
+    description: 'A compact and affordable option that offers a comfortable and relaxing atmosphere.',
+    images: [
+      {
+        id: 5,
+        src: standard_1,
+        alt: 'Standard sauna exterior',
+        title: 'Standard Exterior'
+      },
+      {
+        id: 51,
+        src: standard_2,
+        alt: 'Standard sauna interior',
+        title: 'Standard Interior'
+      }
+    ]
   },
   {
     route: 'category/client-3d-renderings',

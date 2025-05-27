@@ -165,7 +165,7 @@ const ProductPage = ({ products }) => {
               { id: 'materials', label: 'Materials', icon: IconTools },
               { id: 'gallery', label: 'Gallery', icon: IconPhoto },
               { id: 'info', label: 'Product Info', icon: IconInfoCircle },
-              { id: 'plans', label: 'Plans', icon: IconDownload }
+              ...(product?.name !== 'Standard' ? [{ id: 'plans', label: 'Plans', icon: IconDownload }] : [])
             ].map((tab) => (
               <motion.div
                 key={tab.id}
@@ -285,19 +285,48 @@ const ProductPage = ({ products }) => {
                 </div>
 
                 <div className="mt-8">
-                  <h3 className="text-2xl font-bold text-secondary mb-4">Dimensions</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {Object.entries(productInfo[product?.name]?.dimensions || {}).map(([key, value], index) => (
-                      <motion.div
-                        key={key}
-                        variants={fadeIn('up', 'spring', index * 0.1, 0.75)}
-                        className="text-center p-6 rounded-xl backdrop-blur-md bg-white/5 border border-white/10 shadow-lg hover:bg-white/10 transition-all duration-300"
-                      >
-                        <h3 className="text-lg font-semibold capitalize mb-2 text-secondary">{key}</h3>
-                        <p className="text-2xl text-accent">{value}mm</p>
-                      </motion.div>
-                    ))}
-                  </div>
+                  {product?.name === 'Standard' ? (
+                    <>
+                      <h3 className="text-2xl font-bold text-secondary mb-4">Available Kits</h3>
+                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        {product?.kits.map((kit, index) => (
+                          <motion.div
+                            key={kit.id}
+                            variants={fadeIn('up', 'spring', index * 0.1, 0.75)}
+                            className="p-6 rounded-xl backdrop-blur-md bg-white/5 border border-white/10 shadow-lg hover:bg-white/10 transition-all duration-300"
+                          >
+                            <h4 className="text-xl font-semibold text-accent mb-4">{kit.name}</h4>
+                            <div className="space-y-2">
+                              <div className="flex justify-between">
+                                <span className="text-secondary">Width:</span>
+                                <span className="text-accent">{kit.dimensions.width}</span>
+                              </div>
+                              <div className="flex justify-between">
+                                <span className="text-secondary">Depth:</span>
+                                <span className="text-accent">{kit.dimensions.depth}</span>
+                              </div>
+                            </div>
+                          </motion.div>
+                        ))}
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      <h3 className="text-2xl font-bold text-secondary mb-4">Dimensions</h3>
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        {Object.entries(productInfo[product?.name]?.dimensions || {}).map(([key, value], index) => (
+                          <motion.div
+                            key={key}
+                            variants={fadeIn('up', 'spring', index * 0.1, 0.75)}
+                            className="text-center p-6 rounded-xl backdrop-blur-md bg-white/5 border border-white/10 shadow-lg hover:bg-white/10 transition-all duration-300"
+                          >
+                            <h3 className="text-lg font-semibold capitalize mb-2 text-secondary">{key}</h3>
+                            <p className="text-2xl text-accent">{value}mm</p>
+                          </motion.div>
+                        ))}
+                      </div>
+                    </>
+                  )}
                 </div>
 
                 <motion.div
@@ -312,107 +341,109 @@ const ProductPage = ({ products }) => {
               </motion.div>
             </Tabs.Panel>
 
-            <Tabs.Panel value="plans" pt="xl">
-              <motion.div 
-                variants={fadeIn('up', 'spring', 0.2, 0.75)}
-                className="flex flex-col items-center justify-center min-h-[400px]"
-              >
-                <div className="max-w-2xl w-full">
-                  {product?.name === 'Aurora' && (
-                    <motion.div
-                      variants={fadeIn('up', 'spring', 0.1, 0.75)}
-                      className="p-8 rounded-xl backdrop-blur-md bg-white/5 border border-white/10 shadow-lg hover:bg-white/10 transition-all duration-300 text-center"
-                    >
-                      <h3 className="text-2xl font-semibold text-secondary mb-6">Aurora Plans</h3>
-                      <div className="mb-6">
-                        <img 
-                          src={aurora_plan_img} 
-                          alt="Aurora Plan Preview" 
-                          className="w-full h-auto rounded-lg shadow-lg"
-                        />
-                      </div>
-                      <a
-                        href={aurora_plan}
-                        download="aurora_plan.pdf"
-                        className="inline-flex items-center gap-2 bg-accent hover:bg-accent/90 text-white px-8 py-4 rounded-full font-semibold transition-colors"
+            {product?.name !== 'Standard' && (
+              <Tabs.Panel value="plans" pt="xl">
+                <motion.div 
+                  variants={fadeIn('up', 'spring', 0.2, 0.75)}
+                  className="flex flex-col items-center justify-center min-h-[400px]"
+                >
+                  <div className="max-w-2xl w-full">
+                    {product?.name === 'Aurora' && (
+                      <motion.div
+                        variants={fadeIn('up', 'spring', 0.1, 0.75)}
+                        className="p-8 rounded-xl backdrop-blur-md bg-white/5 border border-white/10 shadow-lg hover:bg-white/10 transition-all duration-300 text-center"
                       >
-                        <IconDownload className="w-5 h-5" />
-                        Download Plans
-                      </a>
-                    </motion.div>
-                  )}
-                  {product?.name === 'Elysium' && (
-                    <motion.div
-                      variants={fadeIn('up', 'spring', 0.1, 0.75)}
-                      className="p-8 rounded-xl backdrop-blur-md bg-white/5 border border-white/10 shadow-lg hover:bg-white/10 transition-all duration-300 text-center"
-                    >
-                      <h3 className="text-2xl font-semibold text-secondary mb-6">Elysium Plans</h3>
-                      <div className="mb-6">
-                        <img 
-                          src={elysium_plan_img} 
-                          alt="Elysium Plan Preview" 
-                          className="w-full h-auto rounded-lg shadow-lg"
-                        />
-                      </div>
-                      <a
-                        href={elysium_plan}
-                        download="elysium_plan.pdf"
-                        className="inline-flex items-center gap-2 bg-accent hover:bg-accent/90 text-white px-8 py-4 rounded-full font-semibold transition-colors"
+                        <h3 className="text-2xl font-semibold text-secondary mb-6">Aurora Plans</h3>
+                        <div className="mb-6">
+                          <img 
+                            src={aurora_plan_img} 
+                            alt="Aurora Plan Preview" 
+                            className="w-full h-auto rounded-lg shadow-lg"
+                          />
+                        </div>
+                        <a
+                          href={aurora_plan}
+                          download="aurora_plan.pdf"
+                          className="inline-flex items-center gap-2 bg-accent hover:bg-accent/90 text-white px-8 py-4 rounded-full font-semibold transition-colors"
+                        >
+                          <IconDownload className="w-5 h-5" />
+                          Download Plans
+                        </a>
+                      </motion.div>
+                    )}
+                    {product?.name === 'Elysium' && (
+                      <motion.div
+                        variants={fadeIn('up', 'spring', 0.1, 0.75)}
+                        className="p-8 rounded-xl backdrop-blur-md bg-white/5 border border-white/10 shadow-lg hover:bg-white/10 transition-all duration-300 text-center"
                       >
-                        <IconDownload className="w-5 h-5" />
-                        Download Plans
-                      </a>
-                    </motion.div>
-                  )}
-                  {product?.name === 'Loyly' && (
-                    <motion.div
-                      variants={fadeIn('up', 'spring', 0.1, 0.75)}
-                      className="p-8 rounded-xl backdrop-blur-md bg-white/5 border border-white/10 shadow-lg hover:bg-white/10 transition-all duration-300 text-center"
-                    >
-                      <h3 className="text-2xl font-semibold text-secondary mb-6">Loyly Plans</h3>
-                      <div className="mb-6">
-                        <img 
-                          src={loyly_plan_img} 
-                          alt="Loyly Plan Preview" 
-                          className="w-full h-auto rounded-lg shadow-lg"
-                        />
-                      </div>
-                      <a
-                        href={loyly_plan}
-                        download="loyly_plan.pdf"
-                        className="inline-flex items-center gap-2 bg-accent hover:bg-accent/90 text-white px-8 py-4 rounded-full font-semibold transition-colors"
+                        <h3 className="text-2xl font-semibold text-secondary mb-6">Elysium Plans</h3>
+                        <div className="mb-6">
+                          <img 
+                            src={elysium_plan_img} 
+                            alt="Elysium Plan Preview" 
+                            className="w-full h-auto rounded-lg shadow-lg"
+                          />
+                        </div>
+                        <a
+                          href={elysium_plan}
+                          download="elysium_plan.pdf"
+                          className="inline-flex items-center gap-2 bg-accent hover:bg-accent/90 text-white px-8 py-4 rounded-full font-semibold transition-colors"
+                        >
+                          <IconDownload className="w-5 h-5" />
+                          Download Plans
+                        </a>
+                      </motion.div>
+                    )}
+                    {product?.name === 'Loyly' && (
+                      <motion.div
+                        variants={fadeIn('up', 'spring', 0.1, 0.75)}
+                        className="p-8 rounded-xl backdrop-blur-md bg-white/5 border border-white/10 shadow-lg hover:bg-white/10 transition-all duration-300 text-center"
                       >
-                        <IconDownload className="w-5 h-5" />
-                        Download Plans
-                      </a>
-                    </motion.div>
-                  )}
-                  {product?.name === 'Kaelis' && (
-                    <motion.div
-                      variants={fadeIn('up', 'spring', 0.1, 0.75)}
-                      className="p-8 rounded-xl backdrop-blur-md bg-white/5 border border-white/10 shadow-lg hover:bg-white/10 transition-all duration-300 text-center"
-                    > 
-                      <h3 className="text-2xl font-semibold text-secondary mb-6">Kaelis Plans</h3>
-                      <div className="mb-6">
-                        <img 
-                          src={kaelis_plan_img} 
-                          alt="Kaelis Plan Preview" 
-                          className="w-full h-auto rounded-lg shadow-lg"
-                        />
-                      </div>
-                      <a
-                        href={kaelis_plan}
-                        download="kaelis_plan.pdf"
-                        className="inline-flex items-center gap-2 bg-accent hover:bg-accent/90 text-white px-8 py-4 rounded-full font-semibold transition-colors"
-                      >
-                        <IconDownload className="w-5 h-5" />
-                        Download Plans
-                      </a>
-                    </motion.div>
-                  )}
-                </div>
-              </motion.div>
-            </Tabs.Panel>
+                        <h3 className="text-2xl font-semibold text-secondary mb-6">Loyly Plans</h3>
+                        <div className="mb-6">
+                          <img 
+                            src={loyly_plan_img} 
+                            alt="Loyly Plan Preview" 
+                            className="w-full h-auto rounded-lg shadow-lg"
+                          />
+                        </div>
+                        <a
+                          href={loyly_plan}
+                          download="loyly_plan.pdf"
+                          className="inline-flex items-center gap-2 bg-accent hover:bg-accent/90 text-white px-8 py-4 rounded-full font-semibold transition-colors"
+                        >
+                          <IconDownload className="w-5 h-5" />
+                          Download Plans
+                        </a>
+                      </motion.div>
+                    )}
+                    {product?.name === 'Kaelis' && (
+                      <motion.div
+                        variants={fadeIn('up', 'spring', 0.1, 0.75)}
+                        className="p-8 rounded-xl backdrop-blur-md bg-white/5 border border-white/10 shadow-lg hover:bg-white/10 transition-all duration-300 text-center"
+                      > 
+                        <h3 className="text-2xl font-semibold text-secondary mb-6">Kaelis Plans</h3>
+                        <div className="mb-6">
+                          <img 
+                            src={kaelis_plan_img} 
+                            alt="Kaelis Plan Preview" 
+                            className="w-full h-auto rounded-lg shadow-lg"
+                          />
+                        </div>
+                        <a
+                          href={kaelis_plan}
+                          download="kaelis_plan.pdf"
+                          className="inline-flex items-center gap-2 bg-accent hover:bg-accent/90 text-white px-8 py-4 rounded-full font-semibold transition-colors"
+                        >
+                          <IconDownload className="w-5 h-5" />
+                          Download Plans
+                        </a>
+                      </motion.div>
+                    )}
+                  </div>
+                </motion.div>
+              </Tabs.Panel>
+            )}
           </motion.div>
         </Tabs>
       </motion.section>
