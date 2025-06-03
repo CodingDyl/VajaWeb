@@ -209,7 +209,7 @@ export const products = {
     materials: [
       {
         title: 'Pine Tongue & Groove',
-        image: thermo_pine_tongue_groove
+        image: pine_main
       },
       {
         title: 'Obeché Slats',
