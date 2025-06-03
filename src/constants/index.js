@@ -13,7 +13,7 @@ const navItems = [
           { label: 'Elysium', to: '/products/elysium' },
           { label: 'Loyly', to: '/products/loyly' },
           { label: 'Kaelis', to: '/products/kaelis' },
-          { label: 'Standard', to: '/products/standard' },
+          { label: 'Vakio', to: '/products/vakio' },
         ],
       },
       {
@@ -123,8 +123,8 @@ const saunaRooms = [
     image: kaelis_1,
   },
   {
-    name: 'Standard',
-    slug: 'standard',
+    name: 'Vakio',
+    slug: 'vakio',
     description: 'A compact and affordable option that offers a comfortable and relaxing atmosphere.',
     image: standard_1,
   }

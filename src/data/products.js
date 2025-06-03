@@ -167,9 +167,9 @@ export const products = {
     },
     gallery: [kaelis_1, kaelis_2]
   },
-  'standard': {
-    name: 'Standard',
-    slug: 'standard',
+  'vakio': {
+    name: 'Vakio',
+    slug: 'vakio',
     description: 'Our Standard Sauna Kit range brings classic wellness into any home or small commercial space. With clean lines, efficient sizing, and premium materials, each unit is pre-designed for quick installation and consistent performance.',
     productTitle: 'Timeless design. Built for simplicity. Priced for accessibility.',
     images: [standard_1, standard_2],

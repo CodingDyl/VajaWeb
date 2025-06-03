@@ -7,7 +7,6 @@ export interface ProductFeature {
 }
 
 export interface ProductInfo {
-  name?: string;
   description: string;
   features: ProductFeature[];
   dimensions: {
@@ -138,8 +137,7 @@ export const productInfo: Record<string, ProductInfo> = {
       height: 2400
     }
   },
-  Standard: {
-    name: 'Standard Sauna Kit Series',
+  Vakio: {
     description: "“Vakio” (pronounced vah-kee-oh) directly translates to “standard”, “default”, or “baseline” — simple, strong, and minimal. It fits your naming theme beautifully while still feeling authentic and design-conscious",
     features: [
       {

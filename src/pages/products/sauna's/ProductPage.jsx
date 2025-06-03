@@ -285,7 +285,7 @@ const ProductPage = ({ products }) => {
                 </div>
 
                 <div className="mt-8">
-                  {product?.name === 'Standard' ? (
+                  {product?.name === 'Vakio' ? (
                     <>
                       <h3 className="text-2xl font-bold text-secondary mb-4">Available Kits</h3>
                       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -341,7 +341,7 @@ const ProductPage = ({ products }) => {
               </motion.div>
             </Tabs.Panel>
 
-            {product?.name !== 'Standard' && (
+            {product?.name !== 'Vakio' && (
               <Tabs.Panel value="plans" pt="xl">
                 <motion.div 
                   variants={fadeIn('up', 'spring', 0.2, 0.75)}
