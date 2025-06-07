@@ -6,6 +6,7 @@ import Footer from '../../components/Footer';
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaSteam } from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
 import { products } from '../../data/products';
+import { locations } from '../../data/locations';
 
 const InputField = ({ label, type, name, value, onChange, placeholder }) => (
   <motion.div
@@ -40,6 +41,7 @@ const Contact = () => {
     message: '',
     mobile: '',
     selectedProducts: [],
+    locations: [],
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -60,7 +62,9 @@ const Contact = () => {
       const index = currentProducts.indexOf(productName);
       
       if (index === -1) {
-        currentProducts.push(productName);
+        if (currentProducts.length < 2) {
+          currentProducts.push(productName);
+        }
       } else {
         currentProducts.splice(index, 1);
       }
@@ -69,14 +73,35 @@ const Contact = () => {
     });
   };
 
+  const handleLocationChange = (locationName) => {
+    setFormData(prevState => {
+      const currentLocations = prevState.locations || [];
+      const index = currentLocations.indexOf(locationName);
+      
+      if (index === -1) {
+        currentLocations.push(locationName);
+      } else {
+        currentLocations.splice(index, 1);
+      }
+      
+      return { ...prevState, locations: currentLocations };
+    });
+  };
+
   const resetForm = () => {
-    setFormData({ name: '', email: '', message: '', mobile: '', selectedProducts: [] });
+    setFormData({ name: '', email: '', message: '', mobile: '', selectedProducts: [], locations: [] });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
     setError('');
+
+    if (!formData.locations || formData.locations.length === 0) {
+      setError('Please select at least one location');
+      setIsLoading(false);
+      return;
+    }
 
     try {
       await emailjs.send(
@@ -88,6 +113,7 @@ const Contact = () => {
           message: formData.message,
           mobile: formData.mobile,
           products: formData.selectedProducts.join(', '),
+          location: formData.locations.join(', '),
         }
       );
       setIsSubmitted(true);
@@ -157,7 +183,10 @@ const Contact = () => {
                 className="mb-6"
                 variants={fadeIn('up', 'spring', 0.4, 0.75)}
               >
-                <label className="block text-secondary font-semibold mb-3">Interested in our Saunas</label>
+                <label className="block text-secondary font-semibold mb-3">
+                  Interested in our Saunas
+                  <span className="text-sm text-gray-500 ml-2">(Select up to 2)</span>
+                </label>
                 <div className="space-y-2 block md:flex md:justify-between ">
                   {Object.values(products).map((product) => (
                     <motion.div
@@ -179,6 +208,39 @@ const Contact = () => {
                         className="text-secondary cursor-pointer hover:text-accent transition-colors duration-200"
                       >
                         {product.name}
+                      </label>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+              <motion.div
+                className="mb-6"
+                variants={fadeIn('up', 'spring', 0.4, 0.75)}
+              >
+                <label className="block text-secondary font-semibold mb-3">
+                  Let Us Know Where You Are
+                  <span className="text-red-500 ml-1">*</span>
+                </label>
+                <div className="space-y-2 block md:flex md:justify-between ">
+                  {Object.values(locations).map((location) => (
+                    <motion.div
+                      key={location.slug}
+                      className="flex items-center space-x-3"
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.1 * Object.values(locations).indexOf(location) }}
+                    >
+                      <input
+                        type="checkbox"
+                        id={location.slug}
+                        checked={formData.locations?.includes(location.name)}
+                        onChange={() => handleLocationChange(location.name)}
+                        className="w-4 h-4 text-accent border-secondary rounded focus:ring-accent focus:ring-offset-0"
+                      />
+                      <label
+                        className="text-secondary"
+                      >
+                        {location.name}
                       </label>
                     </motion.div>
                   ))}
