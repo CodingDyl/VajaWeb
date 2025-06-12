@@ -8,6 +8,7 @@ import { aboutImage } from '../../assets'
 import { Divider } from '@mantine/core'
 import { Link } from 'react-router-dom'
 import { IconCheck } from '@tabler/icons-react'
+import { SEOHead } from '../../components/SEOHead'
 
 const AboutSection = ({ title, icon, children, index }) => (
   <motion.div
@@ -45,6 +46,13 @@ const AnimatedButton = () => (
 const About = () => {
   return (
     <div className='min-h-screen bg-primary'>
+      <SEOHead
+        title="About VAJA - South Africa's Premier Sauna & Steam Room Experts"
+        description="Discover VAJA's 50+ year legacy in luxury saunas and steam rooms. Expert installation, maintenance, and service across South Africa. Trusted by homeowners and businesses since 1970."
+        keywords="VAJA saunas, luxury sauna supplier, steam room experts, sauna maintenance, Johannesburg, Cape Town, Gauteng, South Africa"
+        image={aboutImage}
+        type="website"
+      />
       <Navbar />
       <motion.div
         variants={staggerContainer()}

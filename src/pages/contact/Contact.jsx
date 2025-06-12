@@ -7,6 +7,7 @@ import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaSteam } from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
 import { products } from '../../data/products';
 import { locations } from '../../data/locations';
+import { SEOHead } from '../../components/SEOHead';
 
 const InputField = ({ label, type, name, value, onChange, placeholder }) => (
   <motion.div
@@ -129,6 +130,12 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen bg-primary">
+      <SEOHead
+        title="Contact VAJA - Expert Sauna & Steam Room Installation in South Africa"
+        description="Get in touch with VAJA for premium sauna and steam room installations in Johannesburg, Cape Town, and Gauteng. Expert consultation and personalized service available."
+        keywords="sauna installation, steam room installation, contact VAJA, sauna consultation, Johannesburg, Cape Town, Gauteng"
+        type="website"
+      />
       <Navbar />
       <div className="container mx-auto px-4 py-32">
         <motion.h1

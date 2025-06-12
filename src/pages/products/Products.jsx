@@ -8,10 +8,17 @@ import { saunaRooms } from '../../constants';
 import SaunaCard from '../../components/SaunaCard';
 import { Link } from 'react-router-dom';
 import { IconCheck } from '@tabler/icons-react';
+import { SEOHead } from '../../components/SEOHead';
 
 const Products = () => {
   return (
     <div className="min-h-screen bg-primary">
+      <SEOHead
+        title="Premium Saunas & Steam Rooms | VAJA South Africa"
+        description="Explore VAJA's collection of luxury saunas and steam rooms. Premium craftsmanship, expert installation, and exceptional service across Johannesburg, Cape Town, and Gauteng."
+        keywords="luxury saunas, steam rooms, infrared sauna, home sauna installation, premium sauna supplier, Johannesburg, Cape Town, Gauteng"
+        type="website"
+      />
       <Navbar />
       
       {/* Hero Section */}

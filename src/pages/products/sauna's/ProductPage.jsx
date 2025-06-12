@@ -3,14 +3,15 @@ import { motion } from 'framer-motion';
 import { fadeIn, staggerContainer } from '../../../utils/motion';
 import { Navbar } from '../../../components/Navbar';
 import Footer from '../../../components/Footer';
-import {  Tabs } from '@mantine/core';
+import { Tabs } from '@mantine/core';
 import { useParams, Navigate, Link } from 'react-router-dom';
 import { ThreeDViewer } from '../../../components/3DViewer';
-import { IconCheckbox, IconPhoto, IconTools, IconInfoCircle, IconDownload } from '@tabler/icons-react';
+import { IconCheckbox, IconPhoto, IconTools, IconInfoCircle, IconDownload, IconMapPin } from '@tabler/icons-react';
 import { productInfo } from '../../../constants/productInfo';
 import { productIcons } from '../../../constants/productIcons';
 import { aurora_plan, elysium_plan, loyly_plan, kaelis_plan } from '../../../../public';
 import { aurora_plan_img, elysium_plan_img, loyly_plan_img, kaelis_plan_img } from '../../../assets';
+import { SEOHead } from '../../../components/SEOHead';
 
 const ProductPage = ({ products }) => {
   const { productSlug } = useParams();
@@ -40,6 +41,12 @@ const ProductPage = ({ products }) => {
     return <Navigate to="/products" replace />;
   }
 
+  const locations = [
+    { name: 'Johannesburg', region: 'Gauteng' },
+    { name: 'Cape Town', region: 'Western Cape' },
+    { name: 'Pretoria', region: 'Gauteng' }
+  ];
+
   const ImageSkeleton = () => (
     <div className="animate-pulse">
       <div className="aspect-square bg-gray-200 rounded-2xl" />
@@ -53,6 +60,18 @@ const ProductPage = ({ products }) => {
 
   return (
     <div className="min-h-screen bg-primary">
+      <SEOHead
+        title={product.name}
+        description={`Premium ${product.name} sauna by Vaja. ${product.description} Expert installation available in Johannesburg, Cape Town, and Gauteng.`}
+        keywords={`${product.name} sauna, infrared sauna, home sauna installation, luxury sauna supplier, ${locations.map(l => l.name).join(', ')}`}
+        image={product.images[0]}
+        type="product"
+        productData={{
+          brand: "Vaja",
+          availability: "InStock"
+        }}
+      />
+      
       <Navbar />
       
       {/* Hero Section */}
@@ -117,6 +136,22 @@ const ProductPage = ({ products }) => {
             <div className="space-y-4">
               <p className="text-lg text-gray-600">{product?.description}</p>
               <p className="text-gray-700">{product?.productDescription}</p>
+              
+              {/* Location Information */}
+              <div className="mt-6 p-4 bg-white/5 rounded-lg border border-white/10">
+                <h3 className="text-lg font-semibold text-secondary mb-3 flex items-center gap-2">
+                  <IconMapPin className="w-5 h-5 text-accent" />
+                  Available in South Africa
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  {locations.map((location, index) => (
+                    <div key={index} className="text-sm text-gray-600">
+                      <span className="font-medium text-secondary">{location.name}</span>
+                      <span className="block text-gray-500">{location.region}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
 
             <Link 

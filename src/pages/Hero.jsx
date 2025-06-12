@@ -4,12 +4,19 @@ import { sauna_hero } from '../assets'
 import { motion } from 'framer-motion'
 import { Navbar } from '../components/Navbar'
 import { Link } from 'react-router-dom'
-
+import { SEOHead } from '../components/SEOHead'
 
 export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center bg-primary overflow-hidden">
-    <Navbar />
+      <SEOHead
+        title="Luxury Saunas & Steam Rooms in South Africa"
+        description="Discover premium home saunas and steam rooms in Johannesburg, Cape Town, and Gauteng. Expert installation, luxury quality, and exceptional service for your wellness journey."
+        keywords="luxury saunas, steam rooms, home sauna installation, infrared sauna, wellness equipment, Johannesburg, Cape Town, Gauteng"
+        image={sauna_hero}
+        type="website"
+      />
+      <Navbar />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center">
         <div className="lg:w-1/2 z-10">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-secondary mb-2">
@@ -37,7 +44,7 @@ export function Hero() {
         <div className="relative h-full w-full hidden md:block">
           <Image
             src={sauna_hero}
-            alt="Sauna interior"
+            alt="Luxury sauna interior with premium finishes and modern design"
             fill
             className="object-cover rounded-l-[120px] border-4 border-accent"
             sizes="(max-width: 1024px) 100vw, 50vw"
