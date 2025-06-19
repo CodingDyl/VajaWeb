@@ -9,6 +9,7 @@ import {
   gal_1, gal_2, gal_3, gal_4, gal_5, gal_6, gal_7, gal_8, gal_9, gal_10,
   gal_11, gal_12, gal_13, gal_14, gal_15, gal_16, gal_17, gal_18, gal_19, gal_20,
 } from '../../assets';
+import { SEOHead } from '../../components/SEOHead';
 
 const GalleryItem = ({ item, index }) => {
   const slug = item.title.toLowerCase().replace(/\s+/g, '-');
@@ -79,6 +80,12 @@ const Gallery = () => {
 
   return (
     <div className="min-h-screen bg-primary">
+      <SEOHead
+        title="View Our Gallery"
+        description="Immerse in the elegance of our work through Vaja's gallery, showcasing luxurious saunas and steam rooms designed to inspire and soothe."
+        keywords="sauna gallery, steam room gallery, sauna images, steam room images, sauna photos, steam room photos, sauna design, steam room design, sauna interior, steam room interior"
+        type="website"
+      />
       <Navbar />
       <motion.div
         variants={staggerContainer()}

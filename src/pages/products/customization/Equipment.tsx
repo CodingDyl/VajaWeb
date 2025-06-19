@@ -20,6 +20,7 @@ import {
   harvia_cube,
   harvia_the_wall_e,
 } from '../../../assets';
+import { SEOHead } from '../../../components/SEOHead';
 
 interface HeaterInfo {
   id: string;
@@ -70,6 +71,12 @@ const heaters: HeaterInfo[] = [
 const Equipment = () => {
   return (
     <div className="min-h-screen bg-primary">
+      <SEOHead
+        title="Sauna Equipment"
+        description="Find highquality sauna parts and equipment, from heaters to controls, ensuring reliable performance and easy maintenance."
+        keywords="harvia sauna heaters, harvia sauna heater, harvia sauna heater, harvia sauna heater, harvia sauna heater"
+        type="website"
+      />
       <Navbar />
       <main className="container mx-auto px-4 py-32">
         <motion.div

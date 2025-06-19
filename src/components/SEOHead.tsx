@@ -22,7 +22,7 @@ export function SEOHead({
   type = 'website',
   productData
 }: SEOHeadProps) {
-  const fullTitle = `${title} | Vaja - Premium Sauna & Steam Room Suppliers in South Africa`;
+  const fullTitle = `${title} | Vaja`;
   const fullDescription = `${description} Available in Johannesburg, Cape Town, and Gauteng. Expert installation and premium quality guaranteed.`;
 
   return (

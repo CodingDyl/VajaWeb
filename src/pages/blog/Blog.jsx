@@ -5,6 +5,7 @@ import { Navbar } from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import { client } from '../../lib/client';
 import { Link } from 'react-router-dom';
+import { SEOHead } from '../../components/SEOHead';
 
 const BlogCard = ({ post, index }) => (
   <motion.div
@@ -91,6 +92,12 @@ const Blog = () => {
 
   return (
     <div className="min-h-screen bg-primary">
+      <SEOHead
+        title="Read Our Blogs"
+        description="Dive into Vaja's blog for a world of wellness wisdom. From innovative design ideas to health benefits, enrich your knowledge with our experts"
+        keywords="sauna blog, wellness tips, sauna articles, sauna news, sauna insights, sauna tips, sauna news, sauna insights, sauna tips, sauna news, sauna insights"
+        type="website"
+      />
       <Navbar />
       <div className="container mx-auto px-4 py-32">
         <motion.h1

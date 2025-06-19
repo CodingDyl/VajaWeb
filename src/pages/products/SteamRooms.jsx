@@ -6,10 +6,17 @@ import { Divider } from '@mantine/core';
 import { Link } from 'react-router-dom';
 import { IconCheck } from '@tabler/icons-react';
 import { steam_product_1, steam_product_2, steam_product_3 } from '../../assets';
+import { SEOHead } from '../../components/SEOHead';
 
 const SteamRooms = () => {
   return (
     <div className="min-h-screen bg-primary">
+      <SEOHead
+        title="Steam Rooms for Sale in South Africa"
+        description="Explore toptier steam rooms by Vaja, the expert suppliers, manufacturers, and installers. Elevate your space with our luxurious steam solutions."
+        keywords="steam rooms, steam generator, steam bath, steam sauna, steam room supplier, Johannesburg, Cape Town, Gauteng"
+        type="website"
+      />
       <Navbar />
       
       {/* Hero Section */}

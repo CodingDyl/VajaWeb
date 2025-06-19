@@ -15,6 +15,7 @@ import {
   harvia_wave_neckrest,
   harvia_thermometer,
 } from '../../../assets';
+import { SEOHead } from '../../../components/SEOHead';
 
 interface AccessoryItem {
   name: string;
@@ -92,6 +93,12 @@ const AccessoryCard: React.FC<{ item: AccessoryItem; index: number }> = ({ item,
 export function Accessories() {
   return (
     <div className="min-h-screen bg-primary">
+      <SEOHead
+        title="Sauna Accessories"
+        description="Upgrade comfort with essential sauna accessories, including towels, backrests and cushioning, designed for durability and style."
+        keywords="sauna accessories, sauna accessories, sauna accessories, sauna accessories, sauna accessories, sauna accessories, sauna accessories, sauna accessories, sauna accessories, sauna accessories"
+        type="website"
+      />
       <Navbar />
       <main className="container mx-auto px-4 py-32">
         <motion.div
