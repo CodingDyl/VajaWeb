@@ -8,6 +8,7 @@ import emailjs from '@emailjs/browser';
 import { products } from '../../data/products';
 import { locations } from '../../data/locations';
 import { SEOHead } from '../../components/SEOHead';
+import { useNavigate } from 'react-router-dom';
 
 const InputField = ({ label, type, name, value, onChange, placeholder }) => (
   <motion.div
@@ -36,6 +37,7 @@ const InputField = ({ label, type, name, value, onChange, placeholder }) => (
 );
 
 const Contact = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -76,7 +78,7 @@ const Contact = () => {
 
   const handleLocationChange = (locationName) => {
     setFormData(prevState => {
-      const currentLocations = prevState.locations || [];
+      const currentLocations = Array.isArray(prevState.locations) ? [...prevState.locations] : [];
       const index = currentLocations.indexOf(locationName);
       
       if (index === -1) {
@@ -120,6 +122,7 @@ const Contact = () => {
       setIsSubmitted(true);
       setTimeout(() => setIsSubmitted(false), 3000);
       resetForm();
+      navigate('/contact/thank-you');
     } catch (error) {
       console.error('Email send failed:', error);
       setError('Failed to send message. Please try again later.');
@@ -240,12 +243,13 @@ const Contact = () => {
                       <input
                         type="checkbox"
                         id={location.slug}
-                        checked={formData.locations?.includes(location.name)}
+                        checked={formData.locations?.includes(location.name) || false}
                         onChange={() => handleLocationChange(location.name)}
                         className="w-4 h-4 text-accent border-secondary rounded focus:ring-accent focus:ring-offset-0"
                       />
                       <label
-                        className="text-secondary"
+                        htmlFor={location.slug}
+                        className="text-secondary cursor-pointer hover:text-accent transition-colors duration-200"
                       >
                         {location.name}
                       </label>

@@ -48,7 +48,7 @@ export function Hero() {
             fill
             className="object-cover rounded-l-[120px] border-4 border-accent"
             sizes="(max-width: 1024px) 100vw, 50vw"
-            priority
+            priority="true"
           />
         </div>
       </div>

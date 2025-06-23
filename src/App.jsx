@@ -22,6 +22,7 @@ import CategoryGallery from './pages/gallery/category/[slug]'
 import { ReferralForm } from './components/ReferralForm'
 import IceProductPage from './pages/products/iceBath/IceProductPage'
 import { ThreeDGallery } from './pages/gallery/ThreeDGallery'
+import ThankYou from './pages/contact/thank-you/ThankYou'
 
 function App() {
   // const [showReferralModal, setShowReferralModal] = useState(false)
@@ -53,6 +54,7 @@ function App() {
           <Route path="/products" element={<Products />} />
           <Route path="/about" element={<AboutSection />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/contact/thank-you" element={<ThankYou />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPage />} />
