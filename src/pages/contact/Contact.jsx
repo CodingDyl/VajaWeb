@@ -336,9 +336,9 @@ const Contact = () => {
               <h2 className="text-2xl font-bold mb-6">Contact Information</h2>
               <div className="space-y-6">
                 {[
-                  { icon: FaEnvelope, text: "sandy@vaja.co.za" },
-                  { icon: FaPhone, text: "+27 11 794 2090" },
-                  { icon: FaMapMarkerAlt, text: "53 Zeiss Rd, Laser Park, Johannesburg, South Africa" }
+                  { icon: FaEnvelope, text: "sandy@vaja.co.za", type: "email" },
+                  { icon: FaPhone, text: "+27 11 794 2090", type: "phone" },
+                  { icon: FaMapMarkerAlt, text: "53 Zeiss Rd, Laser Park, Johannesburg, South Africa", type: "address" }
                 ].map((item, index) => (
                   <motion.div
                     key={index}
@@ -346,7 +346,25 @@ const Contact = () => {
                     variants={zoomIn(0.2 + index * 0.1, 0.6)}
                   >
                     <item.icon className="text-accent mr-4 text-2xl" />
-                    <p>{item.text}</p>
+                    {item.type === "email" ? (
+                      <a 
+                        href={`mailto:${item.text}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-accent transition-colors"
+                      >
+                        {item.text}
+                      </a>
+                    ) : item.type === "phone" ? (
+                      <a 
+                        href={`tel:${item.text}`}
+                        className="hover:text-accent transition-colors"
+                      >
+                        {item.text}
+                      </a>
+                    ) : (
+                      <p>{item.text}</p>
+                    )}
                   </motion.div>
                 ))}
               </div>

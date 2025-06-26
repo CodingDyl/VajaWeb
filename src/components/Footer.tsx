@@ -5,9 +5,44 @@ const FooterSection = ({ title, items }: { title: string; items: string[] }) => 
   <div className="mb-8 md:mb-0">
     <h3 className="text-lg font-semibold text-secondary mb-4">{title}</h3>
     <ul className="space-y-2">
-      {items.map((item, index) => (
-        <li key={index} className="text-sm text-primary">{item}</li>
-      ))}
+      {items.map((item, index) => {
+        // Check if item is an email or phone number
+        const isEmail = item.includes('@');
+        const isPhone = item.includes('+') || item.includes('Tel:');
+        
+        if (isEmail) {
+          return (
+            <li key={index} className="text-sm text-primary">
+              <a 
+                href={`mailto:${item}`} 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white transition-colors"
+              >
+                {item}
+              </a>
+            </li>
+          );
+        }
+        
+        if (isPhone) {
+          const phoneNumber = item.replace('Tel: ', '');
+          return (
+            <li key={index} className="text-sm text-primary">
+              <a 
+                href={`tel:${phoneNumber}`} 
+                className="hover:text-white transition-colors"
+              >
+                {item}
+              </a>
+            </li>
+          );
+        }
+        
+        return (
+          <li key={index} className="text-sm text-primary">{item}</li>
+        );
+      })}
     </ul>
   </div>
 )
