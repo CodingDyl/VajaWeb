@@ -336,9 +336,10 @@ const Contact = () => {
               <h2 className="text-2xl font-bold mb-6">Contact Information</h2>
               <div className="space-y-6">
                 {[
-                  { icon: FaEnvelope, text: "sandy@vaja.co.za", type: "email" },
+                  { icon: FaEnvelope, text: "tyler@vaja.co.za", type: "email" },
+                  { icon: FaEnvelope, text: "viv@vaja.co.za", type: "email" },
                   { icon: FaPhone, text: "+27 11 794 2090", type: "phone" },
-                  { icon: FaMapMarkerAlt, text: "53 Zeiss Rd, Laser Park, Johannesburg, South Africa", type: "address" }
+                  { icon: FaMapMarkerAlt, text: "53 Zeiss Rd, Laser Park, Johannesburg, South Africa", type: "address" },
                 ].map((item, index) => (
                   <motion.div
                     key={index}
