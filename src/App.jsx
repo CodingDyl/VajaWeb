@@ -1,9 +1,6 @@
-import { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { MantineProvider } from '@mantine/core'
-import { Modal } from '@mantine/core'
 import '@mantine/core/styles.css'
-import Cookies from 'js-cookie'
 import HomeLayout from './layout/HomeLayout'
 import AboutSection from './pages/about/AboutSection'
 import Contact from './pages/contact/Contact'
@@ -25,27 +22,6 @@ import { ThreeDGallery } from './pages/gallery/ThreeDGallery'
 import ThankYou from './pages/contact/thank-you/ThankYou'
 
 function App() {
-  const [showClosureNotice, setShowClosureNotice] = useState(false)
-
-  useEffect(() => {
-    // Check if user has already seen the closure notice
-    const hasSeenNotice = Cookies.get('closure_notice_seen')
-    
-    if (!hasSeenNotice) {
-      const timer = setTimeout(() => {
-        setShowClosureNotice(true)
-      }, 500) // Show shortly after page load
-      
-      return () => clearTimeout(timer)
-    }
-  }, [])
-
-  const handleClosureNoticeClose = () => {
-    setShowClosureNotice(false)
-    // Set cookie to expire after 1 day so notice shows again on next visit during closure period
-    Cookies.set('closure_notice_seen', 'true', { expires: 1 })
-  }
-
   return (
     <MantineProvider>
       <Router>
@@ -72,49 +48,6 @@ function App() {
           <Route path="/steam-rooms" element={<SteamRooms />} />
           <Route path="/gallery/category/client-3d-renderings" element={<ThreeDGallery />} />
         </Routes>
-
-        <Modal
-          opened={showClosureNotice}
-          onClose={handleClosureNoticeClose}
-          size="md"
-          centered
-          withCloseButton
-          overlayProps={{
-            backgroundOpacity: 0.55,
-            blur: 3,
-          }}
-        >
-          <div className="p-6">
-            <div className="text-center mb-4">
-              <h2 className="text-3xl font-bold text-gray-800 mb-3">
-                🎄 Holiday Closure Notice
-              </h2>
-              <div className="h-1 w-24 bg-accent mx-auto mb-4"></div>
-            </div>
-            
-            <div className="space-y-4 text-gray-700">
-              <p className="text-lg text-center">
-                We will be closed from
-              </p>
-              <p className="text-2xl font-bold text-accent text-center">
-                12th December - 12th January
-              </p>
-              <p className="text-center">
-                All requests submitted during this period will be answered when we reopen.
-              </p>
-              <p className="text-center text-sm text-gray-600 mt-4">
-                Thank you for your patience and understanding. We wish you a wonderful holiday season! 🎉
-              </p>
-            </div>
-            
-            <button
-              onClick={handleClosureNoticeClose}
-              className="mt-6 w-full bg-accent hover:bg-accent/90 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200"
-            >
-              Got it, thanks!
-            </button>
-          </div>
-        </Modal>
       </Router>
     </MantineProvider>
   )
