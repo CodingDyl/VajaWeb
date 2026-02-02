@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { motion, AnimatePresence } from 'framer-motion';
 import { fadeIn, slideIn, zoomIn } from '../../utils/motion';
 import { Navbar } from '../../components/Navbar';
@@ -10,12 +11,15 @@ import { locations } from '../../data/locations';
 import { SEOHead } from '../../components/SEOHead';
 import { useNavigate } from 'react-router-dom';
 
-const InputField = ({ label, type, name, value, onChange, placeholder }) => (
+const InputField = ({ label, type, name, value, onChange, placeholder, required }) => (
   <motion.div
     className="mb-6 relative"
     variants={fadeIn('up', 'spring', 0.3, 0.75)}
   >
-    <label htmlFor={name} className="block text-secondary font-semibold mb-2">{label}</label>
+    <label htmlFor={name} className="block text-secondary font-semibold mb-2">
+      {label}
+      {required && <span className="text-red-500 ml-1">*</span>}
+    </label>
     <input
       type={type}
       id={name}
@@ -23,6 +27,7 @@ const InputField = ({ label, type, name, value, onChange, placeholder }) => (
       value={value}
       onChange={onChange}
       placeholder={placeholder}
+      required={required}
       className="w-full px-4 py-2 border-2 border-secondary rounded-lg focus:outline-none focus:border-accent transition-colors duration-300"
     />
     <motion.div
@@ -35,6 +40,16 @@ const InputField = ({ label, type, name, value, onChange, placeholder }) => (
     </motion.div>
   </motion.div>
 );
+
+InputField.propTypes = {
+  label: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+  placeholder: PropTypes.string,
+  required: PropTypes.bool,
+};
 
 const Contact = () => {
   const navigate = useNavigate();
@@ -99,6 +114,12 @@ const Contact = () => {
     e.preventDefault();
     setIsLoading(true);
     setError('');
+
+    if (!formData.email && !formData.mobile) {
+      setError('Please provide either an email address or mobile number');
+      setIsLoading(false);
+      return;
+    }
 
     if (!formData.locations || formData.locations.length === 0) {
       setError('Please select at least one location');
@@ -169,10 +190,18 @@ const Contact = () => {
                 label="Name"
                 type="text"
                 name="name"
+                required
                 value={formData.name}
                 onChange={handleChange}
                 placeholder="Your Name"
               />
+              <motion.div
+                className="mb-4 text-sm text-gray-600 -mt-2"
+                variants={fadeIn('up', 'spring', 0.2, 0.75)}
+              >
+                Please provide at least one contact method below (Email or Mobile Number)
+                <span className="text-red-500 ml-1">*</span>
+              </motion.div>
               <InputField
                 label="Email"
                 type="email"

@@ -71,11 +71,10 @@ const Footer = () => {
           <FooterSection
             title="CPT Office"
             items={[
-              "26 Paarden Eiland Road",
               "Cape Town",
               "Western Cape",
               "South Africa, 7945",
-              "Tel: +27 82 900 1676"
+              "Tel: +27 82 920 6994"
             ]}
           />
           <FooterSection
