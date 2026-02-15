@@ -1,4 +1,16 @@
 {
+  "redirects": [
+    {
+      "source": "/saunas",
+      "destination": "/products",
+      "permanent": true
+    },
+    {
+      "source": "/steamrooms",
+      "destination": "/steam-rooms",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/(.*)",
