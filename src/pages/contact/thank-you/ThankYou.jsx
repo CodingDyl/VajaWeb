@@ -22,6 +22,8 @@ const ThankYou = () => {
       <SEOHead
         title="Thank You for Contacting Us | Vaja"
         description="We've received your inquiry and will be in touch shortly. In the meantime, feel free to explore our gallery of bespoke saunas and steam rooms."
+        canonicalUrl="/contact/thank-you"
+        noindex
         type="website"
       />
       <Navbar />

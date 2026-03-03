@@ -81,9 +81,10 @@ const Gallery = () => {
   return (
     <div className="min-h-screen bg-primary">
       <SEOHead
-        title="View Our Gallery"
-        description="Immerse in the elegance of our work through Vaja's gallery, showcasing luxurious saunas and steam rooms designed to inspire and soothe."
-        keywords="sauna gallery, steam room gallery, sauna images, steam room images, sauna photos, steam room photos, sauna design, steam room design, sauna interior, steam room interior"
+        title="Gallery | Vaja"
+        description="View our gallery of sauna and steam room installations across South Africa. Custom residential and commercial sauna projects. Get inspired for your build."
+        keywords="sauna installations, steam room installation, custom built sauna, bespoke sauna"
+        canonicalUrl="/gallery"
         type="website"
       />
       <Navbar />

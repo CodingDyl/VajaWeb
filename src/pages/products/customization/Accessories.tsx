@@ -94,9 +94,10 @@ export function Accessories() {
   return (
     <div className="min-h-screen bg-primary">
       <SEOHead
-        title="Sauna Accessories"
-        description="Upgrade comfort with essential sauna accessories, including towels, backrests and cushioning, designed for durability and style."
-        keywords="sauna accessories, sauna accessories, sauna accessories, sauna accessories, sauna accessories, sauna accessories, sauna accessories, sauna accessories, sauna accessories, sauna accessories"
+        title="Luxury Sauna Accessories | Vaja"
+        description="Shop sauna accessories and steam room accessories from Vaja. Buckets, ladles, thermometers, lighting, and sauna parts for your home or commercial sauna."
+        keywords="sauna accessories, steam room accessories, sauna parts"
+        canonicalUrl="/products/accessories"
         type="website"
       />
       <Navbar />

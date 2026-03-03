@@ -6,6 +6,10 @@ interface SEOHeadProps {
   description: string;
   keywords?: string;
   image?: string;
+  canonicalUrl?: string;
+  noindex?: boolean;
+  appendBrand?: boolean;
+  appendLocationSuffix?: boolean;
   type?: 'website' | 'product';
   productData?: {
     price?: string;
@@ -19,11 +23,22 @@ export function SEOHead({
   description, 
   keywords, 
   image = '/og-image.jpg',
+  canonicalUrl,
+  noindex = false,
+  appendBrand = false,
+  appendLocationSuffix = false,
   type = 'website',
   productData
 }: SEOHeadProps) {
-  const fullTitle = `${title} | Vaja`;
-  const fullDescription = `${description} Available in Johannesburg, Cape Town, and Gauteng. Expert installation and premium quality guaranteed.`;
+  const siteUrl = 'https://www.vaja.co.za';
+  const fullTitle = appendBrand && !/\|\s*Vaja$/i.test(title) ? `${title} | Vaja` : title;
+  const fullDescription = appendLocationSuffix
+    ? `${description} Available in Johannesburg, Cape Town, and Gauteng. Expert installation and premium quality guaranteed.`
+    : description;
+  const currentPath = typeof window !== 'undefined' ? `${window.location.pathname}${window.location.search}` : '';
+  const resolvedUrl = canonicalUrl
+    ? new URL(canonicalUrl, siteUrl).toString()
+    : `${siteUrl}${currentPath}`;
 
   return (
     <Helmet>
@@ -32,17 +47,19 @@ export function SEOHead({
       <meta name="title" content={fullTitle} />
       <meta name="description" content={fullDescription} />
       {keywords && <meta name="keywords" content={keywords} />}
+      <link rel="canonical" href={resolvedUrl} />
+      {noindex && <meta name="robots" content="noindex,nofollow" />}
 
       {/* Open Graph / Facebook */}
       <meta property="og:type" content={type} />
-      <meta property="og:url" content={window.location.href} />
+      <meta property="og:url" content={resolvedUrl} />
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={fullDescription} />
       <meta property="og:image" content={image} />
 
       {/* Twitter */}
       <meta property="twitter:card" content="summary_large_image" />
-      <meta property="twitter:url" content={window.location.href} />
+      <meta property="twitter:url" content={resolvedUrl} />
       <meta property="twitter:title" content={fullTitle} />
       <meta property="twitter:description" content={fullDescription} />
       <meta property="twitter:image" content={image} />

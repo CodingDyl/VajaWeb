@@ -12,9 +12,10 @@ const SteamRooms = () => {
   return (
     <div className="min-h-screen bg-primary">
       <SEOHead
-        title="Steam Rooms for Sale in South Africa"
-        description="Explore toptier steam rooms by Vaja, the expert suppliers, manufacturers, and installers. Elevate your space with our luxurious steam solutions."
-        keywords="steam rooms, steam generator, steam bath, steam sauna, steam room supplier, Johannesburg, Cape Town, Gauteng"
+        title="Custom Steam Rooms in South Africa | Vaja"
+        description="Premium steam rooms for sale for home and commercial use in South Africa. Nordmann steam room generators fitted as standard. Expert installation included."
+        keywords="steam room, steam room near me, steam room for sale, steam room installers near me, steam room installation"
+        canonicalUrl="/steam-rooms"
         type="website"
       />
       <Navbar />

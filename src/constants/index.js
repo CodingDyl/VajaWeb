@@ -25,7 +25,7 @@ const navItems = [
       {
         heading: 'Ice Baths',
         items: [
-          { label: 'Premium Ice Bath', to: '/products/ice-bath/premium-ice-bath' },
+          { label: 'Premium Ice Bath', to: '/products/icebath/premiumicebath' },
         ],
       },
       {

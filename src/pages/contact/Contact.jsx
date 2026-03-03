@@ -155,9 +155,10 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-primary">
       <SEOHead
-        title="Contact Us"
-        description="Connect with Vaja today to bring your dream sauna or steam room to life. Our team is ready to assist with unparalleled expertise and service."
-        keywords="sauna installation, steam room installation, contact VAJA, sauna consultation, Johannesburg, Cape Town, Gauteng"
+        title="Contact Us | Vaja"
+        description="Contact Vaja for sauna and steam room enquiries. Request a free quote, book a consultation, or visit our Johannesburg showroom. We are here to help you."
+        keywords="sauna installation near me, steam room contractors near me, sauna installation companies, steam room installers near me"
+        canonicalUrl="/contact"
         type="website"
       />
       <Navbar />

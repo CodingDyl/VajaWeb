@@ -72,9 +72,10 @@ const Equipment = () => {
   return (
     <div className="min-h-screen bg-primary">
       <SEOHead
-        title="Sauna Equipment"
-        description="Find highquality sauna parts and equipment, from heaters to controls, ensuring reliable performance and easy maintenance."
-        keywords="harvia sauna heaters, harvia sauna heater, harvia sauna heater, harvia sauna heater, harvia sauna heater"
+        title="Harvia Sauna Heaters in South Africa | Vaja"
+        description="Shop sauna heaters, sauna stoves, and Harvia sauna heaters from Vaja South Africa. Sauna heater for sale with expert advice and fast delivery nationwide."
+        keywords="harvia sauna heaters, sauna heaters, wood burning sauna stove, sauna heater for sale"
+        canonicalUrl="/products/equipment"
         type="website"
       />
       <Navbar />

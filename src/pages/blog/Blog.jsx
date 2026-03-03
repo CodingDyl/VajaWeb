@@ -93,9 +93,10 @@ const Blog = () => {
   return (
     <div className="min-h-screen bg-primary">
       <SEOHead
-        title="Read Our Blogs"
-        description="Dive into Vaja's blog for a world of wellness wisdom. From innovative design ideas to health benefits, enrich your knowledge with our experts"
-        keywords="sauna blog, wellness tips, sauna articles, sauna news, sauna insights, sauna tips, sauna news, sauna insights, sauna tips, sauna news, sauna insights"
+        title="News & Insights | Vaja"
+        description="Stay up to date with the latest sauna and steam room news, tips, and insights from Vaja South Africa. Expert guides on wellness, DIY builds, and more."
+        keywords="sauna blog, steam rooms vs traditional saunas, sauna safety for families, sauna recovery for athletes"
+        canonicalUrl="/blog"
         type="website"
       />
       <Navbar />

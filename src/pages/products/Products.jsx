@@ -14,9 +14,10 @@ const Products = () => {
   return (
     <div className="min-h-screen bg-primary">
       <SEOHead
-        title="Products"
-        description="Experience the ultimate relaxation with our stateoftheart saunas and steam rooms. Custom designs, innovative features, and ecofriendly options tailored to enhance your wellness journey."
-        keywords="luxury saunas, steam rooms, infrared sauna, home sauna installation, premium sauna supplier, Johannesburg, Cape Town, Gauteng"
+        title="Traditional Luxury Saunas in South Africa | Vaja"
+        description="Premium home saunas and traditional sauna rooms crafted in timber. Expert design and installation in Johannesburg, Cape Town, and Pretoria. Request a quote."
+        keywords="saunas, sauna for sale, home sauna for sale, saunas for sale near me, traditional saunas, sauna room for sale"
+        canonicalUrl="/products"
         type="website"
       />
       <Navbar />

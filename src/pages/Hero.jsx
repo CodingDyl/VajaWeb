@@ -10,9 +10,10 @@ export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center bg-primary overflow-hidden">
       <SEOHead
-        title="Luxury Saunas & Steam Rooms in South Africa"
-        description="Discover premium home saunas and steam rooms in Johannesburg, Cape Town, and Gauteng. Expert installation, luxury quality, and exceptional service for your wellness journey."
-        keywords="luxury saunas, steam rooms, home sauna installation, infrared sauna, wellness equipment, Johannesburg, Cape Town, Gauteng"
+        title="Saunas and Steam Rooms Suppliers in South Africa | Vaja"
+        description="South Africa's leading sauna and steam room supplier since 1970. Custom saunas for home and commercial use with expert installation. Get a free quote."
+        keywords="sauna suppliers, sauna manufacturers, steam room manufacturers, sauna installations, steam room installation, home sauna installation"
+        canonicalUrl="/"
         image={sauna_hero}
         type="website"
       />

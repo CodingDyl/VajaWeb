@@ -47,9 +47,10 @@ const About = () => {
   return (
     <div className='min-h-screen bg-primary'>
       <SEOHead
-        title="About"
-        description="Discover Vaja: Leading suppliers, manufacturers, and installers in the wellness industry, specialising in premium saunas and steam rooms."
-        keywords="VAJA saunas, luxury sauna supplier, steam room experts, sauna maintenance, Johannesburg, Cape Town, Gauteng, South Africa"
+        title="About us | Vaja"
+        description="One of South Africa's leading sauna manufacturers since 1970. We design, supply, build, and install custom saunas and steam rooms for homes and businesses."
+        keywords="sauna manufacturers, best sauna manufacturers, sauna suppliers near me, steam room suppliers"
+        canonicalUrl="/about"
         image={aboutImage}
         type="website"
       />

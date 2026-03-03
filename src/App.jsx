@@ -39,6 +39,7 @@ function App() {
             element={<ProductPage products={products} />} 
           />
           <Route path="/products/ice-bath/:productSlug" element={<IceProductPage />} />
+          <Route path="/products/icebath/:productSlug" element={<IceProductPage />} />
           <Route path="/gallery/category/:slug" element={<CategoryGallery />} />
           <Route path="/products/auroma-concentrates" element={<AuromaConcentrates />} />
           <Route path="/products/diy-sauna-kits" element={<DIYSauna />} />
@@ -46,6 +47,7 @@ function App() {
           <Route path="/products/equipment" element={<Equipment />} />
 
           <Route path="/steam-rooms" element={<SteamRooms />} />
+          <Route path="/steamrooms" element={<SteamRooms />} />
           <Route path="/gallery/category/client-3d-renderings" element={<ThreeDGallery />} />
         </Routes>
       </Router>

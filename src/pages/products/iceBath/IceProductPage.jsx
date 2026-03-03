@@ -7,10 +7,15 @@ import { Tabs } from '@mantine/core';
 import { useParams, Navigate, Link } from 'react-router-dom';
 import { IconCheckbox, IconRuler, IconTools, IconInfoCircle, IconVideo } from '@tabler/icons-react';
 import { iceBaths } from '../../../constants';
+import { SEOHead } from '../../../components/SEOHead';
 
 const IceProductPage = () => {
   const { productSlug } = useParams();
-  const product = iceBaths.find(p => p.slug === productSlug);
+  const slugAliases = {
+    premiumicebath: 'premium-ice-bath',
+  };
+  const normalizedSlug = slugAliases[productSlug] || productSlug;
+  const product = iceBaths.find(p => p.slug === normalizedSlug);
   const [activeImage, setActiveImage] = useState(0);
 
   if (!product) {
@@ -19,6 +24,17 @@ const IceProductPage = () => {
 
   return (
     <div className="min-h-screen bg-primary">
+      <SEOHead
+        title="Premium Ice Bath & Cold Plunge Tub | Vaja"
+        description="Recover faster with a professional-grade ice bath from Vaja. Premium cold plunge tubs for athletes and wellness enthusiasts. Delivery across South Africa."
+        keywords="ice baths for sale, ice tubs for sale, cold plunge tub for sale, cold tub for sale"
+        canonicalUrl="/products/icebath/premiumicebath"
+        type="product"
+        productData={{
+          brand: 'Vaja',
+          availability: 'InStock',
+        }}
+      />
       <Navbar />
       
       {/* Hero Section */}
