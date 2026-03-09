@@ -36,6 +36,79 @@ const productSeoMap = {
   },
 };
 
+const productFaqs = {
+  aurora: [
+    {
+      question: 'Is Aurora suitable as an outdoor glass sauna?',
+      answer: 'Yes. Aurora is specifically designed as a modern outdoor glass sauna with durable exterior materials and premium interior timber finishes.',
+    },
+    {
+      question: 'Do you provide sauna installation in South Africa?',
+      answer: 'Yes. Vaja provides professional sauna installation in Johannesburg, Cape Town, Pretoria, and surrounding regions.',
+    },
+    {
+      question: 'Can Aurora be customized?',
+      answer: 'Yes. Our team can advise on finishes, layout, and accessory options to align with your space and project goals.',
+    },
+  ],
+  elysium: [
+    {
+      question: 'What is a sauna and shower combo?',
+      answer: 'A sauna and shower combo combines a heated sauna cabin with an integrated shower zone for complete heat-and-cool recovery in one installation.',
+    },
+    {
+      question: 'Is Elysium suitable for home use?',
+      answer: 'Yes. Elysium is designed for residential and boutique hospitality spaces that need a compact luxury wellness setup.',
+    },
+    {
+      question: 'Do you offer project guidance before purchase?',
+      answer: 'Yes. We assist with sizing, positioning, and installation planning before final specification.',
+    },
+  ],
+  loyly: [
+    {
+      question: 'Is Loyly a wood fired sauna?',
+      answer: 'Yes. Loyly is configured as a wood fired sauna for clients who prefer authentic fire-heated sessions.',
+    },
+    {
+      question: 'Does Loyly include a wood burning sauna stove?',
+      answer: 'Loyly is designed to work with a wood burning sauna heater setup and can be specified to suit your project requirements.',
+    },
+    {
+      question: 'Where can Loyly be installed?',
+      answer: 'It is best suited to outdoor installations with proper ventilation and compliant clearances.',
+    },
+  ],
+  kaelis: [
+    {
+      question: 'Can Kaelis be built as a custom outdoor sauna?',
+      answer: 'Yes. Kaelis is ideal for bespoke home sauna projects with custom finish and layout requirements.',
+    },
+    {
+      question: 'What materials are used in Kaelis?',
+      answer: 'Kaelis typically combines thermo pine and Obeche timber for durability, comfort, and visual warmth.',
+    },
+    {
+      question: 'Do you support commercial projects?',
+      answer: 'Yes. We supply and install custom sauna solutions for residential and hospitality applications.',
+    },
+  ],
+  vakio: [
+    {
+      question: 'Is Vakio a DIY sauna kit?',
+      answer: 'Yes. Vakio is our DIY sauna kit range for buyers who need efficient installation and reliable daily use.',
+    },
+    {
+      question: 'Can Vakio be upgraded after installation?',
+      answer: 'Yes. Vakio supports upgrades such as lighting, accessories, and selected finish enhancements.',
+    },
+    {
+      question: 'Who is Vakio best suited for?',
+      answer: 'Vakio is ideal for homes, guest lodges, and compact wellness spaces that need practical sauna performance.',
+    },
+  ],
+};
+
 const ProductPage = ({ products }) => {
   const { productSlug } = useParams();
   const product = products[productSlug];
@@ -73,6 +146,7 @@ const ProductPage = ({ products }) => {
     title: `${product.name} | Vaja`,
     description: `Premium ${product.name} sauna by Vaja. ${product.description}`,
   };
+  const faqs = productFaqs[productSlug] || [];
 
   const ImageSkeleton = () => (
     <div className="animate-pulse">
@@ -122,7 +196,7 @@ const ProductPage = ({ products }) => {
                 <div className="aspect-square overflow-hidden rounded-2xl">
                   <img 
                     src={product?.images[activeImage]}
-                    alt={product?.name}
+                    alt={`${product?.name} sauna in South Africa`}
                     className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                     loading="eager"
                     decoding="async"
@@ -139,7 +213,7 @@ const ProductPage = ({ products }) => {
                     >
                       <img 
                         src={img} 
-                        alt={`${product?.name} view ${index + 1}`}
+                        alt={`${product?.name} sauna view ${index + 1}`}
                         className="w-full h-full object-cover"
                         loading={index === 0 ? "eager" : "lazy"}
                         decoding="async"
@@ -164,6 +238,9 @@ const ProductPage = ({ products }) => {
             <div className="space-y-4">
               <p className="text-lg text-gray-600">{product?.description}</p>
               <p className="text-gray-700">{product?.productDescription}</p>
+              <p className="text-gray-700">
+                Vaja provides expert sauna installation and after-sales support across South Africa, helping you choose the right layout, heater, and timber finish for long-term performance.
+              </p>
               
               {/* Location Information */}
               <div className="mt-6 p-4 bg-white/5 rounded-lg border border-white/10">
@@ -187,6 +264,12 @@ const ProductPage = ({ products }) => {
               className="inline-flex w-fit bg-accent hover:bg-accent/90 text-white px-8 py-3 rounded-full font-semibold transition-colors"
             >
               Request Quote
+            </Link>
+            <Link
+              to="/products/equipment"
+              className="inline-flex w-fit text-accent underline underline-offset-4 font-medium"
+            >
+              View sauna heaters and equipment
             </Link>
           </motion.div>
         </div>
@@ -327,7 +410,7 @@ const ProductPage = ({ products }) => {
                   >
                     <img
                       src={image}
-                      alt={`Gallery image ${index + 1}`}
+                      alt={`${product?.name} sauna gallery image ${index + 1}`}
                       className="w-full h-full object-cover"
                     />
                   </motion.div>
@@ -401,6 +484,23 @@ const ProductPage = ({ products }) => {
                     We reserve the right to make material changes if the prices or availability of raw materials significantly change during the validity period. We strive to maintain material quality at least at the original level, regardless of any material substitutions.
                   </p>
                 </motion.div>
+
+                {faqs.length > 0 && (
+                <motion.div
+                  variants={fadeIn('up', 'spring', 0.25, 0.75)}
+                  className="mt-10 border-t border-secondary/20 pt-8"
+                >
+                  <h3 className="text-2xl font-bold text-secondary mb-6">Frequently Asked Questions</h3>
+                  <div className="space-y-4">
+                    {faqs.map((faq, index) => (
+                      <div key={index} className="p-4 rounded-lg bg-white/5 border border-white/10">
+                        <h4 className="text-lg font-semibold text-secondary mb-2">{faq.question}</h4>
+                        <p className="text-gray-600">{faq.answer}</p>
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+                )}
               </motion.div>
             </Tabs.Panel>
 

@@ -4,30 +4,30 @@ export const products = {
   'aurora': {
     name: 'Aurora',
     slug: 'aurora',
-    description: 'Inspired by the breathtaking Northern Lights, this name evokes serenity, warmth, and natural beauty. Perfect for a sleek, modern sauna that offers a tranquil escape. (Please Note: This sauna is currently only available in Johannesburg)',
-    productTitle: 'Compact tranquility',
-    // productDescription: 'The Sola sauna is a compact and elegant sauna that offers a serene and tranquil experience. It is designed to fit seamlessly into any space, making it an ideal choice for those who want a luxurious sauna without the need for a large room.',
+    description: 'Aurora is a modern outdoor glass sauna designed for premium homes in South Africa. It combines a bold black glass facade, oak sauna board interior, and ambient LED lighting for a high-end wellness experience.',
+    productTitle: 'Modern outdoor glass sauna',
+    productDescription: 'If you are looking for a modern sauna outdoor design with clean architecture, Aurora delivers a minimalist profile with premium timber finishes. This model is ideal for homeowners who want a statement sauna with everyday comfort and professional installation.',
     images: [aurora_1, aurora_2],
     embed: 'https://kuula.co/share/hJQTz?logo=-1&info=0&fs=1&vr=1&initload=0&thumbs=1&margin=30',
     features: [
       {
-        title: 'Easy installation',
-        description: 'Easy to install: Approximately 4–6 hours with two people.',
+        title: 'Fast installation',
+        description: 'Engineered for streamlined on-site assembly with expert support from the Vaja installation team.',
         icon: '🔧'
       },
       {
-        title: 'Interior',
-        description: 'Cozy, pleasant look and feel thanks to the color and quality of the thermo-aspen. Small dimensions make Cala easy to fit into smaller (bath)rooms. Premium door with a metal or wooden handle. Wooden details are pretreated with sauna wax.',
+        title: 'Premium interior',
+        description: 'Oak sauna board walls and Obeche seating provide a refined look with comfortable heat performance.',
         icon: '🏠'
       },
       {
-        title: 'Lighting',
-        description: 'The Sola sauna features a built-in LED lighting system that provides a soft, ambient glow to create a relaxing atmosphere. The lighting can be adjusted to your preferences, allowing you to create the perfect lighting for your sauna experience.',
+        title: 'Ambient LED lighting',
+        description: 'Integrated backrest lighting creates a calming environment for evening sessions and spa-style relaxation.',
         icon: '💡'
       },
       {
-        title: 'Size',
-        description: 'The Sola sauna is available in two sizes: solo and four-person. The solo size is perfect for those who want a compact and intimate sauna experience, while the four-person size is perfect for those who want a spacious and luxurious sauna experience.',
+        title: 'Optimized footprint',
+        description: 'Balanced dimensions make Aurora suitable for luxury courtyards, pool areas, and modern residential layouts.',
         icon: '📏'
       }
     ],
@@ -55,20 +55,20 @@ export const products = {
   'elysium': {
     name: 'Elysium',
     slug: 'elysium',
-    description: 'Named after the mythical paradise, this name represents ultimate relaxation and luxury. Ideal for a high-end, spa-like sauna experience.',
-    productTitle: 'Elegant relaxation',
-    // productDescription: 'The Elysium sauna is a high-end, spa-like sauna that offers a luxurious and serene experience. It is designed to provide a comfortable and relaxing atmosphere, perfect for those who want to escape the stresses of everyday life.',
+    description: 'Elysium is a luxury outdoor sauna and shower combo that blends heat therapy and cooling rinse in one premium unit. It is built for South African homes that want a complete wellness zone in a compact outdoor format.',
+    productTitle: 'Outdoor sauna with shower combo',
+    productDescription: 'This sauna and shower combo uses Black Pine and Obeche timber finishes for a high-end spa aesthetic. Elysium is ideal for daily recovery, post-training routines, and residential spa upgrades where design and practicality matter.',
     images: [elysium_1, elysium_2],
     embed: "https://kuula.co/share/hJQn2?logo=-1&info=0&fs=1&vr=1&initload=0&thumbs=1&margin=30",
     features: [
       {
-        title: 'Easy installation',
-        description: 'Easy to install: Approximately 4–6 hours with two people.',
+        title: 'Integrated wellness layout',
+        description: 'Sauna and shower are designed as one system for smooth transitions between heat and cooling.',
         icon: '🔧'
       },
       {
-        title: 'Interior',
-        description: 'Cozy, pleasant look and feel thanks to the color and quality of the thermo-aspen. Small dimensions make Cala easy to fit into smaller (bath)rooms. Premium door with a metal or wooden handle. Wooden details are pretreated with sauna wax.',
+        title: 'Premium timber interior',
+        description: 'Obeche seating and wall details create a comfortable, low-maintenance sauna interior with a luxury finish.',
         icon: '🏠'
       }
     ],
@@ -92,20 +92,20 @@ export const products = {
   'loyly': {
     name: 'Loyly',
     slug: 'loyly',
-    description: 'Meaning "heavenly" in Latin, this name conveys a sense of elegance and sophistication. Perfect for a minimalist, contemporary sauna with a refined aesthetic.',
-    productTitle: 'Heavenly elegance',
-    // productDescription: 'The Celeste sauna is a minimalist, contemporary sauna with a refined aesthetic. It is designed to provide a comfortable and relaxing atmosphere, perfect for those who want to escape the stresses of everyday life.',
+    description: 'Loyly is a wood fired sauna designed for authentic traditional sauna sessions. It combines a rustic black pine exterior, wood burning heater, and feature window for clients who want a classic fire-heated experience.',
+    productTitle: 'Wood fired sauna with wood burning stove',
+    productDescription: 'For buyers searching for a wood burning sauna stove setup, Loyly provides traditional heat, natural timber character, and robust performance. It is ideal for outdoor spaces where a classic sauna ritual is preferred over electric systems.',
     images: [loyly_1, loyly_2],
     embed: 'https://kuula.co/share/hJQdC?logo=-1&info=0&fs=1&vr=1&initload=0&thumbs=1&margin=30',
     features: [
       {
-        title: 'Easy installation',
-        description: 'Easy to install: Approximately 4–6 hours with two people.',
+        title: 'Traditional heating',
+        description: 'Configured for a wood-fired heater to deliver deep, natural sauna heat and authentic loyly steam.',
         icon: '🔧'
       },
       {
-        title: 'Interior',
-        description: 'Cozy, pleasant look and feel thanks to the color and quality of the thermo-aspen. Small dimensions make Cala easy to fit into smaller (bath)rooms. Premium door with a metal or wooden handle. Wooden details are pretreated with sauna wax.',  
+        title: 'Rugged timber finish',
+        description: 'Black pine interior and exterior materials create a bold, durable aesthetic suited to outdoor installations.',  
         icon: '🏠' 
       }
     ],
@@ -129,20 +129,20 @@ export const products = {
   'kaelis': {
     name: 'Kaelis',
     slug: 'kaelis',
-    description: 'Inspired by the rare and precious gemstone, this name signifies luxury, uniqueness, and radiance. A great fit for a bespoke sauna design with intricate details.',
-    productTitle: 'Luxury and radiance',
-    // productDescription: 'The Opal sauna is a luxurious and unique sauna that offers a radiant and radiant atmosphere, perfect for those who want to escape the stresses of everyday life.',
+    description: 'Kaelis is a custom outdoor sauna built for homeowners who want a bespoke sauna with premium timber selections. The design blends thermo pine cladding, Obeche seating, and modern detailing for daily wellness use.',
+    productTitle: 'Custom outdoor sauna',
+    productDescription: 'If you are planning a custom built sauna, Kaelis offers flexibility in finish, layout, and installation planning. It is designed for clients who value a tailored sauna aesthetic with professional project support from concept to completion.',
     images: [kaelis_1, kaelis_2],
     embed: "https://kuula.co/share/hJQD2?logo=-1&info=0&fs=1&vr=1&initload=0&thumbs=1&margin=30",
     features: [
       {
-        title: 'Easy installation',
-        description: 'Easy to install: Approximately 4–6 hours with two people.',
+        title: 'Custom-ready build',
+        description: 'Designed for bespoke projects with options that suit premium residential and hospitality spaces.',
         icon: '🔧'
       },
       {
-        title: 'Interior',
-        description: 'Cozy, pleasant look and feel thanks to the color and quality of the thermo-aspen. Small dimensions make Cala easy to fit into smaller (bath)rooms. Premium door with a metal or wooden handle. Wooden details are pretreated with sauna wax.',
+        title: 'Comfort-focused interior',
+        description: 'Obeche slats and carefully selected wood surfaces deliver comfort, durability, and visual warmth.',
         icon: '🏠'
       }
     ],
@@ -170,19 +170,20 @@ export const products = {
   'vakio': {
     name: 'Vakio',
     slug: 'vakio',
-    description: 'Our Standard Sauna Kit range brings classic wellness into any home or small commercial space. With clean lines, efficient sizing, and premium materials, each unit is pre-designed for quick installation and consistent performance.',
-    productTitle: 'Timeless design. Built for simplicity. Priced for accessibility.',
+    description: 'Vakio is our DIY sauna kit range for buyers who want a sauna for sale that is simple to install and easy to upgrade. It is a practical solution for homes, guest lodges, and compact wellness spaces.',
+    productTitle: 'DIY sauna kit for homes and small spaces',
+    productDescription: 'This DIY sauna kit South Africa range is pre-sized for fast setup and long-term reliability. Vakio gives you a clean, modern sauna room with upgrade paths for lighting, accessories, and finish options as your space evolves.',
     images: [standard_1, standard_2],
     embed: 'https://kuula.co/share/h1Tqh?logo=-1&info=0&fs=1&vr=1&initload=0&thumbs=1&margin=30',
     features: [
       {
         title: 'Easy installation',
-        description: 'Easy to install: Approximately 4–6 hours with two people.',
+        description: 'Pre-designed kit layout supports efficient installation with clear assembly steps.',
         icon: '🔧'
       },
       {
         title: 'Clean, minimalistic design',
-        description: 'Our Standard Sauna Kit range brings classic wellness into any home or small commercial space. With clean lines, efficient sizing, and premium materials, each unit is pre-designed for quick installation and consistent performance.',
+        description: 'Clean lines and proportioned dimensions create a modern sauna look that fits contemporary interiors.',
         icon: '🏠'
       },
       {

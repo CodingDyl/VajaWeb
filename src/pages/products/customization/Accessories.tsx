@@ -16,6 +16,7 @@ import {
   harvia_thermometer,
 } from '../../../assets';
 import { SEOHead } from '../../../components/SEOHead';
+import { Link } from 'react-router-dom';
 
 interface AccessoryItem {
   name: string;
@@ -109,12 +110,10 @@ export function Accessories() {
           className="text-center mb-16"
         >
           <h1 className="text-4xl font-bold text-accent mb-6">
-            Sauna Accessories
+            Luxury Sauna Accessories for Home and Commercial Use
           </h1>
           <p className="text-secondary max-w-2xl mx-auto">
-            Enhance your sauna experience with our premium collection of accessories. 
-            Each piece is carefully crafted from the finest materials to complement 
-            your wellness journey.
+            Shop sauna accessories and steam room accessories including buckets, ladles, thermometers, and premium timber components. Vaja accessories are selected to improve comfort, control, and durability in every sauna session.
           </p>
         </motion.div>
 
@@ -141,12 +140,13 @@ export function Accessories() {
             Looking for Something Special?
           </h3>
           <p className="text-gray-600 mb-8">
-            Contact us to inquire about custom accessories or specific requirements 
-            for your sauna setup.
+            Contact us for product compatibility advice, installation support, and bulk accessory orders for hospitality and wellness facilities.
           </p>
-          <button className="bg-accent text-white px-8 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-colors">
-            Contact Us
-          </button>
+          <Link to="/contact">
+            <button className="bg-accent text-white px-8 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-colors">
+              Contact Us
+            </button>
+          </Link>
         </motion.div>
       </main>
       <Footer />

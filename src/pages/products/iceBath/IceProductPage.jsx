@@ -88,6 +88,9 @@ const IceProductPage = () => {
             
             <div className="space-y-4">
               <p className="text-lg text-gray-600">{product?.description}</p>
+              <p className="text-gray-700">
+                This professional cold plunge tub is designed for athletes, high-performance recovery facilities, and home wellness users who need stable temperature control and hygienic filtration.
+              </p>
             </div>
 
             <Link 
@@ -95,6 +98,12 @@ const IceProductPage = () => {
               className="inline-flex w-fit bg-accent hover:bg-accent/90 text-white px-8 py-3 rounded-full font-semibold transition-colors"
             >
               Request Quote
+            </Link>
+            <Link
+              to="/products/equipment"
+              className="inline-flex w-fit text-accent underline underline-offset-4 font-medium"
+            >
+              Explore sauna heaters and equipment
             </Link>
           </motion.div>
         </div>

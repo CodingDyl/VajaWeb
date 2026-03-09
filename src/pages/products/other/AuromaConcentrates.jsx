@@ -5,6 +5,8 @@ import { Navbar } from '../../../components/Navbar';
 import Footer from '../../../components/Footer';
 import { aromaImage } from '../../../assets';
 import { Divider } from '@mantine/core';
+import { SEOHead } from '../../../components/SEOHead';
+import { Link } from 'react-router-dom';
 
 const fragrances = [
   'Pine Needle',
@@ -19,6 +21,13 @@ const fragrances = [
 const AuromaConcentrates = () => {
   return (
     <div className="min-h-screen bg-primary">
+      <SEOHead
+        title="Steam Room and Sauna Aroma Concentrates | Vaja"
+        description="Enhance your sauna and steam room sessions with professional aroma concentrates. Choose from eucalyptus, pine needle, peppermint, and more."
+        keywords="steam room accessories, sauna accessories, aroma concentrates, eucalyptus sauna oil"
+        canonicalUrl="/products/auroma-concentrates"
+        type="website"
+      />
       <Navbar />
       <main className="container mx-auto px-4 py-32">
         <motion.div
@@ -31,8 +40,7 @@ const AuromaConcentrates = () => {
             Aroma Concentrates
           </h1>
           <p className="text-secondary max-w-2xl mx-auto">
-            Enhance your sauna or steam room experience with our wide variety of fragrant essential oils, 
-            carefully selected to create the perfect atmosphere for relaxation and rejuvenation.
+            Our aroma concentrates are formulated for sauna and steam room use, helping you create a consistent wellness atmosphere with high-quality fragrance profiles.
           </p>
         </motion.div>
 
@@ -87,11 +95,11 @@ const AuromaConcentrates = () => {
             Ready to Transform Your Wellness Experience?
           </h3>
           <p className="text-gray-600 mb-8">
-            Contact us to learn more about our aroma concentrates and how they can enhance your sauna or steam room experience.
+            Contact us for recommended fragrance selections, usage guidance, and compatibility with your sauna or steam room setup.
           </p>
-          <button className="bg-accent text-white px-8 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-colors">
+          <Link to="/contact" className="bg-accent text-white px-8 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-colors inline-block">
             Get in Touch
-          </button>
+          </Link>
         </motion.div>
       </main>
       <Footer />

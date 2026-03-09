@@ -6,6 +6,8 @@ import Footer from '../../../components/Footer';
 import { Carousel } from '@mantine/carousel';
 import { Divider } from '@mantine/core';
 import { productImage, sauna_hero } from '../../../assets';
+import { SEOHead } from '../../../components/SEOHead';
+import { Link } from 'react-router-dom';
 
 const saunaKits = [
   {
@@ -49,6 +51,13 @@ const kitIncludes = [
 const DIYSauna = () => {
   return (
     <div className="min-h-screen bg-primary">
+      <SEOHead
+        title="Vakio DIY Sauna Kit South Africa | Vaja"
+        description="Shop DIY sauna kits in South Africa with premium timber finishes and efficient installation. Ideal for homes and small wellness spaces. Request a quote from Vaja."
+        keywords="diy sauna kits south africa, diy sauna kit, sauna kits, home sauna for sale, sauna room for sale"
+        canonicalUrl="/products/diy-sauna-kits"
+        type="website"
+      />
       <Navbar />
       <main className="container mx-auto px-4 py-32">
         <motion.div
@@ -61,9 +70,7 @@ const DIYSauna = () => {
             DIY Sauna Kits
           </h1>
           <p className="text-secondary max-w-2xl mx-auto">
-            Transform your space with our easy-to-assemble DIY sauna kits. 
-            Perfect for both residential and commercial installations, each kit is 
-            designed for straightforward assembly while maintaining premium quality.
+            Our DIY sauna kits are designed for buyers who want premium sauna performance with a faster installation path. Each kit is engineered for reliable heat retention, efficient assembly, and long-term durability.
           </p>
         </motion.div>
 
@@ -142,12 +149,11 @@ const DIYSauna = () => {
             Need a Custom Size?
           </h3>
           <p className="text-gray-600 mb-8">
-            We manufacture custom size kits to suit your specific requirements. 
-            Contact our experienced design team to create your perfect sauna solution.
+            Need custom dimensions, layout advice, or installation support? Our team can help you specify the right sauna kit for your home or commercial project.
           </p>
-          <button className="bg-accent text-white px-8 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-colors">
+          <Link to="/contact" className="bg-accent text-white px-8 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-colors inline-block">
             Request Custom Quote
-          </button>
+          </Link>
         </motion.div>
       </main>
       <Footer />

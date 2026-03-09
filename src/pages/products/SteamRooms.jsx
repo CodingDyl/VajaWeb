@@ -52,10 +52,10 @@ const SteamRooms = () => {
           className="max-w-4xl mx-auto text-center space-y-8 mb-16"
         >
           <h1 className="text-4xl md:text-5xl font-bold text-accent">
-            Premium Steam Solutions by VAJA
+            Custom Steam Rooms in South Africa
           </h1>
           <p className="text-secondary text-lg">
-            At VAJA, we supply high-quality steam generators that bring the luxury of steam therapy to homes, spas, and commercial wellness spaces. As the exclusive supplier of Nordmann Steam Generators, we provide cutting-edge, efficient, and durable steam solutions trusted by industry professionals worldwide.
+            Vaja supplies and installs premium steam rooms for homes, spas, gyms, and hospitality spaces. We use Nordmann steam room generators to deliver consistent steam output, efficient performance, and dependable long-term operation.
           </p>
         </motion.div>
 
@@ -65,10 +65,10 @@ const SteamRooms = () => {
           className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 max-w-3xl mx-auto mb-16"
         >
           <h2 className="text-2xl font-semibold text-accent mb-4 text-center">
-            Why Choose VAJA's Steam Generators?
+            Steam Room Installation with Nordmann Technology
           </h2>
           <p className="text-secondary text-center">
-            Our steam solutions combine innovative technology with reliable performance, delivering an unmatched wellness experience. Each VAJA steam system is designed for optimal efficiency, easy maintenance, and long-lasting operation.
+            Our custom steam room systems are designed around your room dimensions, usage profile, and finish requirements. From specification to commissioning, our team ensures each installation is efficient, serviceable, and built for daily wellness use.
           </p>
         </motion.div>
 
@@ -181,15 +181,17 @@ const SteamRooms = () => {
         >
           <h3 className="text-2xl font-semibold text-accent mb-4">Ready to Transform Your Space?</h3>
           <p className="text-secondary mb-8">
-            As South Africa's leading supplier of steam generators, VAJA ensures unmatched quality and service for your steam room installation.
+            Request a quote for a custom steam room in Johannesburg, Cape Town, Pretoria, and surrounding regions.
           </p>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-accent text-white px-8 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-all duration-300 shadow-lg"
-          >
-            Contact Us Today
-          </motion.button>
+          <Link to="/contact">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-accent text-white px-8 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-all duration-300 shadow-lg"
+            >
+              Contact Us Today
+            </motion.button>
+          </Link>
         </motion.div>
       </motion.section>
       <Footer />

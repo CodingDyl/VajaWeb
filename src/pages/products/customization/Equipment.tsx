@@ -21,6 +21,7 @@ import {
   harvia_the_wall_e,
 } from '../../../assets';
 import { SEOHead } from '../../../components/SEOHead';
+import { Link } from 'react-router-dom';
 
 interface HeaterInfo {
   id: string;
@@ -87,10 +88,10 @@ const Equipment = () => {
           className="text-center mb-16"
         >
           <h1 className="text-4xl font-bold text-accent mb-6">
-            Harvia's Heaters
+            Harvia Sauna Heaters and Sauna Stoves in South Africa
           </h1>
           <p className="text-secondary max-w-2xl mx-auto">
-            Discover our premium range of Harvia sauna heaters, designed to provide the perfect heat for your sauna experience. From traditional wood-burning to modern electric solutions, we have the ideal heater for your needs.
+            Explore electric and wood burning sauna heater options for residential and commercial sauna projects. Vaja supplies Harvia sauna heaters with expert sizing guidance, technical support, and fast national delivery.
           </p>
         </motion.div>
 
@@ -106,7 +107,7 @@ const Equipment = () => {
               <div className="h-80 relative p-4">
                 <img
                   src={heater.image}
-                  alt={heater.name}
+                  alt={`${heater.name} sauna heater`}
                   className="w-full h-full object-contain"
                 />
               </div>
@@ -132,16 +133,14 @@ const Equipment = () => {
             View Full Range
           </h3>
           <p className="text-gray-600 mb-8">
-            Explore Harvia's complete collection of sauna heaters and accessories.
+            Need help choosing the right kilowatt rating and sauna heater model? Contact our team for product matching and installation guidance.
           </p>
-          <a 
-            href="https://www.harvia.com/fi/"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            to="/contact"
             className="inline-block bg-accent text-white px-8 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-colors"
           >
-            Visit Harvia Website
-          </a>
+            Request Heater Advice
+          </Link>
         </motion.div>
       </main>
       <Footer />

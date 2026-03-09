@@ -138,7 +138,7 @@ export const productInfo: Record<string, ProductInfo> = {
     }
   },
   Vakio: {
-    description: "“Vakio” (pronounced vah-kee-oh) directly translates to “standard”, “default”, or “baseline” — simple, strong, and minimal. It fits your naming theme beautifully while still feeling authentic and design-conscious",
+    description: "Vakio is a practical DIY sauna kit designed for buyers who want a streamlined sauna installation with premium materials. It combines compact dimensions, efficient heat performance, and upgrade-ready components for long-term value in home wellness spaces.",
     features: [
       {
         title: 'Easy installation',

@@ -54,10 +54,10 @@ const Products = () => {
           className="max-w-4xl mx-auto text-center space-y-8 mb-16"
         >
           <h1 className="text-4xl md:text-5xl font-bold text-accent">
-            Experience Luxury & Wellness with VAJA Saunas
+            Traditional Luxury Saunas in South Africa
           </h1>
           <p className="text-secondary text-lg">
-            At VAJA, we design and manufacture premium saunas that bring the essence of relaxation and wellness into your home or business. Crafted with exceptional materials and cutting-edge technology, our saunas offer an elegant, rejuvenating escape tailored to your lifestyle.
+            Vaja designs and installs premium home saunas and commercial sauna rooms across Johannesburg, Cape Town, and Pretoria. Our sauna range combines durable timber construction, modern design, and expert installation support from concept to commissioning.
           </p>
         </motion.div>
 
@@ -67,10 +67,10 @@ const Products = () => {
           className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 max-w-3xl mx-auto mb-16"
         >
           <h2 className="text-2xl font-semibold text-accent mb-4 text-center">
-            The VAJA Sauna Collection: Crafted for Comfort & Style
+            Sauna Manufacturers and Installers You Can Trust
           </h2>
           <p className="text-secondary text-center">
-            Our luxury saunas combine time-honored traditions with modern innovation, delivering an immersive wellness experience. From traditional Finnish saunas to custom-designed contemporary spaces, each VAJA sauna is built to enhance both aesthetic appeal and therapeutic benefits.
+            As one of South Africa's established sauna suppliers, we build traditional and custom sauna solutions for residential and hospitality projects. Every model is engineered for reliable heat performance, long-term durability, and day-to-day comfort.
           </p>
         </motion.div>
 
@@ -151,15 +151,17 @@ const Products = () => {
         >
           <h3 className="text-2xl font-semibold text-accent mb-4">Need a custom solution?</h3>
           <p className="text-secondary mb-8">
-            We offer custom-sized sauna kits tailored to your specific requirements. Contact our experienced design team to create your dream sauna.
+            We provide custom built sauna design, sizing, and on-site sauna installation for homes and wellness venues across South Africa.
           </p>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-accent text-white px-8 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-all duration-300 shadow-lg"
-          >
-            Get a Custom Quote
-          </motion.button>
+          <Link to="/contact">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-accent text-white px-8 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-all duration-300 shadow-lg"
+            >
+              Get a Custom Quote
+            </motion.button>
+          </Link>
         </motion.div>
       </motion.section>
       <Footer />

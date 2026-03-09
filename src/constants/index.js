@@ -101,31 +101,31 @@ const saunaRooms = [
   {
     name: 'Aurora',
     slug: 'aurora',
-    description: 'Inspired by the breathtaking Northern Lights, this name evokes serenity, warmth, and natural beauty. Perfect for a sleek, modern sauna that offers a tranquil escape.',
+    description: 'A modern outdoor glass sauna with oak interior finishes and LED ambient lighting for premium home wellness spaces.',
     image: aurora_1,
   },
   {
     name: 'Elysium',
     slug: 'elysium',
-    description: 'Named after the mythical paradise, this name represents ultimate relaxation and luxury. Ideal for a high-end, spa-like sauna experience.',
+    description: 'A luxury sauna and shower combo designed for complete outdoor recovery and spa-style home installations.',
     image: elysium_1,
   },
   {
     name: 'Löyly',
     slug: 'loyly',
-    description: 'Meaning "heavenly" in Latin, this name conveys a sense of elegance and sophistication. Perfect for a minimalist, contemporary sauna with a refined aesthetic.',
+    description: 'A wood fired sauna with a wood burning heater for authentic traditional sessions and bold rustic design.',
     image: loyly_1,
   },
   {
     name: 'Kaelis',
     slug: 'kaelis',
-    description: 'Inspired by the rare and precious gemstone, this name signifies luxury, uniqueness, and radiance. A great fit for a bespoke sauna design with intricate details.',
+    description: 'A custom outdoor sauna with premium timber and bespoke detailing for high-end residential wellness projects.',
     image: kaelis_1,
   },
   {
     name: 'Vakio',
     slug: 'vakio',
-    description: 'A compact and affordable option that offers a comfortable and relaxing atmosphere.',
+    description: 'A DIY sauna kit range for compact spaces, quick setup, and scalable upgrades over time.',
     image: standard_1,
   }
 ];
