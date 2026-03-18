@@ -17,6 +17,7 @@ import {
 } from '../../../assets';
 import { SEOHead } from '../../../components/SEOHead';
 import { Link } from 'react-router-dom';
+import { getRouteSeo } from '../../../lib/seo';
 
 interface AccessoryItem {
   name: string;
@@ -92,11 +93,13 @@ const AccessoryCard: React.FC<{ item: AccessoryItem; index: number }> = ({ item,
 );
 
 export function Accessories() {
+  const seoData = getRouteSeo('/products/accessories');
+
   return (
     <div className="min-h-screen bg-primary">
       <SEOHead
-        title="Luxury Sauna Accessories | Vaja"
-        description="Shop sauna accessories and steam room accessories from Vaja. Buckets, ladles, thermometers, lighting, and sauna parts for your home or commercial sauna."
+        title={seoData.title}
+        description={seoData.description}
         keywords="sauna accessories, steam room accessories, sauna parts"
         canonicalUrl="/products/accessories"
         type="website"

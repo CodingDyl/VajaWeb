@@ -10,6 +10,7 @@ import {
   gal_11, gal_12, gal_13, gal_14, gal_15, gal_16, gal_17, gal_18, gal_19, gal_20,
 } from '../../assets';
 import { SEOHead } from '../../components/SEOHead';
+import { getRouteSeo } from '../../lib/seo';
 
 const GalleryItem = ({ item, index }) => {
   const slug = item.title.toLowerCase().replace(/\s+/g, '-');
@@ -70,6 +71,7 @@ const AnimatedButton = () => (
 );
 
 const Gallery = () => {
+  const seoData = getRouteSeo('/gallery');
   const standaloneImages = [
     gal_1, gal_2, gal_3, gal_4, gal_5, gal_6, gal_7, gal_8, gal_9, gal_10,
     gal_11, gal_12, gal_13, gal_14, gal_15, gal_16, gal_17, gal_18, gal_19, gal_20,
@@ -81,8 +83,8 @@ const Gallery = () => {
   return (
     <div className="min-h-screen bg-primary">
       <SEOHead
-        title="Gallery | Vaja"
-        description="View our gallery of sauna and steam room installations across South Africa. Custom residential and commercial sauna projects. Get inspired for your build."
+        title={seoData.title}
+        description={seoData.description}
         keywords="sauna installations, steam room installation, custom built sauna, bespoke sauna"
         canonicalUrl="/gallery"
         type="website"

@@ -7,6 +7,7 @@ import { aromaImage } from '../../../assets';
 import { Divider } from '@mantine/core';
 import { SEOHead } from '../../../components/SEOHead';
 import { Link } from 'react-router-dom';
+import { getRouteSeo } from '../../../lib/seo';
 
 const fragrances = [
   'Pine Needle',
@@ -19,11 +20,13 @@ const fragrances = [
 ];
 
 const AuromaConcentrates = () => {
+  const seoData = getRouteSeo('/products/auroma-concentrates');
+
   return (
     <div className="min-h-screen bg-primary">
       <SEOHead
-        title="Steam Room and Sauna Aroma Concentrates | Vaja"
-        description="Enhance your sauna and steam room sessions with professional aroma concentrates. Choose from eucalyptus, pine needle, peppermint, and more."
+        title={seoData.title}
+        description={seoData.description}
         keywords="steam room accessories, sauna accessories, aroma concentrates, eucalyptus sauna oil"
         canonicalUrl="/products/auroma-concentrates"
         type="website"

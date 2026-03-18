@@ -6,6 +6,7 @@ import { Navbar } from '../../../components/Navbar';
 import Footer from '../../../components/Footer';
 import { SEOHead } from '../../../components/SEOHead';
 import { fadeIn, staggerContainer } from '../../../utils/motion';
+import { getRouteSeo } from '../../../lib/seo';
 import {
   sun, sabi, bhp, fair, shera, inter, legacy, woodland, earth, cloud9,
   planetFit, vodacom, royalSax, idc, wildCoast, virgin, maldives
@@ -17,13 +18,15 @@ const customers = [
 ];
 
 const ThankYou = () => {
+  const seoData = getRouteSeo('/contact/thank-you');
+
   return (
     <div className="min-h-screen bg-primary flex flex-col">
       <SEOHead
-        title="Thank You for Contacting Us | Vaja"
-        description="We've received your inquiry and will be in touch shortly. In the meantime, feel free to explore our gallery of bespoke saunas and steam rooms."
+        title={seoData.title}
+        description={seoData.description}
         canonicalUrl="/contact/thank-you"
-        noindex
+        noindex={seoData.noindex}
         type="website"
       />
       <Navbar />

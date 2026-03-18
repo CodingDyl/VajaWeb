@@ -5,13 +5,16 @@ import { motion } from 'framer-motion'
 import { Navbar } from '../components/Navbar'
 import { Link } from 'react-router-dom'
 import { SEOHead } from '../components/SEOHead'
+import { getRouteSeo } from '../lib/seo'
 
 export function Hero() {
+  const seoData = getRouteSeo('/')
+
   return (
     <section className="relative min-h-screen flex items-center bg-primary overflow-hidden">
       <SEOHead
-        title="Saunas and Steam Rooms Suppliers in South Africa | Vaja"
-        description="South Africa's leading sauna and steam room supplier since 1970. Custom saunas for home and commercial use with expert installation. Get a free quote."
+        title={seoData.title}
+        description={seoData.description}
         keywords="sauna suppliers, sauna manufacturers, steam room manufacturers, sauna installations, steam room installation, home sauna installation"
         canonicalUrl="/"
         image={sauna_hero}

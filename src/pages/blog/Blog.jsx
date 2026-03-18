@@ -6,6 +6,7 @@ import Footer from '../../components/Footer';
 import { client } from '../../lib/client';
 import { Link } from 'react-router-dom';
 import { SEOHead } from '../../components/SEOHead';
+import { getRouteSeo } from '../../lib/seo';
 
 const BlogCard = ({ post, index }) => (
   <motion.div
@@ -44,6 +45,7 @@ const BlogCard = ({ post, index }) => (
 );
 
 const Blog = () => {
+  const seoData = getRouteSeo('/blog');
   const [blogPosts, setBlogPosts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -93,8 +95,8 @@ const Blog = () => {
   return (
     <div className="min-h-screen bg-primary">
       <SEOHead
-        title="News & Insights | Vaja"
-        description="Stay up to date with the latest sauna and steam room news, tips, and insights from Vaja South Africa. Expert guides on wellness, DIY builds, and more."
+        title={seoData.title}
+        description={seoData.description}
         keywords="sauna blog, steam rooms vs traditional saunas, sauna safety for families, sauna recovery for athletes"
         canonicalUrl="/blog"
         type="website"

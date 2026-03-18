@@ -9,13 +9,16 @@ import SaunaCard from '../../components/SaunaCard';
 import { Link } from 'react-router-dom';
 import { IconCheck } from '@tabler/icons-react';
 import { SEOHead } from '../../components/SEOHead';
+import { getRouteSeo } from '../../lib/seo';
 
 const Products = () => {
+  const seoData = getRouteSeo('/products');
+
   return (
     <div className="min-h-screen bg-primary">
       <SEOHead
-        title="Traditional Luxury Saunas in South Africa | Vaja"
-        description="Premium home saunas and traditional sauna rooms crafted in timber. Expert design and installation in Johannesburg, Cape Town, and Pretoria. Request a quote."
+        title={seoData.title}
+        description={seoData.description}
         keywords="saunas, sauna for sale, home sauna for sale, saunas for sale near me, traditional saunas, sauna room for sale"
         canonicalUrl="/products"
         type="website"

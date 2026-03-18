@@ -4,7 +4,9 @@ import { motion } from 'framer-motion';
 import { fadeIn, staggerContainer } from '../../../utils/motion';
 import { Navbar } from '../../../components/Navbar';
 import Footer from '../../../components/Footer';
+import { SEOHead } from '../../../components/SEOHead';
 import { galleryCategories } from '../../../constants/galleryImages';
+import { getGalleryCategorySeo } from '../../../lib/seo';
 
 const CategoryGallery = () => {
   const { slug } = useParams();
@@ -27,8 +29,15 @@ const CategoryGallery = () => {
     );
   }
 
+  const seoData = getGalleryCategorySeo(category);
+
   return (
     <div className="min-h-screen bg-primary">
+      <SEOHead
+        title={seoData.title}
+        description={seoData.description}
+        canonicalUrl={`/gallery/${category.route}`}
+      />
       <Navbar />
       <motion.div
         variants={staggerContainer()}

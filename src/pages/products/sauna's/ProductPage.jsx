@@ -12,29 +12,7 @@ import { productIcons } from '../../../constants/productIcons';
 import { aurora_plan, elysium_plan, loyly_plan, kaelis_plan } from '../../../../public';
 import { aurora_plan_img, elysium_plan_img, loyly_plan_img, kaelis_plan_img } from '../../../assets';
 import { SEOHead } from '../../../components/SEOHead';
-
-const productSeoMap = {
-  aurora: {
-    title: 'Aurora Modern Glass Sauna South Africa | Vaja',
-    description: 'The Aurora sauna features a striking black glass exterior, oak interior and LED ambient lighting. Request a quote in Johannesburg, Cape Town or Pretoria.',
-  },
-  elysium: {
-    title: 'Elysium Outdoor Sauna with Shower | Vaja',
-    description: 'Luxury sauna and shower combo in Black Pine and Obeche timber. Designed for outdoor spaces. Available in Johannesburg, Cape Town, and Pretoria. Get a quote.',
-  },
-  loyly: {
-    title: 'Loyly Wood Fired Sauna with Wood Burning Sauna Stove | Vaja',
-    description: 'The Loyly sauna with rustic black pine exterior, wood burning heater and large feature window. A bold, minimalist design available across South Africa.',
-  },
-  kaelis: {
-    title: 'Kaelis Custom Outdoor Sauna in South Africa | Vaja',
-    description: 'The Kaelis bespoke sauna with thermo pine exterior, obeche wood seating and modern design built for everyday luxury. Available across South Africa today.',
-  },
-  vakio: {
-    title: 'Vakio DIY Sauna Kit South Africa | Vaja',
-    description: 'The Vakio standard sauna kit offers easy installation, clean design and premium materials for homes or small spaces. Fully upgradeable and available in SA.',
-  },
-};
+import { productSeoBySlug } from '../../../lib/seo';
 
 const productFaqs = {
   aurora: [
@@ -142,7 +120,7 @@ const ProductPage = ({ products }) => {
     { name: 'Cape Town', region: 'Western Cape' },
     { name: 'Pretoria', region: 'Gauteng' }
   ];
-  const seoData = productSeoMap[productSlug] || {
+  const seoData = productSeoBySlug[productSlug] || {
     title: `${product.name} | Vaja`,
     description: `Premium ${product.name} sauna by Vaja. ${product.description}`,
   };

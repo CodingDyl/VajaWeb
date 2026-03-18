@@ -8,8 +8,10 @@ import { useParams, Navigate, Link } from 'react-router-dom';
 import { IconCheckbox, IconRuler, IconTools, IconInfoCircle, IconVideo } from '@tabler/icons-react';
 import { iceBaths } from '../../../constants';
 import { SEOHead } from '../../../components/SEOHead';
+import { getRouteSeo } from '../../../lib/seo';
 
 const IceProductPage = () => {
+  const seoData = getRouteSeo('/products/icebath/premiumicebath');
   const { productSlug } = useParams();
   const slugAliases = {
     premiumicebath: 'premium-ice-bath',
@@ -25,8 +27,8 @@ const IceProductPage = () => {
   return (
     <div className="min-h-screen bg-primary">
       <SEOHead
-        title="Premium Ice Bath & Cold Plunge Tub | Vaja"
-        description="Recover faster with a professional-grade ice bath from Vaja. Premium cold plunge tubs for athletes and wellness enthusiasts. Delivery across South Africa."
+        title={seoData.title}
+        description={seoData.description}
         keywords="ice baths for sale, ice tubs for sale, cold plunge tub for sale, cold tub for sale"
         canonicalUrl="/products/icebath/premiumicebath"
         type="product"

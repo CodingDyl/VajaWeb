@@ -21,6 +21,12 @@ const staticRoutes = [
   { path: '/steam-rooms', changefreq: 'monthly', priority: '0.8' },
   { path: '/contact', changefreq: 'monthly', priority: '0.7' },
   { path: '/gallery', changefreq: 'weekly', priority: '0.8' },
+  { path: '/gallery/category/kaelis', changefreq: 'monthly', priority: '0.7' },
+  { path: '/gallery/category/aurora', changefreq: 'monthly', priority: '0.7' },
+  { path: '/gallery/category/loyly', changefreq: 'monthly', priority: '0.7' },
+  { path: '/gallery/category/elysium', changefreq: 'monthly', priority: '0.7' },
+  { path: '/gallery/category/standard', changefreq: 'monthly', priority: '0.7' },
+  { path: '/gallery/category/premium-ice-baths', changefreq: 'monthly', priority: '0.7' },
   { path: '/gallery/category/client-3d-renderings', changefreq: 'monthly', priority: '0.7' },
   { path: '/blog', changefreq: 'weekly', priority: '0.8' },
 ];

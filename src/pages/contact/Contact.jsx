@@ -10,6 +10,7 @@ import { products } from '../../data/products';
 import { locations } from '../../data/locations';
 import { SEOHead } from '../../components/SEOHead';
 import { useNavigate } from 'react-router-dom';
+import { getRouteSeo } from '../../lib/seo';
 
 const InputField = ({ label, type, name, value, onChange, placeholder, required }) => (
   <motion.div
@@ -52,6 +53,7 @@ InputField.propTypes = {
 };
 
 const Contact = () => {
+  const seoData = getRouteSeo('/contact');
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',
@@ -155,8 +157,8 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-primary">
       <SEOHead
-        title="Contact Us | Vaja"
-        description="Contact Vaja for sauna and steam room enquiries. Request a free quote, book a consultation, or visit our Johannesburg showroom. We are here to help you."
+        title={seoData.title}
+        description={seoData.description}
         keywords="sauna installation near me, steam room contractors near me, sauna installation companies, steam room installers near me"
         canonicalUrl="/contact"
         type="website"

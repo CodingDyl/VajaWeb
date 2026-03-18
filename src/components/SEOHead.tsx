@@ -32,13 +32,16 @@ export function SEOHead({
 }: SEOHeadProps) {
   const siteUrl = 'https://www.vaja.co.za';
   const fullTitle = appendBrand && !/\|\s*Vaja$/i.test(title) ? `${title} | Vaja` : title;
+  const normalizedDescription = description.replace(/\s+/g, ' ').trim();
   const fullDescription = appendLocationSuffix
-    ? `${description} Available in Johannesburg, Cape Town, and Gauteng. Expert installation and premium quality guaranteed.`
-    : description;
-  const currentPath = typeof window !== 'undefined' ? `${window.location.pathname}${window.location.search}` : '';
+    ? `${normalizedDescription} Available in Johannesburg, Cape Town, and Gauteng. Expert installation and premium quality guaranteed.`
+    : normalizedDescription;
+  const currentPath = typeof window !== 'undefined' ? window.location.pathname : '';
   const resolvedUrl = canonicalUrl
     ? new URL(canonicalUrl, siteUrl).toString()
     : `${siteUrl}${currentPath}`;
+  const resolvedImage = image.startsWith('http') ? image : new URL(image, siteUrl).toString();
+  const robotsContent = noindex ? 'noindex,nofollow' : 'index,follow';
 
   return (
     <Helmet>
@@ -48,21 +51,22 @@ export function SEOHead({
       <meta name="description" content={fullDescription} />
       {keywords && <meta name="keywords" content={keywords} />}
       <link rel="canonical" href={resolvedUrl} />
-      {noindex && <meta name="robots" content="noindex,nofollow" />}
+      <meta name="robots" content={robotsContent} />
 
       {/* Open Graph / Facebook */}
       <meta property="og:type" content={type} />
+      <meta property="og:site_name" content="Vaja" />
       <meta property="og:url" content={resolvedUrl} />
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={fullDescription} />
-      <meta property="og:image" content={image} />
+      <meta property="og:image" content={resolvedImage} />
 
       {/* Twitter */}
-      <meta property="twitter:card" content="summary_large_image" />
-      <meta property="twitter:url" content={resolvedUrl} />
-      <meta property="twitter:title" content={fullTitle} />
-      <meta property="twitter:description" content={fullDescription} />
-      <meta property="twitter:image" content={image} />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:url" content={resolvedUrl} />
+      <meta name="twitter:title" content={fullTitle} />
+      <meta name="twitter:description" content={fullDescription} />
+      <meta name="twitter:image" content={resolvedImage} />
 
       {/* Product Schema */}
       {type === 'product' && productData && (
@@ -71,8 +75,8 @@ export function SEOHead({
             "@context": "https://schema.org",
             "@type": "Product",
             "name": title,
-            "description": description,
-            "image": image,
+            "description": normalizedDescription,
+            "image": resolvedImage,
             "brand": {
               "@type": "Brand",
               "name": productData.brand || "Vaja"
@@ -105,8 +109,8 @@ export function SEOHead({
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
           "name": "Vaja",
-          "image": "/og-image.jpg",
-          "description": "South Africa's leading supplier of luxury home saunas, infrared saunas, and steam rooms.",
+          "image": `${siteUrl}/og-image.jpg`,
+          "description": "South Africa's leading sauna and steam room supplier since 1970.",
           "address": {
             "@type": "PostalAddress",
             "addressCountry": "ZA",
@@ -117,7 +121,7 @@ export function SEOHead({
             "latitude": "-26.2041",
             "longitude": "28.0473"
           },
-          "url": "https://vaja.co.za",
+          "url": siteUrl,
           "priceRange": "$$$",
           "areaServed": [
             {
@@ -129,8 +133,8 @@ export function SEOHead({
               "name": "Cape Town"
             },
             {
-              "@type": "State",
-              "name": "Gauteng"
+              "@type": "City",
+              "name": "Pretoria"
             }
           ]
         })}

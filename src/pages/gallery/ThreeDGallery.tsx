@@ -4,6 +4,8 @@ import { fadeIn, staggerContainer } from '../../utils/motion';
 import { ThreeDViewer } from '../../components/3DViewer';
 import { Navbar } from '../../components/Navbar';
 import Footer from '../../components/Footer';
+import { SEOHead } from '../../components/SEOHead';
+import { getRouteSeo } from '../../lib/seo';
 
 interface ThreeDRender {
   id: string;
@@ -34,8 +36,15 @@ const threeDRenderings: ThreeDRender[] = [
 ];
 
 export function ThreeDGallery() {
+  const seoData = getRouteSeo('/gallery/category/client-3d-renderings');
+
   return (
     <div className="min-h-screen bg-primary">
+      <SEOHead
+        title={seoData.title}
+        description={seoData.description}
+        canonicalUrl="/gallery/category/client-3d-renderings"
+      />
       <Navbar />
       
       <motion.section

@@ -9,6 +9,7 @@ import { Divider } from '@mantine/core'
 import { Link } from 'react-router-dom'
 import { IconCheck } from '@tabler/icons-react'
 import { SEOHead } from '../../components/SEOHead'
+import { getRouteSeo } from '../../lib/seo'
 
 const AboutSection = ({ title, icon, children, index }) => (
   <motion.div
@@ -44,11 +45,13 @@ const AnimatedButton = () => (
 )
 
 const About = () => {
+  const seoData = getRouteSeo('/about')
+
   return (
     <div className='min-h-screen bg-primary'>
       <SEOHead
-        title="About us | Vaja"
-        description="One of South Africa's leading sauna manufacturers since 1970. We design, supply, build, and install custom saunas and steam rooms for homes and businesses."
+        title={seoData.title}
+        description={seoData.description}
         keywords="sauna manufacturers, best sauna manufacturers, sauna suppliers near me, steam room suppliers"
         canonicalUrl="/about"
         image={aboutImage}

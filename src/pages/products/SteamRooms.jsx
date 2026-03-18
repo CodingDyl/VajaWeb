@@ -7,13 +7,16 @@ import { Link } from 'react-router-dom';
 import { IconCheck } from '@tabler/icons-react';
 import { steam_product_1, steam_product_2, steam_product_3 } from '../../assets';
 import { SEOHead } from '../../components/SEOHead';
+import { getRouteSeo } from '../../lib/seo';
 
 const SteamRooms = () => {
+  const seoData = getRouteSeo('/steam-rooms');
+
   return (
     <div className="min-h-screen bg-primary">
       <SEOHead
-        title="Custom Steam Rooms in South Africa | Vaja"
-        description="Premium steam rooms for sale for home and commercial use in South Africa. Nordmann steam room generators fitted as standard. Expert installation included."
+        title={seoData.title}
+        description={seoData.description}
         keywords="steam room, steam room near me, steam room for sale, steam room installers near me, steam room installation"
         canonicalUrl="/steam-rooms"
         type="website"

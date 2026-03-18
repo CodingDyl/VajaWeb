@@ -8,6 +8,7 @@ import { Divider } from '@mantine/core';
 import { productImage, sauna_hero } from '../../../assets';
 import { SEOHead } from '../../../components/SEOHead';
 import { Link } from 'react-router-dom';
+import { getRouteSeo } from '../../../lib/seo';
 
 const saunaKits = [
   {
@@ -49,11 +50,13 @@ const kitIncludes = [
 ];
 
 const DIYSauna = () => {
+  const seoData = getRouteSeo('/products/diy-sauna-kits');
+
   return (
     <div className="min-h-screen bg-primary">
       <SEOHead
-        title="Vakio DIY Sauna Kit South Africa | Vaja"
-        description="Shop DIY sauna kits in South Africa with premium timber finishes and efficient installation. Ideal for homes and small wellness spaces. Request a quote from Vaja."
+        title={seoData.title}
+        description={seoData.description}
         keywords="diy sauna kits south africa, diy sauna kit, sauna kits, home sauna for sale, sauna room for sale"
         canonicalUrl="/products/diy-sauna-kits"
         type="website"
