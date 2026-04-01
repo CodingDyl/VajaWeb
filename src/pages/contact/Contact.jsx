@@ -117,8 +117,8 @@ const Contact = () => {
     setIsLoading(true);
     setError('');
 
-    if (!formData.email && !formData.mobile) {
-      setError('Please provide either an email address or mobile number');
+    if (!formData.email || !formData.mobile) {
+      setError('Please provide both an email address and mobile number');
       setIsLoading(false);
       return;
     }
@@ -198,17 +198,11 @@ const Contact = () => {
                 onChange={handleChange}
                 placeholder="Your Name"
               />
-              <motion.div
-                className="mb-4 text-sm text-gray-600 -mt-2"
-                variants={fadeIn('up', 'spring', 0.2, 0.75)}
-              >
-                Please provide at least one contact method below (Email or Mobile Number)
-                <span className="text-red-500 ml-1">*</span>
-              </motion.div>
               <InputField
                 label="Email"
                 type="email"
                 name="email"
+                required
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="your.email@example.com"
@@ -217,6 +211,7 @@ const Contact = () => {
                 label="Mobile Number"
                 type="tel"
                 name="mobile"
+                required
                 value={formData.mobile}
                 onChange={handleChange}
                 placeholder="+27 12 345 6789"
