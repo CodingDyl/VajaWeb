@@ -1,23 +1,7 @@
-'use client'
-
 import { motion } from 'framer-motion'
 import { fadeIn } from '../utils/motion'
-import { useEffect } from 'react'
 
 export function Testimonials() {
-  useEffect(() => {
-    // Load Elfsight script
-    const script = document.createElement('script')
-    script.src = "https://static.elfsight.com/platform/platform.js"
-    script.async = true
-    document.body.appendChild(script)
-
-    return () => {
-      // Cleanup script when component unmounts
-      document.body.removeChild(script)
-    }
-  }, [])
-
   return (
     <section className="relative min-h-[600px] bg-primary py-20">
       <div className="container mx-auto px-4">
@@ -38,11 +22,13 @@ export function Testimonials() {
         >
           {/* Decorative accent line */}
           <div className="absolute top-0 left-0 w-full h-1 bg-accent" />
-          
-          {/* Elfsight Reviews Widget */}
-          <div 
-            className="elfsight-app-226e6c36-cd82-4e20-b595-8e3f856350ee" 
-            data-elfsight-app-lazy 
+
+          <iframe
+            src="https://3e83f46f286d4ca4b8a5adf7f7307f14.elf.site"
+            title="VAJA customer reviews"
+            loading="lazy"
+            className="relative z-10 h-[560px] w-full border-0 md:h-[620px] lg:h-[68vh] lg:min-h-[680px] lg:max-h-[820px]"
+            referrerPolicy="strict-origin-when-cross-origin"
           />
         </motion.div>
       </div>
