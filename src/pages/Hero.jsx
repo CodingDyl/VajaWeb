@@ -1,5 +1,4 @@
-import React from 'react'
-import { Divider, Image } from '@mantine/core'
+import { Divider } from '@mantine/core'
 import { sauna_hero } from '../assets'
 import { motion } from 'framer-motion'
 import { Navbar } from '../components/Navbar'
@@ -33,7 +32,7 @@ export function Hero() {
           <div className="flex flex-col md:flex-row gap-4">
             <Link to="/products">
               <button className="w-full md:w-auto bg-accent text-white px-6 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-colors">
-                Discover Our Sauna's
+                Discover Our Sauna&apos;s
               </button>
             </Link>
             <Link to="/contact">
@@ -44,17 +43,12 @@ export function Hero() {
           </div>
         </div>
       </div>
-      <div className="absolute right-[-10%] bottom-[-15%] w-1/2 lg:w-7/12">
-        <div className="relative h-full w-full hidden md:block">
-          <Image
-            src={sauna_hero}
-            alt="Luxury sauna interior with premium finishes and modern design"
-            fill
-            className="object-cover rounded-l-[120px] border-4 border-accent"
-            sizes="(max-width: 1024px) 100vw, 50vw"
-            priority="true"
-          />
-        </div>
+      <div className="absolute bottom-0 right-0 hidden md:block h-[48vh] w-[48vw] overflow-hidden rounded-tl-[120px] border-l-4 border-t-4 border-accent">
+        <img
+          src={sauna_hero}
+          alt="Luxury sauna interior with premium finishes and modern design"
+          className="h-full w-full object-cover object-center"
+        />
       </div>
       <div className="absolute bottom-10 md:hidden w-full flex justify-center items-center">
         <a href={`#about`}>

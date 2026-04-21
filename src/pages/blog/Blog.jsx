@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { fadeIn, staggerContainer } from '../../utils/motion';
 import { Navbar } from '../../components/Navbar';
@@ -93,7 +93,7 @@ const Blog = () => {
   console.log("Current blogPosts state:", blogPosts); // Debugging line
 
   return (
-    <div className="min-h-screen bg-primary">
+    <div className="min-h-screen bg-primary flex flex-col">
       <SEOHead
         title={seoData.title}
         description={seoData.description}
@@ -102,7 +102,8 @@ const Blog = () => {
         type="website"
       />
       <Navbar />
-      <div className="container mx-auto px-4 py-32">
+      <main className="flex-1">
+        <div className="container mx-auto px-4 py-32 min-h-full">
         <motion.h1
           variants={fadeIn('down', 'spring', 0.2, 0.75)}
           initial="hidden"
@@ -156,7 +157,8 @@ const Blog = () => {
             </button>
           )}
         </motion.div>
-      </div>
+        </div>
+      </main>
       <Footer />
     </div>
   );

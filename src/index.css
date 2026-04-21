@@ -29,22 +29,30 @@ body {
 }
 
 .logo-scroll-container {
+  width: 100%;
   overflow: hidden;
   padding: 20px 0;
   white-space: nowrap;
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+}
+
+.logo-scroll-track {
+  width: 100%;
+  overflow: hidden;
 }
 
 .logo-scroll {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  width: max-content;
   animation: scroll 30s linear infinite;
 }
 
 .logo-item {
-  display: inline-block;
+  flex: 0 0 auto;
   margin: 0 20px;
 }
 

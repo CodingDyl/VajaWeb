@@ -1,5 +1,4 @@
-import React from 'react'
-import { Image, Title, Container } from '@mantine/core'
+import { Image } from '@mantine/core'
 import { motion } from 'framer-motion'
 import { sun, sabi, bhp, fair, shera, inter, legacy, woodland, earth, cloud9, planetFit, vodacom, royalSax, idc, wildCoast, virgin, maldives } from '../assets'
 
@@ -13,8 +12,8 @@ const HomeCustomers = () => {
       transition={{ duration: 0.5 }}
       className="bg-primary overflow-hidden"
     >
-      <Container size="xl">
-        <div className="logo-scroll-container bg-white">
+      <div className="logo-scroll-container bg-white">
+        <div className="logo-scroll-track">
           <div className="logo-scroll">
             {[...customers, ...customers].map((customer, index) => (
               <div key={index} className="logo-item">
@@ -28,7 +27,7 @@ const HomeCustomers = () => {
             ))}
           </div>
         </div>
-      </Container>
+      </div>
     </motion.section>
   )
 }
