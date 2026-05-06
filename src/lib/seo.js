@@ -65,11 +65,6 @@ export const routeSeo = {
     description:
       'Enhance your sauna and steam room sessions with professional aroma concentrates. Choose from eucalyptus, pine needle, peppermint, and more.',
   },
-  '/products/icebath/premiumicebath': {
-    title: 'Premium Ice Bath South Africa | Vaja',
-    description:
-      'Recover faster with a professional-grade ice bath from Vaja. Premium cold plunge tubs for athletes and wellness enthusiasts. Delivery across South Africa.',
-  },
 };
 
 export const productSeoBySlug = {
@@ -163,11 +158,6 @@ export const galleryCategorySeoBySlug = {
     title: 'Standard Sauna Gallery | Vaja',
     description:
       'View Standard sauna gallery images from Vaja. Explore a compact and affordable sauna option designed for comfort, efficient use of space, and everyday wellness.',
-  },
-  'premium-ice-baths': {
-    title: 'Premium Ice Bath Gallery | Vaja',
-    description:
-      'View premium ice bath gallery images from Vaja. Explore professional-grade cold plunge installations designed for recovery, wellness, and high-performance spaces.',
   },
   'client-3d-renderings': routeSeo['/gallery/category/client-3d-renderings'],
 };

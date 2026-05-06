@@ -79,7 +79,7 @@ const Footer = () => {
           />
           <FooterSection
             title="Services"
-            items={["Steam Rooms", "Saunas", "Ice Baths"]}
+            items={["Steam Rooms", "Saunas"]}
           />
           <FooterSection
             title="Contact Us"

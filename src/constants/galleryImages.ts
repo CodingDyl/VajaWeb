@@ -1,4 +1,4 @@
-import { kaelis_1, aurora_1, loyly_1, elysium_1, ice_bath_1, steam_product_1, kaelis_2, aurora_2, loyly_2, elysium_2, ice_bath_2, steam_product_2, custom_2, custom_1, custom_3, sauna_hero, standard_1, standard_2 } from "../assets";
+import { kaelis_1, aurora_1, loyly_1, elysium_1, steam_product_1, kaelis_2, aurora_2, loyly_2, elysium_2, steam_product_2, custom_2, custom_1, custom_3, sauna_hero, standard_1, standard_2 } from "../assets";
 
 interface GalleryImage {
   id: number;
@@ -132,25 +132,6 @@ export const galleryCategories: GalleryCategory[] = [
         src: custom_3,
         alt: 'Custom sauna features',
         title: 'Unique Features'
-      }
-    ]
-  },
-  {
-    route: 'category/premium-ice-baths',
-    title: 'Premium Ice Baths',
-    description: 'Experience the ultimate cold therapy with our premium ice bath solutions, designed for optimal recovery and wellness benefits.',
-    images: [
-      {
-        id: 6,
-        src: ice_bath_1,
-        alt: 'Premium ice bath installation',
-        title: 'Luxury Ice Bath'
-      },
-      {
-        id: 61,
-        src: ice_bath_2,
-        alt: 'Ice bath features and controls',
-        title: 'Advanced Features'
       }
     ]
   },

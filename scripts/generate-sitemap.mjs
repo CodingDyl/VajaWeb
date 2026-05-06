@@ -17,7 +17,6 @@ const staticRoutes = [
   { path: '/products/diy-sauna-kits', changefreq: 'monthly', priority: '0.7' },
   { path: '/products/accessories', changefreq: 'monthly', priority: '0.8' },
   { path: '/products/equipment', changefreq: 'monthly', priority: '0.8' },
-  { path: '/products/icebath/premiumicebath', changefreq: 'monthly', priority: '0.8' },
   { path: '/steam-rooms', changefreq: 'monthly', priority: '0.8' },
   { path: '/contact', changefreq: 'monthly', priority: '0.7' },
   { path: '/gallery', changefreq: 'weekly', priority: '0.8' },
@@ -26,7 +25,6 @@ const staticRoutes = [
   { path: '/gallery/category/loyly', changefreq: 'monthly', priority: '0.7' },
   { path: '/gallery/category/elysium', changefreq: 'monthly', priority: '0.7' },
   { path: '/gallery/category/standard', changefreq: 'monthly', priority: '0.7' },
-  { path: '/gallery/category/premium-ice-baths', changefreq: 'monthly', priority: '0.7' },
   { path: '/gallery/category/client-3d-renderings', changefreq: 'monthly', priority: '0.7' },
   { path: '/blog', changefreq: 'weekly', priority: '0.8' },
 ];

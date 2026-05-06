@@ -22,7 +22,6 @@ const staticRoutes = [
   '/products/diy-sauna-kits',
   '/products/accessories',
   '/products/equipment',
-  '/products/icebath/premiumicebath',
   '/steam-rooms',
   '/contact',
   '/contact/thank-you',
@@ -33,7 +32,6 @@ const staticRoutes = [
   '/gallery/category/loyly',
   '/gallery/category/elysium',
   '/gallery/category/standard',
-  '/gallery/category/premium-ice-baths',
   '/gallery/category/client-3d-renderings',
   '/blog',
 ];

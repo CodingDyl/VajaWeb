@@ -17,7 +17,6 @@ import { products } from './data/products'
 import SteamRooms from './pages/products/SteamRooms'
 import '@mantine/carousel/styles.css';
 import CategoryGallery from './pages/gallery/category/[slug]'
-import IceProductPage from './pages/products/iceBath/IceProductPage'
 import { ThreeDGallery } from './pages/gallery/ThreeDGallery'
 import ThankYou from './pages/contact/thank-you/ThankYou'
 
@@ -38,8 +37,6 @@ function App() {
             path="/products/:productSlug" 
             element={<ProductPage products={products} />} 
           />
-          <Route path="/products/ice-bath/:productSlug" element={<IceProductPage />} />
-          <Route path="/products/icebath/:productSlug" element={<IceProductPage />} />
           <Route path="/gallery/category/:slug" element={<CategoryGallery />} />
           <Route path="/products/auroma-concentrates" element={<AuromaConcentrates />} />
           <Route path="/products/diy-sauna-kits" element={<DIYSauna />} />
