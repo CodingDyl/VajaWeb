@@ -1,11 +1,14 @@
 /* eslint-disable react/prop-types */
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
+import emailjs from '@emailjs/browser';
 import {
   IconCheck,
+  IconChevronDown,
   IconClipboardList,
   IconDownload,
   IconFileDescription,
+  IconMail,
   IconNotes,
   IconPrinter,
   IconRulerMeasure,
@@ -109,8 +112,16 @@ const accessoryOptions = [
   'Maintenance oil or aftercare kit',
 ];
 
+const emailJsConfig = {
+  publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'X2fstaygJ1stzvuEF',
+  serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID || 'service_da22vjp',
+  checklistTemplateId: import.meta.env.VITE_EMAILJS_CHECKLIST_TEMPLATE_ID || 'template_nxq94qv',
+  recipientEmail: import.meta.env.VITE_VAJA_CHECKLIST_EMAIL || 'tyler@vaja.co.za',
+};
+
 const initialForm = {
   clientName: '',
+  clientEmail: '',
   projectReference: '',
   contactNumber: '',
   siteAddress: '',
@@ -214,6 +225,47 @@ function SpecRow({ label, value }) {
   );
 }
 
+function CollapsibleSection({ id, title, description, icon: Icon, isOpen, onToggle, children, summary }) {
+  return (
+    <section className="overflow-hidden rounded-lg bg-white shadow-lg">
+      <button
+        type="button"
+        onClick={() => onToggle(id)}
+        aria-expanded={isOpen}
+        aria-controls={`${id}-panel`}
+        className="flex w-full items-start justify-between gap-4 p-5 text-left transition hover:bg-primary/70 sm:p-8"
+      >
+        <span className="flex items-start gap-3">
+          <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-accent/15 text-accent">
+            <Icon size={22} />
+          </span>
+          <span>
+            <span className="block text-2xl font-bold text-secondary">{title}</span>
+            <span className="mt-1 block text-sm leading-6 text-gray-500">{description}</span>
+            {!isOpen && summary && (
+              <span className="mt-3 block rounded-md border border-secondary/15 bg-primary px-3 py-2 text-xs leading-5 text-gray-500">
+                {summary}
+              </span>
+            )}
+          </span>
+        </span>
+        <span className="mt-1 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-secondary/20 text-secondary">
+          <IconChevronDown
+            size={20}
+            className={`transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
+          />
+        </span>
+      </button>
+
+      {isOpen && (
+        <div id={`${id}-panel`} className="border-t border-secondary/10 px-5 pb-5 sm:px-8 sm:pb-8">
+          {children}
+        </div>
+      )}
+    </section>
+  );
+}
+
 function escapeHtml(value) {
   return String(value || '')
     .replaceAll('&', '&amp;')
@@ -259,6 +311,7 @@ function buildDocumentHtml(form, completedItems, generatedDate) {
     <div class="box">
       <dl>
         <dt>Client</dt><dd>${escapeHtml(form.clientName || 'Not specified')}</dd>
+        <dt>Email</dt><dd>${escapeHtml(form.clientEmail || 'Not specified')}</dd>
         <dt>Project reference</dt><dd>${escapeHtml(form.projectReference || 'Not specified')}</dd>
         <dt>Contact number</dt><dd>${escapeHtml(form.contactNumber || 'Not specified')}</dd>
         <dt>Site address</dt><dd>${escapeHtml(form.siteAddress || 'Not specified')}</dd>
@@ -285,8 +338,58 @@ function buildDocumentHtml(form, completedItems, generatedDate) {
 </html>`;
 }
 
+function buildDocumentText(form, completedItems, totalItems, generatedDate) {
+  const checklistText = checklistGroups
+    .map((group) => {
+      const items = group.items
+        .map((item) => `${form.checklist[item] ? '[x]' : '[ ]'} ${item}`)
+        .join('\n');
+      return `${group.title}\n${items}`;
+    })
+    .join('\n\n');
+
+  return `Elysium Sauna Client Specification
+Generated: ${generatedDate}
+Checklist confirmed: ${completedItems}/${totalItems}
+
+Client: ${form.clientName || 'Not specified'}
+Email: ${form.clientEmail || 'Not specified'}
+Contact number: ${form.contactNumber || 'Not specified'}
+Project reference: ${form.projectReference || 'Not specified'}
+Site address: ${form.siteAddress || 'Not specified'}
+Target install date: ${form.targetInstallDate || 'Not specified'}
+
+Exterior wood: ${form.exteriorWood}
+Interior wood: ${form.interiorWood}
+Bench wood: ${form.benchWood}
+Door: ${form.doorPreference}
+Glass: ${form.glassPreference}
+Heater: ${form.heaterPreference}
+Shower: ${form.showerPreference}
+Lighting: ${form.lightingPreference}
+Accessories: ${form.accessories.join(', ') || 'None selected'}
+
+${checklistText}
+
+Client notes and exclusions:
+${form.notes || 'No additional notes recorded.'}
+
+Approval:
+Client approval signature: ______________________________
+Vaja project approval signature: ________________________`;
+}
+
 export default function ElysiumChecklist() {
   const [form, setForm] = useState(initialForm);
+  const [openSections, setOpenSections] = useState({
+    details: true,
+    wood: false,
+    build: false,
+    signoff: false,
+    notes: false,
+  });
+  const [emailStatus, setEmailStatus] = useState('idle');
+  const [emailMessage, setEmailMessage] = useState('');
   const generatedDate = useMemo(
     () =>
       new Intl.DateTimeFormat('en-ZA', {
@@ -302,8 +405,23 @@ export default function ElysiumChecklist() {
   const completionPercentage = Math.round((completedItems / totalItems) * 100);
   const woodNames = woodOptions.map((option) => option.name);
 
+  useEffect(() => {
+    emailjs.init(emailJsConfig.publicKey);
+  }, []);
+
   const updateForm = (key, value) => {
     setForm((currentForm) => ({ ...currentForm, [key]: value }));
+    if (emailMessage) {
+      setEmailMessage('');
+      setEmailStatus('idle');
+    }
+  };
+
+  const toggleSection = (sectionId) => {
+    setOpenSections((currentSections) => ({
+      ...currentSections,
+      [sectionId]: !currentSections[sectionId],
+    }));
   };
 
   const toggleChecklistItem = (item) => {
@@ -341,6 +459,53 @@ export default function ElysiumChecklist() {
     link.click();
     link.remove();
     URL.revokeObjectURL(url);
+  };
+
+  const emailSpecification = async () => {
+    const trimmedClientName = form.clientName.trim();
+    const trimmedClientEmail = form.clientEmail.trim();
+    const trimmedContactNumber = form.contactNumber.trim();
+
+    setEmailMessage('');
+
+    if (!trimmedClientEmail && !trimmedContactNumber) {
+      setEmailStatus('error');
+      setEmailMessage('Add at least one client contact method before emailing the specification to Vaja.');
+      return;
+    }
+
+    setEmailStatus('sending');
+
+    try {
+      const documentHtml = buildDocumentHtml(form, completedItems, generatedDate);
+      const documentText = buildDocumentText(form, completedItems, totalItems, generatedDate);
+
+      await emailjs.send(emailJsConfig.serviceId, emailJsConfig.checklistTemplateId, {
+        from_name: trimmedClientName || 'Elysium checklist client',
+        from_email: trimmedClientEmail || 'website@vaja.co.za',
+        reply_to: trimmedClientEmail || '',
+        to_name: 'Vaja',
+        to_email: emailJsConfig.recipientEmail,
+        client_name: trimmedClientName || 'Not specified',
+        client_email: trimmedClientEmail || 'Not specified',
+        client_contact: trimmedContactNumber || 'Not specified',
+        contact_number: trimmedContactNumber || 'Not specified',
+        mobile: trimmedContactNumber,
+        project_reference: form.projectReference || 'Not specified',
+        product_name: 'Elysium',
+        subject: `Elysium checklist submission${form.projectReference ? ` - ${form.projectReference}` : ''}`,
+        message: documentText,
+        document_text: documentText,
+        document_html: documentHtml,
+      });
+
+      setEmailStatus('success');
+      setEmailMessage(`Specification emailed to Vaja${trimmedClientEmail ? ` from ${trimmedClientEmail}` : ''}.`);
+    } catch (error) {
+      console.error('Specification email failed:', error);
+      setEmailStatus('error');
+      setEmailMessage('Could not send the specification. Check the EmailJS template settings and try again.');
+    }
   };
 
   return (
@@ -412,18 +577,18 @@ export default function ElysiumChecklist() {
 
         <section className="container mx-auto grid gap-8 px-4 py-10 sm:px-6 lg:grid-cols-[minmax(0,1fr)_390px] lg:px-8">
           <div className="space-y-8">
-            <section className="rounded-lg bg-white p-5 shadow-lg sm:p-8">
-              <div className="mb-6 flex items-center gap-3">
-                <span className="flex h-11 w-11 items-center justify-center rounded-full bg-accent/15 text-accent">
-                  <IconUser size={22} />
-                </span>
-                <div>
-                  <h2 className="text-2xl font-bold text-secondary">Client & Project Details</h2>
-                  <p className="text-sm text-gray-500">Used in the exported approval document.</p>
-                </div>
-              </div>
+            <CollapsibleSection
+              id="details"
+              title="Client & Project Details"
+              description="Optional project identifiers. Add at least one contact method before emailing to Vaja."
+              icon={IconUser}
+              isOpen={openSections.details}
+              onToggle={toggleSection}
+              summary={`${form.clientName || 'Client name not set'} · ${form.clientEmail || form.contactNumber || 'Contact method needed for email'}`}
+            >
               <div className="grid gap-5 md:grid-cols-2">
                 <Field id="clientName" label="Client name" value={form.clientName} onChange={(value) => updateForm('clientName', value)} placeholder="Full name or company" />
+                <Field id="clientEmail" label="Client email" type="email" value={form.clientEmail} onChange={(value) => updateForm('clientEmail', value)} placeholder="client@example.com" />
                 <Field id="projectReference" label="Project reference" value={form.projectReference} onChange={(value) => updateForm('projectReference', value)} placeholder="Quote or job-card number" />
                 <Field id="contactNumber" label="Contact number" value={form.contactNumber} onChange={(value) => updateForm('contactNumber', value)} placeholder="+27..." />
                 <Field id="targetInstallDate" label="Target install date" type="date" value={form.targetInstallDate} onChange={(value) => updateForm('targetInstallDate', value)} />
@@ -431,19 +596,17 @@ export default function ElysiumChecklist() {
                   <Field id="siteAddress" label="Site address" value={form.siteAddress} onChange={(value) => updateForm('siteAddress', value)} placeholder="Installation address" />
                 </div>
               </div>
-            </section>
+            </CollapsibleSection>
 
-            <section className="rounded-lg bg-white p-5 shadow-lg sm:p-8">
-              <div className="mb-6 flex items-center gap-3">
-                <span className="flex h-11 w-11 items-center justify-center rounded-full bg-accent/15 text-accent">
-                  <IconClipboardList size={22} />
-                </span>
-                <div>
-                  <h2 className="text-2xl font-bold text-secondary">Wood Selection</h2>
-                  <p className="text-sm text-gray-500">All current sauna wood options are available for discussion and sign-off.</p>
-                </div>
-              </div>
-
+            <CollapsibleSection
+              id="wood"
+              title="Wood Selection"
+              description="Skip this block to keep the original Elysium material specification."
+              icon={IconClipboardList}
+              isOpen={openSections.wood}
+              onToggle={toggleSection}
+              summary={`Default active: ${form.exteriorWood} exterior, ${form.interiorWood} interior, ${form.benchWood} benches`}
+            >
               <div className="grid gap-5 md:grid-cols-3">
                 <SelectField id="exteriorWood" label="Exterior wood" value={form.exteriorWood} onChange={(value) => updateForm('exteriorWood', value)} options={woodNames} />
                 <SelectField id="interiorWood" label="Interior wall wood" value={form.interiorWood} onChange={(value) => updateForm('interiorWood', value)} options={woodNames} />
@@ -461,18 +624,17 @@ export default function ElysiumChecklist() {
                   />
                 ))}
               </div>
-            </section>
+            </CollapsibleSection>
 
-            <section className="rounded-lg bg-white p-5 shadow-lg sm:p-8">
-              <div className="mb-6 flex items-center gap-3">
-                <span className="flex h-11 w-11 items-center justify-center rounded-full bg-accent/15 text-accent">
-                  <IconTool size={22} />
-                </span>
-                <div>
-                  <h2 className="text-2xl font-bold text-secondary">Build Preferences</h2>
-                  <p className="text-sm text-gray-500">These choices remove ambiguity from the quote and installation scope.</p>
-                </div>
-              </div>
+            <CollapsibleSection
+              id="build"
+              title="Build Preferences"
+              description="Optional finish and system preferences. Defaults remain the original Elysium design."
+              icon={IconTool}
+              isOpen={openSections.build}
+              onToggle={toggleSection}
+              summary={`${form.doorPreference} · ${form.heaterPreference} · ${form.showerPreference}`}
+            >
               <div className="grid gap-5 md:grid-cols-2">
                 <SelectField id="doorPreference" label="Door preference" value={form.doorPreference} onChange={(value) => updateForm('doorPreference', value)} options={['Glass sauna door', 'Timber framed glass door', 'Full timber door', 'To be confirmed on drawing']} />
                 <SelectField id="glassPreference" label="Glass preference" value={form.glassPreference} onChange={(value) => updateForm('glassPreference', value)} options={['Clear glass', 'Grey tinted glass', 'Bronze tinted glass', 'Frosted/privacy glass']} />
@@ -507,18 +669,17 @@ export default function ElysiumChecklist() {
                   })}
                 </div>
               </div>
-            </section>
+            </CollapsibleSection>
 
-            <section className="rounded-lg bg-white p-5 shadow-lg sm:p-8">
-              <div className="mb-6 flex items-center gap-3">
-                <span className="flex h-11 w-11 items-center justify-center rounded-full bg-accent/15 text-accent">
-                  <IconNotes size={22} />
-                </span>
-                <div>
-                  <h2 className="text-2xl font-bold text-secondary">Sign-off Checklist</h2>
-                  <p className="text-sm text-gray-500">Tick each item once the client and Vaja agree on the detail.</p>
-                </div>
-              </div>
+            <CollapsibleSection
+              id="signoff"
+              title="Sign-off Checklist"
+              description="Optional confirmation ticks. Unticked items show Vaja what still needs discussion."
+              icon={IconNotes}
+              isOpen={openSections.signoff}
+              onToggle={toggleSection}
+              summary={`${completedItems}/${totalItems} confirmation items ticked`}
+            >
               <div className="grid gap-5 lg:grid-cols-3">
                 {checklistGroups.map((group) => {
                   const GroupIcon = group.icon;
@@ -545,11 +706,18 @@ export default function ElysiumChecklist() {
                   );
                 })}
               </div>
-            </section>
+            </CollapsibleSection>
 
-            <section className="rounded-lg bg-white p-5 shadow-lg sm:p-8">
+            <CollapsibleSection
+              id="notes"
+              title="Client Notes & Exclusions"
+              description="Optional free-text decisions, constraints, exclusions, or unknowns."
+              icon={IconFileDescription}
+              isOpen={openSections.notes}
+              onToggle={toggleSection}
+              summary={form.notes ? `${form.notes.slice(0, 96)}${form.notes.length > 96 ? '...' : ''}` : 'No additional notes recorded'}
+            >
               <label htmlFor="notes" className="block">
-                <span className="mb-2 block text-lg font-bold text-secondary">Client notes and exclusions</span>
                 <textarea
                   id="notes"
                   value={form.notes}
@@ -559,7 +727,7 @@ export default function ElysiumChecklist() {
                   className="w-full rounded-md border border-secondary/25 bg-primary px-4 py-3 text-sm text-gray-700 outline-none transition focus:border-accent focus:ring-2 focus:ring-accent/25"
                 />
               </label>
-            </section>
+            </CollapsibleSection>
           </div>
 
           <aside className="lg:sticky lg:top-28 lg:self-start">
@@ -576,6 +744,7 @@ export default function ElysiumChecklist() {
 
                 <dl className="space-y-0">
                   <SpecRow label="Client" value={form.clientName} />
+                  <SpecRow label="Email" value={form.clientEmail} />
                   <SpecRow label="Project" value={form.projectReference} />
                   <SpecRow label="Exterior" value={form.exteriorWood} />
                   <SpecRow label="Interior" value={form.interiorWood} />
@@ -602,10 +771,32 @@ export default function ElysiumChecklist() {
                     <IconDownload size={18} />
                     Download HTML Spec
                   </button>
+                  <button
+                    type="button"
+                    onClick={emailSpecification}
+                    disabled={emailStatus === 'sending'}
+                    className="inline-flex items-center justify-center gap-2 rounded-full border border-accent bg-accent/10 px-5 py-3 text-sm font-bold text-accent transition hover:bg-accent hover:text-white disabled:cursor-not-allowed disabled:opacity-60"
+                  >
+                    <IconMail size={18} />
+                    {emailStatus === 'sending' ? 'Emailing Spec...' : 'Email Spec to Vaja'}
+                  </button>
                 </div>
 
+                {emailMessage && (
+                  <p
+                    className={`mt-4 rounded-md px-4 py-3 text-xs leading-5 ${
+                      emailStatus === 'success'
+                        ? 'bg-accent/10 text-secondary'
+                        : 'bg-red-50 text-red-700'
+                    }`}
+                    role="status"
+                  >
+                    {emailMessage}
+                  </p>
+                )}
+
                 <p className="mt-5 text-xs leading-5 text-gray-500">
-                  Generated {generatedDate}. Use the print action to save as PDF, or attach the downloaded specification file to the quote or job card.
+                  Generated {generatedDate}. Skipped sections keep the original Elysium defaults. Use print, download, or email the specification to Vaja.
                 </p>
               </div>
             </div>
@@ -620,6 +811,7 @@ export default function ElysiumChecklist() {
         </p>
         <div className="mt-8 grid grid-cols-2 gap-x-10">
           <SpecRow label="Client" value={form.clientName} />
+          <SpecRow label="Email" value={form.clientEmail} />
           <SpecRow label="Project reference" value={form.projectReference} />
           <SpecRow label="Contact number" value={form.contactNumber} />
           <SpecRow label="Site address" value={form.siteAddress} />
