@@ -13,12 +13,14 @@ import AuromaConcentrates from './pages/products/other/AuromaConcentrates'
 import DIYSauna from './pages/products/other/DIYSauna'
 import Accessories from './pages/products/customization/Accessories'
 import Equipment from './pages/products/customization/Equipment'
+import ElysiumChecklist from './pages/products/checklists/ElysiumChecklist'
 import { products } from './data/products'
 import SteamRooms from './pages/products/SteamRooms'
 import '@mantine/carousel/styles.css';
 import CategoryGallery from './pages/gallery/category/[slug]'
 import { ThreeDGallery } from './pages/gallery/ThreeDGallery'
 import ThankYou from './pages/contact/thank-you/ThankYou'
+import NotFound from './pages/NotFound'
 
 function App() {
   return (
@@ -42,10 +44,12 @@ function App() {
           <Route path="/products/diy-sauna-kits" element={<DIYSauna />} />
           <Route path="/products/accessories" element={<Accessories />} />
           <Route path="/products/equipment" element={<Equipment />} />
+          <Route path="/client-checklists/elysium" element={<ElysiumChecklist />} />
 
           <Route path="/steam-rooms" element={<SteamRooms />} />
           <Route path="/steamrooms" element={<SteamRooms />} />
           <Route path="/gallery/category/client-3d-renderings" element={<ThreeDGallery />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
     </MantineProvider>

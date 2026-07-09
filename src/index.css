@@ -60,3 +60,23 @@ body {
 .logo-scroll-container:hover .logo-scroll {
   animation-play-state: paused;
 }
+
+@media print {
+  nav,
+  main,
+  footer {
+    display: none !important;
+  }
+
+  body {
+    background: #ffffff;
+  }
+
+  .print\:block {
+    display: block !important;
+  }
+
+  @page {
+    margin: 14mm;
+  }
+}
