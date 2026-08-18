@@ -364,7 +364,7 @@ const Contact = () => {
               <div className="space-y-6">
                 {[
                   { icon: FaEnvelope, text: "tyler@vaja.co.za", type: "email" },
-                  { icon: FaEnvelope, text: "viv@vaja.co.za", type: "email" },
+                  { icon: FaEnvelope, text: "kaylee@vaja.co.za", type: "email" },
                   { icon: FaPhone, text: "+27 11 794 2090", type: "phone" },
                   { icon: FaMapMarkerAlt, text: "53 Zeiss Rd, Laser Park, Johannesburg, South Africa", type: "address" },
                 ].map((item, index) => (

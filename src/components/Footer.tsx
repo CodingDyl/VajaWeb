@@ -83,7 +83,7 @@ const Footer = () => {
           />
           <FooterSection
             title="Contact Us"
-            items={["tyler@vaja.co.za", "viv@vaja.co.za", "+27 11 794 2090"]}
+            items={["tyler@vaja.co.za", "kaylee@vaja.co.za", "+27 11 794 2090"]}
           />
         </div>
         <div className="mt-12 pt-8 border-t border-secondary">
