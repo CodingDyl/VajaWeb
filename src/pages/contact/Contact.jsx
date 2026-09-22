@@ -363,7 +363,7 @@ const Contact = () => {
               <h2 className="text-2xl font-bold mb-6">Contact Information</h2>
               <div className="space-y-6">
                 {[
-                  { icon: FaEnvelope, label: "Joburg enquiries", text: "tyler@vaja.co.za", type: "email" },
+                  { icon: FaEnvelope, label: "Johannesburg enquiries", text: "tyler@vaja.co.za", type: "email" },
                   { icon: FaEnvelope, label: "Cape Town enquiries", text: "kaylee@vaja.co.za", type: "email" },
                   { icon: FaPhone, text: "+27 11 794 2090", type: "phone" },
                   { icon: FaMapMarkerAlt, text: "53 Zeiss Rd, Laser Park, Johannesburg, South Africa", type: "address" },

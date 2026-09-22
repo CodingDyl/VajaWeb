@@ -86,7 +86,7 @@ const Footer = () => {
               "Roodeport",
               "South Africa, 2040",
               "Tel: +27 11 794 2090",
-              { label: "Joburg enquiries", email: "tyler@vaja.co.za" },
+              { label: "Johannesburg enquiries", email: "tyler@vaja.co.za" },
             ]}
           />
           <FooterSection
@@ -106,7 +106,7 @@ const Footer = () => {
           <FooterSection
             title="Contact Us"
             items={[
-              { label: "Joburg enquiries", email: "tyler@vaja.co.za" },
+              { label: "Johannesburg enquiries", email: "tyler@vaja.co.za" },
               { label: "Cape Town enquiries", email: "kaylee@vaja.co.za" },
               "+27 11 794 2090",
             ]}
