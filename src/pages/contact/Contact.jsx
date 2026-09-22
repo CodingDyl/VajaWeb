@@ -363,35 +363,38 @@ const Contact = () => {
               <h2 className="text-2xl font-bold mb-6">Contact Information</h2>
               <div className="space-y-6">
                 {[
-                  { icon: FaEnvelope, text: "tyler@vaja.co.za", type: "email" },
-                  { icon: FaEnvelope, text: "kaylee@vaja.co.za", type: "email" },
+                  { icon: FaEnvelope, label: "Joburg enquiries", text: "tyler@vaja.co.za", type: "email" },
+                  { icon: FaEnvelope, label: "Cape Town enquiries", text: "kaylee@vaja.co.za", type: "email" },
                   { icon: FaPhone, text: "+27 11 794 2090", type: "phone" },
                   { icon: FaMapMarkerAlt, text: "53 Zeiss Rd, Laser Park, Johannesburg, South Africa", type: "address" },
                 ].map((item, index) => (
                   <motion.div
                     key={index}
-                    className="flex items-center"
+                    className="flex items-start"
                     variants={zoomIn(0.2 + index * 0.1, 0.6)}
                   >
-                    <item.icon className="text-accent mr-4 text-2xl" />
+                    <item.icon className="text-accent mr-4 mt-0.5 text-2xl shrink-0" />
                     {item.type === "email" ? (
-                      <a 
-                        href={`mailto:${item.text}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:text-accent transition-colors"
-                      >
-                        {item.text}
-                      </a>
+                      <div className="flex flex-col">
+                        <span className="text-sm text-white/75 mb-0.5">{item.label}</span>
+                        <a 
+                          href={`mailto:${item.text}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:text-accent transition-colors"
+                        >
+                          {item.text}
+                        </a>
+                      </div>
                     ) : item.type === "phone" ? (
                       <a 
                         href={`tel:${item.text}`}
-                        className="hover:text-accent transition-colors"
+                        className="hover:text-accent transition-colors self-center"
                       >
                         {item.text}
                       </a>
                     ) : (
-                      <p>{item.text}</p>
+                      <p className="self-center">{item.text}</p>
                     )}
                   </motion.div>
                 ))}
